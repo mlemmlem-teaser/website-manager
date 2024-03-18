@@ -1,0 +1,101 @@
+@import url(variable.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+body {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-size: var(--font-size-medium);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-bold);
+    margin: var(--spacing-medium) 0 var(--spacing-small);
+}
+
+h1 {
+    font-size: var(--font-size-xxlarge);
+}
+
+h2 {
+    font-size: var(--font-size-xlarge);
+}
+
+h3 {
+    font-size: var(--font-size-large);
+}
+
+h4 {
+    font-size: var(--font-size-large);
+}
+
+h5 {
+    font-size: var(--font-size-medium);
+}
+
+h6 {
+    font-size: var(--font-size-small);
+}
+
+p {
+    margin: var(--spacing-small) 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-medium);
+}
+
+button {
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+}
+
+input {
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    width: 100%;
+    margin: var(--spacing-small) 0;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+/* Path: global_style.css */
