@@ -39,7 +39,7 @@
         <!-- Gender -->
         <div>
           <h6>Giới tính</h6>
-          <input type="radio" id="male" name="gender" value="male">
+          <input type="radio" id="male" name="gender" value="male" checked>
           <label for="html">Nam</label>
           <input type="radio" id="female" name="gender" value="female">
           <label for="css">Nữ</label>
@@ -47,13 +47,9 @@
           <label for="javascript">Khác</label><br>
         </div>
         <!-- Birth -->
-        <div class="form-outline mb-4" style="display: flex;justify-content: space-between;align-items: center;">Birth:
-            <input type="number" id="form2Example4" class="form-control" maxlength="2" placeholder="dd" style="width: 20%" min="1" max="31"/>
+        <div class="form-outline mb-4" style="display: flex;align-items: center;">Birth:
+            <input type="date" id="form2Example4" class="form-control" style="width: 50%;margin-left: 5%;" value="2024-03-21"/>
             <label class="form-label" for="form2Example4"></label>
-            <input type="number" id="form2Example5" class="form-control" maxlength="2" placeholder="mm" style="width: 20%" min="1" max="12"/>
-            <label class="form-label" for="form2Example5"></label>
-            <input type="number" id="form2Example6" class="form-control" maxlength="4" placeholder="yyyy" style="width: 20%" min="1900" max="2024"/>
-            <label class="form-label" for="form2Example6"></label>
         </div>
 
       
@@ -67,10 +63,10 @@
             </div>
           </div>
       
-          <div class="col">
+          <!-- <div class="col"> -->
             <!-- Simple link -->
-            <a href="#!">Forgot password?</a>
-          </div>
+            <!-- <a href="#!">Forgot password?</a>
+          </div> -->
         </div>
       
         <!-- Submit button -->
