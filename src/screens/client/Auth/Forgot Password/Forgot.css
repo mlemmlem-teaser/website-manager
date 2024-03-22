@@ -1,0 +1,10 @@
+#ForgotBtn {
+    border: none;
+    background-color: white;
+    font-size: 10px;
+    color: #31afff;
+    
+}
+#ForgotBtn:hover {
+    color: #6610f2;
+}
