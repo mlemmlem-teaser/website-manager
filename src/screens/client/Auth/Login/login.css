@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container-form-register {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.form_login {
+    background-color: #0b091e;
+    padding: 1% 5%;
+    width: 40%;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.form_login input {
+    background-color: #252340;
+    border: none;
+}
+.form_login input:invalid {
+    background-color: #252340;
+}
+
+.kobtdatten {
+   color: #a3a7b4;
+   text-shadow: #484860 1px;
+}
+#video_background {
+  position: absolute;
+    right: 0px;
+
+  min-height: 100%;
+    top: 0px;
+  height: 100vh;
+  z-index: -1000;
+  overflow: hidden;
+
+}
+.grey_ttl {
+    color: #7086a9;
+    text-shadow: #414c68;
+}
