@@ -16,26 +16,22 @@
 </head>
 <body>
     
-    <form style="height: 800px;width: 450px;margin-left: 10vw;">
-        <h1 class="text-center" style="margin-bottom: 10%;font-weight: 400;text-shadow: 1px 1px black;">Forgot password</h1>
+  <form class="form_login">
+    <h2 style="margin-bottom: 10%;color: white;text-shadow: 1px 1px #5c6f8e;">Forgot password</h2>
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="email" id="form2Example1" class="form-control" />
-          <label class="form-label" for="form2Example1">Email address</label> <br>
+          <input  type="email" name="email" id="email" class="form-control" />
+          <label class="form-label kobtdatten" for="email">Email address</label>
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-
-          <input type="password" id="form2Example2" class="form-control" />
-          <label class="form-label" for="form2Example2">Nhập mã xác minh</label>
-          <button id="ForgotBtn" onclick="SendVerify()"><u>Gửi lại mã xác minh</u></button>
+          <input type="password" name="password" id="password" class="form-control" />
+          <label class="form-label kobtdatten" for="password">Password</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="password" id="resetpassword" class="form-control" />
-            <label class="form-label" for="resetpassword">Đặt lại mật khẩu</label> <br>
-          </div>
-      
+          <input type="password" name="resetpassword" id="resetpassword" class="form-control" />
+          <label class="form-label kobtdatten" for="resetpassword">Reset Password</label>
         </div>
       
         <!-- Submit button -->
@@ -62,6 +58,11 @@
           </button>
         </div>
       </form>
+      <video id="video_background" preload="auto" autoplay="true" loop="loop" muted volume="0">
+
+        <source src="../../../../../Assets/Images/videoplayback.mp4" type="video/mp4"/>
+        
+        </video>
 
     
     
