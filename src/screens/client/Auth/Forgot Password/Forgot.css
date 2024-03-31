@@ -11,7 +11,7 @@ body {
 .container {
   max-width: 400px;
   width: 90%;
-  padding: 10em 5em;
+  padding: 7.5em 5em;
   background-color: #0b091e;
   border-radius: 0px 8px 8px 0;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
@@ -29,7 +29,8 @@ form {
 }
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
   width: 100%;
   padding: 1em;
   margin-bottom: 1em;
