@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/7a436d10a3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../../global_style.css" />
     <link rel="stylesheet" href="../../../../variable.css" />
     <link rel="stylesheet" href="homepage.css" />
@@ -21,12 +13,14 @@
   <body>
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
+        <!-- Cái nút menu ở đây -->
+        <button id="MenuBtn"><i class="fa-solid fa-bars"></i></button>
         <h1 class="logo me-auto"><a href="index.html">Mọt phim</a></h1>
         <a href="/src/screens/client/Homepage/homepage.html" class="logo me-auto"><img src="/Assets/Images/logo-modified.png" alt="" class="img-fluid"/></a>
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="/src/screens/client/Homepage/homepage.html">Home</a></li>
+            <li><a class="nav-link scrollto" href="/src/screens/client/Homepage/homepage.html">Home</a></li>
             <li><a class="nav-link scrollto" href="#about">About</a></li>
             <li><a class="nav-link scrollto" href="#services">Services</a></li>
             <li>
@@ -57,25 +51,33 @@
                 <li><a href="#">Drop Down 4</a></li>
               </ul>
             </li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <li>
-              <a class="nav-link scrollto" href="#contact">Contact</a>
-            </li>
-            <li id="UserToLogin">
-              <a class="getstarted scrollto" href="/src/screens/client/Auth/Register/register.html" style="margin-left: 180px" >Login</a>
-            </li>
-            <li>
-              <form class="d-flex btn" style="width: max-content;height: 100%;"> <input style="border-radius: 5px 0 0 5px;border:2px #47b2e4 solid;background: none;color: white;" class="form-control mr-2" type="search" placeholder="Search" aria-label="Search"><button class="btn btn-outline-success" style="border-radius:0 5px 5px 0;border: 2px #47b2e4 solid;color: White;" type="submit" id="search" >Search</button>  </form>
+              <a class="getstarted scrollto" href="/src/screens/client/Auth/Register/register.html" style="margin-left: 180px" >Logout</a>
             </li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
       </div>
     </header>
+    <!-- Cái sidebar ở đây -->
+    <div id="sidebar">
+      <div id="searchBar">
+        <input type="text">
+      </div>
+      <div>
+        <ul>
+          <li class="sidebar_item">Item1</li>
+          <li class="sidebar_item">Item2</li>
+          <li class="sidebar_item">Item3</li>
+          <li class="sidebar_item">Item4</li>
+        </ul>
+      </div>
+    </div>
     <div id="container">
-        
+        <div style="height: 99999px; "></div>
     </div>
 
-    <script type="module" src="register.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
