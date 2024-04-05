@@ -283,7 +283,7 @@ body {
   }
   #UserManagerContainer {
     position: relative;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(126, 126, 126);
     padding: 1%;
     height: 1000px;
     width: 80vw;
@@ -326,7 +326,7 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: rgb(200,200,200);
+  background-color: #dae2f9;
   height: 50px;
   border-radius: 8px 8px 0 0;
   border-bottom: 1px solid grey;
@@ -339,7 +339,7 @@ body {
   flex-grow: 1;
 }
 .user {
-  background-color: rgb(234, 234, 234);
+  background-color: #e6e9f3;
   font-size: 20px;
 }
 .ID {
