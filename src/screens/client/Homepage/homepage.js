@@ -47,12 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
           sidebar.style.display = 'flex';
           setTimeout(()=>{
             sidebar.style.transform = 'translateX(0)';
-        },500)
+        },200)
       } else {
           sidebar.style.transform = 'translateX(-20vw)';
           setTimeout(() => {
               sidebar.style.display = 'none';
-          }, 500);
+          }, 200);
       }
   });
 });
