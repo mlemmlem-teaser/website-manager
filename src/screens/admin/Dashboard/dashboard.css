@@ -352,9 +352,10 @@ body {
   margin-right: 10%;
 }
 .Name {
-  max-width: 18%;
+  max-width: 10%;
   overflow: hidden;
-
+  mask-image: linear-gradient(to left,transparent,white);
+  margin-right: 8%;
 }
 .Age {
   max-width: 12%;
