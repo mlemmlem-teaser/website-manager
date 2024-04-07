@@ -1,0 +1,20 @@
+function js: concat(), forEarch();
+
+module js: muti file js: 
+    - export: đẩy biến/function/...: thành những biến,... global
+    - import: lấy function, biến,... từ những file export
+    ***: file được import cần có type = "module" để sử dụng import
+
+map, filter, fill, reduce, findIndex,..
+
+map ~~ forEarch: 
+    - forEarch: những item trong mảng 
+    - map: 1 mảng mới
+
+filter: tìm kiếm 1 thứ gì đó trong mảng trả về cho chúng ta 1 mảng
+fill: fill giá trị thành 1 giá trị gì đó: 
+    - value: giá trị được fill
+    - start: vị trí bắt đầu (không bắt buộc)
+    - end: vị trí kết thúc (không bắt buộc)
+
+findIndex
