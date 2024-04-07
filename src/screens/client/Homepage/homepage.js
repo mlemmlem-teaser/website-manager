@@ -15,17 +15,42 @@ const logout = () => {
 onAuthStateChanged(Auth, async (user) => {
   if (user) {
     const uid = user.uid;
+    console.log(uid);
     const docRef = doc(dbFireStore, "users", uid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const data = docSnap.data();
+      alert(data.name);
       name_user.innerText = data.name;
+      console.log(data.name);
     } else {
       console.log("No such document!");
     }
   } else {
   }
 });
+
+
+
+const userId = "your_user_id_here";
+getUserInfo(userId)
+  .then((userData) => {
+    if (userData) {
+      console.log("User data:", userData);
+    }
+  })
+  .catch((error) => {
+    console.log("Error fetching user data:", error);
+  });
+
+// Sử dụng hàm để lấy tất cả người dùng
+getAllUsers()
+  .then((allUsers) => {
+    console.log("All users:", allUsers);
+  })
+  .catch((error) => {
+    console.log("Error fetching all users:", error);
+  });
 //Phần giao diện
 
 //Animation Sidebar 
