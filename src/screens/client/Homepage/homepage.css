@@ -1,6 +1,10 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background: -webkit-linear-gradient(45deg, #000000, #140014);
+  background: -o-linear-gradient(45deg, #707070, #16002d);
+  background: -moz-linear-gradient(45deg, #000000, #0b0034);
+  background: linear-gradient(45deg, #6a6a6a, #000d2c);
 }
 
 a {
@@ -92,10 +96,10 @@ h6 {
   z-index: 997;
   padding: 15px 0;
   background: #a64bf4;
-  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -webkit-linear-gradient(45deg, #000000, #140014);
+  background: -o-linear-gradient(45deg, #000000, #16002d);
+  background: -moz-linear-gradient(45deg, #000000, #0b0034);
+  background: linear-gradient(45deg, #000000, #000d2c);
   width: 100vw;
 }
 
@@ -258,25 +262,72 @@ h6 {
   background: none;
   position: fixed;
   left: 0;
+  margin: 20px;
+  color: white;
 }
 #MenuBtn:active,
 #MenuBtn:focus {
   border: none;
   outline: none;
 }
+
 #sidebar {
   position: fixed;
   margin-top: 80px;
   left: 0;
   height: 100vh;
-  width: 20vw;
-  background-color: #f2f0e6;
+  width: 30vw;
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.2s ease-in-out,display 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, display 0.2s ease-in-out;
   overflow: hidden;
 }
-#SearchBar {
-  width: fit-content;
+
+.search-input {
+  padding: 10px;
+  transition: box-shadow 0.75s;
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 20px;
+  font-size: 20px;
+  width: 300px;
 }
+
+.search-input:focus {
+  box-shadow: 0 0 40px #007bff;
+}
+
+#SearchBar {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+  transition: box-shadow 1s;
+  height: 100%;
+}
+
+.search-button {
+  background: none;
+  font-size: 20px;
+  color: white;
+  transition: border-color 0.3s ease, text-shadow 0.3s ease, color 0.3 ease;
+}
+
+.search-button:hover {
+  color: #31a9e1;
+  border-color: #007bff;
+  text-shadow: 0 0 50px #007bff;
+}
+
+.Item a {
+  transition: color 1s;
+}
+
+.Item a:hover {
+  color: white;
+}
+

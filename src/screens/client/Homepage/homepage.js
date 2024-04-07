@@ -32,25 +32,25 @@ onAuthStateChanged(Auth, async (user) => {
 
 
 
-const userId = "your_user_id_here";
-getUserInfo(userId)
-  .then((userData) => {
-    if (userData) {
-      console.log("User data:", userData);
-    }
-  })
-  .catch((error) => {
-    console.log("Error fetching user data:", error);
-  });
+// const userId = "your_user_id_here";
+// getUserInfo(userId)
+//   .then((userData) => {
+//     if (userData) {
+//       console.log("User data:", userData);
+//     }
+//   })
+//   .catch((error) => {
+//     console.log("Error fetching user data:", error);
+//   });
 
-// Sử dụng hàm để lấy tất cả người dùng
-getAllUsers()
-  .then((allUsers) => {
-    console.log("All users:", allUsers);
-  })
-  .catch((error) => {
-    console.log("Error fetching all users:", error);
-  });
+// // Sử dụng hàm để lấy tất cả người dùng
+// getAllUsers()
+//   .then((allUsers) => {
+//     console.log("All users:", allUsers);
+//   })
+//   .catch((error) => {
+//     console.log("Error fetching all users:", error);
+//   });
 //Phần giao diện
 
 //Animation Sidebar 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             sidebar.style.transform = 'translateX(0)';
         },200)
       } else {
-          sidebar.style.transform = 'translateX(-20vw)';
+          sidebar.style.transform = 'translateX(-30vw)';
           setTimeout(() => {
               sidebar.style.display = 'none';
           }, 200);
