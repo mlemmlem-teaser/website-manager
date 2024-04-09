@@ -61,6 +61,11 @@ if (Usernamecheck()&&Passwordcheck()&&Emailcheck()&&Birthcheck()) {
     try {
         const userCredential = await createUserWithEmailAndPassword(Auth, email, password);
         const { user} =userCredential;
+        if (user) {
+            target.email.value = "";
+            target.password.value = "";
+            target.name.value = "";
+          };
         localStorage.setItem("token", user.accessToken);
         try {
             const docref = await addDoc(collection(dbFireStore,"users"),{
@@ -68,7 +73,11 @@ if (Usernamecheck()&&Passwordcheck()&&Emailcheck()&&Birthcheck()) {
                 email:email,
                 id:user.uid,
                 date:date,
-                gender:Gendercheck()
+                gender:Gendercheck(),
+                status: {
+                    role: "user",
+                    active: true,
+                  },
             })
         } catch (error) {
             console.error(error);

@@ -1,20 +1,202 @@
-function js: concat(), forEarch();
+import { app, auth, dbFireStore,} from "../../../../contains/config.firebase.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+import { setDoc, doc,} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+import { role } from "../../../../contains/index.js";
 
-module js: muti file js: 
-    - export: đẩy biến/function/...: thành những biến,... global
-    - import: lấy function, biến,... từ những file export
-    ***: file được import cần có type = "module" để sử dụng import
+// querySelector: dùng để lấy element trong html ~~ document.getElementById
+const form = document.querySelector(".form_login");
+async function registerUser(e) {
+  e.preventDefault();
+  const { target } = e; //này là user
+  const email = target.email.value;
+  const password = target.password.value;
+  const name = target.name.value;
+  try {
+    //thông tin đăng nhập
+    const userCredential = await createUserWithEmailAndPassword( 
+      auth,
+      email,
+      password
+    );
+    const { user } = userCredential;
+    if (user) {
+      target.email.value = "";
+      target.password.value = "";
+      target.name.value = "";
+    }
+    try {
+      await setDoc(doc(dbFireStore, role.user, user.uid), { //tạo dữ liệu trong db của bảng admin hoặc user
+        email,
+        name,
+        id: user.uid,
+        status: {
+          role: "user",
+          active: true,
+        },
+      });
+    } catch (error) {
+      alert(error.message);
+    }
+  } catch (error) {
+    alert(error.message);
+  }
+}
 
-map, filter, fill, reduce, findIndex,..
+form.addEventListener("submit", async (e) => {
+  await registerUser(e);
+});
 
-map ~~ forEarch: 
-    - forEarch: những item trong mảng 
-    - map: 1 mảng mới
 
-filter: tìm kiếm 1 thứ gì đó trong mảng trả về cho chúng ta 1 mảng
-fill: fill giá trị thành 1 giá trị gì đó: 
-    - value: giá trị được fill
-    - start: vị trí bắt đầu (không bắt buộc)
-    - end: vị trí kết thúc (không bắt buộc)
 
-findIndex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { role } from "../../../contains.js";
+
+import { dbFireStore } from "../../../contains/config.firebase.js";
+import modalHtml from "../../../contains/modal.js";
+import { collection, getDocs, setDoc, doc,} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+const modal = document.querySelector(".modal");
+const container = document.querySelector(".container");
+const table = document.querySelector(".table");
+
+
+//hàm lấy tất cả user rồi nhét vào bảng, tạo bảng
+const getUser = async () => {
+  const querySnapsot = await getDocs(collection(dbFireStore, "users")); //lấy tài liệu từ db của bảng users
+  querySnapsot.docs.forEach((item, index) => { //lấy mỗi user từ querySnapsot và vị trí của nó
+    const data = item.data(); //object chứa thông tin user
+    const { name, email, id, status } = data; 
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${name}</td>
+      <td>${email}</td>
+      <td>${
+        status.active
+          ? "<p style='color: green'>active</p>"
+          : "<p style='color: red'>unactive</p>"
+      }</td>
+    `;
+    const column = document.createElement("td");
+    const btn = document.createElement("button");
+    column.appendChild(btn);
+    tr.appendChild(column);
+    btn.innerText = "Delete";
+    btn.addEventListener("click", () => {
+      onDelete(id);
+    });
+    table.appendChild(tr);
+  });
+};
+
+window.onload = getUser();
+
+//hàm tạo lại cái bảng sau khi xóa user
+function onDelete(id) {
+  modal.innerHTML = modalHtml();
+  modal.style.display = "block";
+  const btn_cancel = document.querySelector(".btn_cancel");
+  const btn_confirm = document.querySelector(".btn_confirm");
+  container.style = `
+    position: relative;
+    z-index: 1;
+    opacity: 0.5; 
+    background-color: #000;
+  `;
+
+  //ẩn cái modal khi cancel
+  const handelHiddenModal = () => {
+    modal.style.display = "none";
+    container.style = "";
+  };
+
+
+//ẩn cái modal khi confirm
+  const handelDeleteUser = async () => {
+    const dref = doc(dbFireStore, "users", id); //lấy 1 user từ db
+    modal.style.display = "none";
+    container.style = "";
+    try {
+      await setDoc(dref, //user được chọn để xóa
+        {status: {active: false,},} //đặt lại status thành false
+        ,{ merge: true }); //options
+      getUser(); //tạo lại cái bảng sau khi xóa
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  btn_confirm.addEventListener("click", handelDeleteUser);
+  btn_cancel.addEventListener("click", handelHiddenModal);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { role } from "../../../contains/index.js";
+
+onAuthStateChanged(auth, async (user) => { //khi đăng nhập lấy tham số auth(người đang đăng nhập)
+  if (user) {
+    const uid = user.uid;
+    const docRef = doc(dbFireStore, "users", uid); //thông tin user đó
+    const docSnap = await getDoc(docRef); //lấy thông tin cho vào biến docSnap
+    if (docSnap.exists()) {
+      const data = docSnap.data(); //lấy data cần dùng từ docSnap
+      data.status.role === role.admin
+        ? (window.location.href = "../../Admin/Dashboard/dashboard.html")
+        : (window.location.href = "../../Home/home.html");
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+const role = {
+  admin: "admin",
+  user: "users",
+};
+
+const getData = async (url) => {
+  const data = await fetch(`${url}`);
+  return data;
+};
+
+export { getData, role };
