@@ -102,13 +102,14 @@ getAllUsers()
     console.log(allUsers);
     let indexOfUser =1;
     allUsers.forEach((user)=>{
+      console.log(user);
       const ID =document.createElement("td"); ID.innerText=`${indexOfUser}`; indexOfUser++; ID.classList.add("textcenter");
       const Email =document.createElement("td");  Email.innerText=user.email; Email.classList.add("padding");
       const Name =document.createElement("td"); Name.innerText=user.name!=null ? user.name : user.username; Name.classList.add("padding");
       const Birth =document.createElement("td"); Birth.innerText=user.date; Birth.classList.add("textcenter");
       const Gender =document.createElement("td"); Gender.innerText=user.gender; Gender.classList.add("textcenter");
-      const Created =document.createElement("td"); Created.innerText="????"; Created.classList.add("padding");
-      const Setting =document.createElement("td");  Setting.innerHTML="????"; Setting.classList.add("textcenter");
+      const Created =document.createElement("td"); Created.innerText=user.accountCreated; Created.classList.add("padding");
+      const Setting =document.createElement("td");  Setting.innerHTML=`<i class="fa-solid fa-gear authSetting"></i><i class="fa-solid fa-trash authDelete"></i>`; Setting.classList.add("textcenter");
       if (user.gender==undefined) {
         Gender.innerText="No Info"
       }

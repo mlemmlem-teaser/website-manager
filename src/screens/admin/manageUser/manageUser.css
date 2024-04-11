@@ -408,3 +408,14 @@ td {
     background-color: #ff3300;
     transform: rotate(120deg);
   }
+  .authSetting,.authDelete {
+    margin: 0 2%;
+    color: #444444;
+    font-size: 20px;
+  }
+  .authSetting:hover {
+    color: green;
+  }
+  .authDelete:hover {
+    color: red;
+  }
