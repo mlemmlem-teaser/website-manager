@@ -117,6 +117,7 @@ getAllUsers()
       const Setting =document.createElement("td"); Setting.classList.add("textcenter");
 
       const settingmodal = document.getElementById("SettingModal");
+      const deletemodal = document.getElementById("DeleteModal");
       const avatarPreview = user.avatar ==""|| user.avatar == undefined||user.avatar==null ? "/Assets/Images/default-user-img.webp" : user.avatar;
 
 
@@ -156,8 +157,12 @@ const modal = `<form id="userForm">
     <button type="submit" id="saveBtn">Save</button>
 </div>
 </form>`;
-
-
+      const modal2=`          Are you sure delete this account?
+      <div id="DelUsername">Name: ${user.username||user.name}</div>
+      <div id="DelEmail">Email: ${user.email}</div>
+      <button type="button" id="cancelBtn2">Cancel</button>
+      <button type="submit" id="saveBtn2">Delete</button>`
+//authSetting
 authSetting.addEventListener("click",()=>{
   settingmodal.innerHTML=modal;
   const userForm= document.getElementById("userForm");
@@ -175,6 +180,20 @@ authSetting.addEventListener("click",()=>{
     userForm.style.display="none";
   });
 });
+//authDelete
+authDelete.addEventListener("click",()=>{
+  deletemodal.innerHTML=modal2;
+  deletemodal.style.display="inherit";
+  const cancelBtn2 = document.getElementById("cancelBtn2");
+  const saveBtn2 = document.getElementById("saveBtn2");
+  cancelBtn2.addEventListener("click",()=>{
+    deletemodal.style.display="none";
+  });
+  saveBtn2.addEventListener("click",()=>{
+  
+    deletemodal.style.display="none";
+  });
+})
 
 
 

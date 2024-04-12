@@ -463,8 +463,8 @@ label {
   max-height: 100px;
   margin-bottom: 10px;
 }
-#cancelBtn,#saveBtn {
-  padding: 8px 16px;
+#cancelBtn,#saveBtn,#cancelBtn2,#saveBtn2 {
+  padding: 6px 14px;
   margin-right: 10px;
   border: none;
   border-radius: 3px;
@@ -479,13 +479,25 @@ label {
 #saveBtn:hover {
   background-color: #0056b3;
 }
-
-
 #cancelBtn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 #saveBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+#cancelBtn2:hover {
+  background-color: #0056b3;
+}
+#saveBtn2:hover {
+  background-color: #0056b3;
+}
+#cancelBtn2:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+#saveBtn2:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
@@ -495,4 +507,22 @@ label {
   max-height: 80vh;
   width: 100%;
 
+}
+#DeleteModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f2f2f2;
+  border: 2px solid #ddd;
+  color: #333;
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 30px 800px rgb(0, 0, 0,0.4);
+  display: none;
+  font-weight: 100;
+  font-size: 20px;
+  padding: 20px;
+  line-height: 40px;
 }
