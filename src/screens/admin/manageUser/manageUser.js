@@ -108,7 +108,9 @@ getAllUsers()
       const Birth =document.createElement("td"); Birth.innerText=user.date; Birth.classList.add("textcenter");
       const Gender =document.createElement("td"); Gender.innerText=user.gender; Gender.classList.add("textcenter");
       const Created =document.createElement("td"); Created.innerText=user.accountCreated; Created.classList.add("padding");
-      const Setting =document.createElement("td");  Setting.innerHTML=`<i class="fa-solid fa-gear authSetting"></i><i class="fa-solid fa-trash authDelete"></i>`; Setting.classList.add("textcenter");
+      const authSetting = document.createElement("i"); authSetting.classList.add("fa-solid","fa-gear","authSetting");
+      const authDelete = document.createElement("i"); authDelete.classList.add("fa-solid","fa-trash","authDelete");
+      const Setting =document.createElement("td"); Setting.classList.add("textcenter");
       if (user.gender==undefined) {
         Gender.innerText="No Info"
       }
@@ -116,6 +118,8 @@ getAllUsers()
         Birth.innerText="No Info"
       }
       const tr = document.createElement("tr");
+      Setting.appendChild(authSetting);
+      Setting.appendChild(authDelete);
       tr.appendChild(ID);
       tr.appendChild(Email);
       tr.appendChild(Name);

@@ -107,7 +107,7 @@ async function registerUser(e) {
     } catch (error) {
       console.error(error);
     }
-    // window.location = "../Login/login.html";
+    window.location = "../Login/login.html";
   }
 }
 form.addEventListener("submit", async (e) => {
