@@ -90,6 +90,7 @@ async function registerUser(e) {
 
       try {
         await setDoc(doc(dbFireStore, role.user, user.uid), {
+          avatar:"/Assets/Images/default-user-img.webp",
           username: username,
           email: email,
           id: user.uid,

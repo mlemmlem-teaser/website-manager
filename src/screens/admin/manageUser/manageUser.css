@@ -419,3 +419,71 @@ td {
   .authDelete:hover {
     color: red;
   }
+
+
+/* form */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#userForm {
+  width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  position: absolute;
+  display: none;
+  position: absolute;
+}
+#userForm div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+}
+
+#username,
+#email,
+#birth {
+  width: calc(100% - 120px);
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+#avatarPreview {
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+#cancelBtn,#saveBtn {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#cancelBtn:hover {
+  background-color: #0056b3;
+}
+#saveBtn:hover {
+  background-color: #0056b3;
+}
+
+
+#cancelBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+#saveBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
