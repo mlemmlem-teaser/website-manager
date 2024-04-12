@@ -429,8 +429,8 @@ body {
 }
 
 #userForm {
-  width: 900px;
-  margin: 20px auto;
+  width: 50vw;
+  margin: 20px 25vw;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -438,6 +438,8 @@ body {
   position: absolute;
   display: none;
   position: absolute;
+  font-size: 20px;
+  box-shadow: 0 0 30px 600px rgb(0, 0, 0,0.4);
 }
 #userForm div {
   margin-bottom: 10px;
@@ -486,4 +488,11 @@ label {
 #saveBtn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+#SettingModal {
+  position: fixed;
+  top: 10vh;
+  max-height: 80vh;
+  width: 100%;
+
 }
