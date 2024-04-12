@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //Auth
   import { dbFireStore, Auth } from "../../../config-firebase.js";
-  import { collection, getDocs, getDoc, doc,} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+  import { collection, getDocs, getDoc, doc,updateDoc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
   import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
   // const name_user = document.querySelector(".name_user");
   // onAuthStateChanged(Auth, async (user) => {
@@ -189,9 +189,27 @@ authDelete.addEventListener("click",()=>{
   cancelBtn2.addEventListener("click",()=>{
     deletemodal.style.display="none";
   });
-  saveBtn2.addEventListener("click",()=>{
+  saveBtn2.addEventListener("click",async ()=>{
   
     deletemodal.style.display="none";
+    {
+      deletemodal.style.display = "none";
+    
+      // Get the user document reference
+      const userDocRef = doc(dbFireStore, "users", user.id);
+    
+      try {
+        // Update the user document's 'active' field to 'false'
+        await updateDoc(userDocRef, {
+          status: {
+            active: false,
+          },
+        },{merge: true});
+        console.log("User's active field has been set to false.");
+      } catch (error) {
+        console.error("Error setting user's active field to false:", error);
+      }
+    }
   });
 })
 
@@ -215,8 +233,8 @@ authDelete.addEventListener("click",()=>{
       tr.appendChild(Setting);
       const userInformation = document.getElementById("usersInformation");
       userInformation.appendChild(tr);
-
-    })
+    }
+    )
   })
   .catch((error) => {
     console.log("Error fetching all users:", error);
