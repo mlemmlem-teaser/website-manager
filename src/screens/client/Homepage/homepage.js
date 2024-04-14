@@ -20,7 +20,6 @@ onAuthStateChanged(Auth, async (user) => {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const data = docSnap.data();
-      alert(data.name);
       name_user.innerText = data.name;
       console.log(data.name);
     } else {

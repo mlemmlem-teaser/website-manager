@@ -6,21 +6,26 @@
 document.addEventListener('DOMContentLoaded', function () {
     const menuBtn = document.getElementById('MenuBtn');
     const sidebar = document.getElementById('sidebar');
+    const UserManagerContainer = document.getElementById("UserManagerContainer");
   
     menuBtn.addEventListener('click',async function () {
         if (sidebar.style.display === 'none') {
             sidebar.style.display = 'flex';
+            UserManagerContainer.style.padding="100px 0 0 32vw"
             setTimeout(()=>{
               sidebar.style.transform = 'translateX(0)';
           },200)
         } else {
             sidebar.style.transform = 'translateX(-20vw)';
+            UserManagerContainer.style.padding="100px 10vw 0 10vw"
             setTimeout(() => {
                 sidebar.style.display = 'none';
+
             }, 200);
         }
     });
   });
+  const UserManagerContainer = document.getElementById("UserManagerContainer");
   //Chart
   const xValues = [50,60,70,80,90,100,110,120,130,140,150];
   const yValues = [7,8,8,9,9,9,10,11,14,14,15];
@@ -102,13 +107,15 @@ getUserInfo(userId)
   });
 
 // Sử dụng hàm để lấy tất cả người dùng
-getAllUsers()
+function AuthTableCreate() {
+  const userInformation = document.getElementById("usersInformation");
+  userInformation.innerHTML="";
+  getAllUsers()
   .then((allUsers) => {
     console.log(allUsers);
-    let indexOfUser =1;
     allUsers.forEach((user)=>{
       console.log(user);
-      const ID =document.createElement("td"); ID.innerText=`${indexOfUser}`; indexOfUser++; ID.classList.add("textcenter");
+      const ID =document.createElement("td");  ID.classList.add("textcenter");
       const Email =document.createElement("td");  Email.innerText=user.email; Email.classList.add("padding");
       const Name =document.createElement("td"); Name.innerText=user.name!=null ? user.name : user.username; Name.classList.add("padding");
       const Birth =document.createElement("td"); Birth.innerText=user.date; Birth.classList.add("textcenter");
@@ -163,6 +170,22 @@ const modal = `<form id="userForm">
       <button type="button" id="cancelBtn2">Cancel</button>
       <button type="submit" id="saveBtn2">Delete</button>`
 //authSetting
+
+function OnchangeActive() {
+  ID.innerText=(user.status.active==(true||"true")?"Active":"Unactive");
+  if (ID.innerText=="Active") {
+    ID.style.color="green";
+    authDelete.classList.remove("fa-rotate-left");
+    authDelete.classList.add("fa-trash");
+  } else {
+    ID.style.color="red";
+    authDelete.classList.remove("fa-trash");
+    authDelete.classList.add("fa-rotate-left");
+  }
+};
+OnchangeActive();
+
+
 authSetting.addEventListener("click",()=>{
   settingmodal.innerHTML=modal;
   const userForm= document.getElementById("userForm");
@@ -170,14 +193,15 @@ authSetting.addEventListener("click",()=>{
 
   const cancelBtn = document.getElementById("cancelBtn");
   const saveBtn = document.getElementById("saveBtn");
+
   cancelBtn.addEventListener("click",()=>{
     const userForm= document.getElementById("userForm");
     userForm.style.display="none";
   });
   saveBtn.addEventListener("click",()=>{
-  
     const userForm= document.getElementById("userForm");
     userForm.style.display="none";
+    AuthTableCreate();
   });
 });
 //authDelete
@@ -190,14 +214,10 @@ authDelete.addEventListener("click",()=>{
     deletemodal.style.display="none";
   });
   saveBtn2.addEventListener("click",async ()=>{
-  
-    deletemodal.style.display="none";
-    {
       deletemodal.style.display = "none";
-    
       // Get the user document reference
       const userDocRef = doc(dbFireStore, "users", user.id);
-    
+      if (user.status.active=="true"||user.status.active==true) {
       try {
         // Update the user document's 'active' field to 'false'
         await updateDoc(userDocRef, {
@@ -205,11 +225,21 @@ authDelete.addEventListener("click",()=>{
             active: false,
           },
         },{merge: true});
-        console.log("User's active field has been set to false.");
       } catch (error) {
-        console.error("Error setting user's active field to false:", error);
+      }
+    } else {
+      try {
+        // Update the user document's 'active' field to 'false'
+        await updateDoc(userDocRef, {
+          status: {
+            active: true,
+            role:"user",
+          },
+        },{merge: true});
+      } catch (error) {
       }
     }
+      AuthTableCreate();
   });
 })
 
@@ -224,14 +254,17 @@ authDelete.addEventListener("click",()=>{
       const tr = document.createElement("tr");
       Setting.appendChild(authSetting);
       Setting.appendChild(authDelete);
-      tr.appendChild(ID);
+
+
+
       tr.appendChild(Email);
       tr.appendChild(Name);
       tr.appendChild(Birth);
       tr.appendChild(Gender);
       tr.appendChild(Created);
+      tr.appendChild(ID);
       tr.appendChild(Setting);
-      const userInformation = document.getElementById("usersInformation");
+
       userInformation.appendChild(tr);
     }
     )
@@ -239,3 +272,5 @@ authDelete.addEventListener("click",()=>{
   .catch((error) => {
     console.log("Error fetching all users:", error);
   });
+};
+AuthTableCreate();
