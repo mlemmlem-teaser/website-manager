@@ -1,6 +1,11 @@
 //Phần login
 import { dbFireStore, Auth } from "../../../config-firebase.js";
-import { collection, getDocs, getDoc, doc,} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+import {
+  collection,
+  getDocs,
+  getDoc,
+  doc,
+} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 const name_user = document.querySelector(".name_user");
 const token = localStorage.getItem("token");
@@ -29,8 +34,6 @@ onAuthStateChanged(Auth, async (user) => {
   }
 });
 
-
-
 // const userId = "your_user_id_here";
 // getUserInfo(userId)
 //   .then((userData) => {
@@ -52,7 +55,7 @@ onAuthStateChanged(Auth, async (user) => {
 //   });
 //Phần giao diện
 
-//Animation Sidebar 
+//Animation Sidebar
 // function RunSideBar() {
 //   const SideBar = document.getElementById("sidebar");
 //   if (SideBar.style.display="flex") {
@@ -62,21 +65,84 @@ onAuthStateChanged(Auth, async (user) => {
 //   }
 // }
 // document.getElementById("MenuBtn").addEventListener("click",RunSideBar());
-document.addEventListener('DOMContentLoaded', function () {
-  const menuBtn = document.getElementById('MenuBtn');
-  const sidebar = document.getElementById('sidebar');
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("MenuBtn");
+  const sidebar = document.getElementById("sidebar");
 
-  menuBtn.addEventListener('click', function () {
-      if (sidebar.style.display === 'none') {
-          sidebar.style.display = 'flex';
-          setTimeout(()=>{
-            sidebar.style.transform = 'translateX(0)';
-        },200)
-      } else {
-          sidebar.style.transform = 'translateX(-30vw)';
-          setTimeout(() => {
-              sidebar.style.display = 'none';
-          }, 200);
-      }
+  menuBtn.addEventListener("click", function () {
+    if (sidebar.style.display === "none") {
+      sidebar.style.display = "flex";
+      setTimeout(() => {
+        sidebar.style.transform = "translateX(0)";
+      }, 200);
+    } else {
+      sidebar.style.transform = "translateX(-30vw)";
+      setTimeout(() => {
+        sidebar.style.display = "none";
+      }, 200);
+    }
   });
+});
+
+const API_URL =
+  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6bfaa39b0a3a25275c765dcaddc7dae7&page=1";
+const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
+const SEARCH_API =
+  'https://api.themoviedb.org/3/search/movie?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&query="';
+
+const ul = document.getElementById("movieUl");
+const form = document.getElementById("searchForm");
+const search = document.getElementById("search");
+
+// initial Movies
+getMovies(API_URL);
+
+async function getMovies(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+  showMovies(data.results);
+}
+
+// SHOW MOVIES LIST
+function showMovies(movies) {
+  console.log(movies);
+  ul.innerHTML = "";
+  movies.forEach((movie) => {
+    const { title, poster_path, vote_average, overview } = movie;
+    const movieItem = document.createElement("li");
+    movieItem.classList.add("movie_list_item");
+    movieItem.innerHTML = `
+     <img src="${IMG_PATH + poster_path}" alt="${title}" />
+     <div class="movie_info">
+       <h3>${title}</h3>
+       <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+     </div>
+     <div class="overview">
+      <h3>Overview</h3>
+      <p>${overview}</p>
+     </div>
+    `;
+    ul.appendChild(movieItem);
+  });
+}
+// FOR RATE
+function getClassByRate(vote) {
+  if (vote >= 8) {
+    return "green";
+  } else if (vote >= 5) {
+    return "orange";
+  } else {
+    return "red";
+  }
+}
+// FOR SEARCH SUBMIT
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const searchTerm = search.value;
+  if (searchTerm && searchTerm !== "") {
+    getMovies(SEARCH_API + searchTerm);
+    search.value = "";
+  } else {
+    window.location.reload();
+  }
 });
