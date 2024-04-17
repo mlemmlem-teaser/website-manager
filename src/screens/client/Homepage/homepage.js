@@ -25,7 +25,7 @@ onAuthStateChanged(Auth, async (user) => {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const data = docSnap.data();
-      name_user.innerText = data.name;
+      // name_user.innerText = data.name;
       console.log(data.name);
     } else {
       console.log("No such document!");
@@ -145,4 +145,19 @@ form.addEventListener("submit", (e) => {
   } else {
     window.location.reload();
   }
+});
+$(document).ready(function(){
+  var lastScrollTop = 0;
+  var navbar = $('#header');
+  var navbarHeight = navbar.outerHeight();
+
+  $(window).scroll(function(){
+    var scrollTop = $(this).scrollTop();
+    if (scrollTop > lastScrollTop && scrollTop > navbarHeight){
+      navbar.addClass('navbar-hidden');
+    } else {
+      navbar.removeClass('navbar-hidden');
+    }
+    lastScrollTop = scrollTop;
+  });
 });

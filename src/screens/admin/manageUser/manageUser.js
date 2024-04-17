@@ -1,8 +1,4 @@
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const menuBtn = document.getElementById('MenuBtn');
     const sidebar = document.getElementById('sidebar');
