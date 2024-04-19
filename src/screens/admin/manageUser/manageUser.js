@@ -28,11 +28,11 @@ const user_avatar =document.querySelector("#user-avatar");
 const token = localStorage.getItem("token");
 
 if (!token) {
-  window.location.href = "../Auth/Login/login.html";
+  window.location.href = "../../client/Auth/Login/login.html";
 }
 const logout = () => {
   localStorage.removeItem("token");
-  window.location.href = "../Auth/Login/login.html";
+  window.location.href = "../../client/Auth/Login/login.html";
 };
 function resetState() {
 onAuthStateChanged(Auth, async (user) => {
@@ -224,8 +224,6 @@ authSetting.addEventListener("click",()=>{
       return true;
     }
   }
-
-
   saveBtn.addEventListener("click", async (e)=>{
     e.preventDefault();
     const userDocRef = doc(dbFireStore, "users", user.id);

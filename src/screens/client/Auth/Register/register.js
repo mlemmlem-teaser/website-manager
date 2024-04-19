@@ -88,7 +88,6 @@ async function registerUser(e) {
         password
       );
       const { user } = userCredential;
-
       try {
         await setDoc(doc(dbFireStore, role.user, user.uid), {
           avatar:"/Assets/Images/default-user-img.webp",
