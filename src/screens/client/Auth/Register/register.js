@@ -38,10 +38,11 @@ async function registerUser(e) {
     if (
       username.length <= 6 ||
       ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(
-        username.charAt(0)
+        username.charAt(0) ||
+        username.length >=31
       )
     ) {
-      alert("Username phải trên 6 kí tự và bắt đầu bằng 1 kí tự chữ");
+      alert("Username phải trên 6 kí tự, dưới 32 kí tự và bắt đầu bằng 1 kí tự chữ");
       return false;
     } else {
       return true;

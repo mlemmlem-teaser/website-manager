@@ -18,34 +18,37 @@
   <body style="background-color: white">
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto">
-          <a href="/website-manager/src/screens/client/Homepage/homepage.html" >Mọt phim</a>
+        <button id="MenuBtn"><i class="fa-solid fa-bars"></i></button>
+        <h1 class="logo">
+          <a href="index.html"
+            ><b>Net<span style="color: red">flex</span></b></a
+          >
         </h1>
-        <a href="index.html" class="logo me-auto"><img src="/website-manager/Assets/Images/logo-modified.png" alt="" class="img-fluid"/></a>
-
         <nav id="navbar" class="navbar">
           <ul>
             <li>
-              <a class="nav-link scrollto active" href="/website-manager/src/screens/client/Homepage/homepage.html" >Home</a>
+              <a
+                class="nav-link scrollto"
+                href="/src/screens/client/Homepage/homepage.html"
+                >Home</a
+              >
             </li>
-            <li><a class="nav-link scrollto" href="/website-manager/src/screens/client/contact us/about.html" >About</a>
-            </li>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="#about">Top</a></li>
             <li>
-              <a class="nav-link scrollto" href="#portfolio">Shop</a>
+              <a class="nav-link scrollto" href="#portfolio">Gallery</a>
             </li>
-            <li><a class="nav-link scrollto" href="#team">Team</a></li>
+            <li><a class="nav-link scrollto" href="#team">Season</a></li>
             <li class="dropdown">
-              <a href="#"
-                ><span>More</span> <i class="bi bi-chevron-down"></i
-              ></a>
+              <a href="#">
+                <span>Genres</span> <i class="bi bi-chevron-down"></i>
+              </a>
               <ul>
                 <li><a href="#">Drop Down 1</a></li>
                 <li class="dropdown">
-                  <a href="#"
-                    ><span>Deep Drop Down</span>
-                    <i class="bi bi-chevron-right"></i
-                  ></a>
+                  <a href="#">
+                    <span>Deep Drop Down</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </a>
                   <ul>
                     <li><a href="#">Deep Drop Down 1</a></li>
                     <li><a href="#">Deep Drop Down 2</a></li>
@@ -59,15 +62,27 @@
                 <li><a href="#">Drop Down 4</a></li>
               </ul>
             </li>
-            <li>
-              <a class="nav-link scrollto" href="/website-manager/src/screens/client/contact us/contact.html" >Contact</a>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="nav-link scrollto" href="#services">Help</a></li>
+            <li id="user">
+            <div id="user-info-container">
+              <img id="user-avatar" src="/Assets/Images/default-user-img.webp" alt="">
+              <div class="user-info">
+                mlemmlem
+              </div> 
+
+              <a id="logout-btn" class href="/src/screens/client/Auth/Register/register.html">
+                <i class="fa-solid fa-right-from-bracket" style="font-size: 20px;"></i>
+              </a>
+            </div>
             </li>
-            <li>
-              <a class="getstarted scrollto" href="#about" style="margin-left: 180px" >Get Started</a>
-            </li>
+            
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
+
+          
         </nav>
+        
       </div>
     </header>
   <div class="top">

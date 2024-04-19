@@ -1,4 +1,6 @@
-
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+import { dbFireStore, Auth } from "../../../config-firebase.js";
+import { collection, getDocs, getDoc, doc,updateDoc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 document.addEventListener('DOMContentLoaded', function () {
     const menuBtn = document.getElementById('MenuBtn');
     const sidebar = document.getElementById('sidebar');
@@ -7,13 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
     menuBtn.addEventListener('click',async function () {
         if (sidebar.style.display === 'none') {
             sidebar.style.display = 'flex';
-            UserManagerContainer.style.padding="100px 0 0 32vw"
+            // UserManagerContainer.style.padding="100px 0 0 32vw"
             setTimeout(()=>{
               sidebar.style.transform = 'translateX(0)';
           },200)
         } else {
             sidebar.style.transform = 'translateX(-20vw)';
-            UserManagerContainer.style.padding="100px 10vw 0 10vw"
+            // UserManagerContainer.style.padding="100px 10vw 0 10vw"
             setTimeout(() => {
                 sidebar.style.display = 'none';
 
@@ -21,53 +23,65 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
   });
+const user_info = document.querySelector(".user-info");
+const user_avatar =document.querySelector("#user-avatar");
+const token = localStorage.getItem("token");
+
+if (!token) {
+  window.location.href = "../Auth/Login/login.html";
+}
+const logout = () => {
+  localStorage.removeItem("token");
+  window.location.href = "../Auth/Login/login.html";
+};
+function resetState() {
+onAuthStateChanged(Auth, async (user) => {
+  if (user) {
+    const uid = user.uid;
+    console.log(uid);
+    const docRef = doc(dbFireStore, "users", uid);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      console.log(data);
+      user_info.innerText = data.username;
+      user_avatar.url = (data.avatar!=""||data.avatar==null||data.avatar==undefined) ? data.avatar : "/Assets/Images/default-user-img.webp";
+
+    } else {
+      console.log("No such document!");
+    }
+  } else {
+  }
+});
+};
+resetState();
   const UserManagerContainer = document.getElementById("UserManagerContainer");
   //Chart
   const xValues = [50,60,70,80,90,100,110,120,130,140,150];
   const yValues = [7,8,8,9,9,9,10,11,14,14,15];
   
-  new Chart("myChart", {
-    type: "line",
-    data: {
-      labels: xValues,
-      datasets: [{
-        fill: false,
-        lineTension: 0,
-        backgroundColor: "rgba(0,0,255,1.0)",
-        borderColor: "rgba(0,0,255,0.1)",
-        data: yValues
-      }]
-    },
-    options: {
-      legend: {display: false},
-      scales: {
-        yAxes: [{ticks: {min: 6, max:16}}],
-      }
-    }
-  });
 
-
-  //Auth
-  import { dbFireStore, Auth } from "../../../config-firebase.js";
-  import { collection, getDocs, getDoc, doc,updateDoc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
-  import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
-  // const name_user = document.querySelector(".name_user");
-  // onAuthStateChanged(Auth, async (user) => {
-  //   if (user) {
-  //     const uid = user.uid;
-  //     console.log(uid);
-  //     const docRef = doc(dbFireStore, "users", uid);
-  //     const docSnap = await getDoc(docRef);
-  //     if (docSnap.exists()) {
-  //       const data = docSnap.data();
-  //       name_user.innerText = data.name;
-  //       console.log(data.name);
-  //     } else {
-  //       console.log("No such document!");
+  
+  // new Chart("myChart", {
+  //   type: "line",
+  //   data: {
+  //     labels: xValues,
+  //     datasets: [{
+  //       fill: false,
+  //       lineTension: 0,
+  //       backgroundColor: "rgba(0,0,255,1.0)",
+  //       borderColor: "rgba(0,0,255,0.1)",
+  //       data: yValues
+  //     }]
+  //   },
+  //   options: {
+  //     legend: {display: false},
+  //     scales: {
+  //       yAxes: [{ticks: {min: 6, max:16}}],
   //     }
-  //   } else {
   //   }
   // });
+
   
   const getUserInfo = async (userId) => {
     const docRef = doc(dbFireStore, "users", userId);
@@ -110,13 +124,12 @@ function AuthTableCreate() {
   .then((allUsers) => {
     console.log(allUsers);
     allUsers.forEach((user)=>{
-      console.log(user);
       const ID =document.createElement("td");  ID.classList.add("textcenter");
       const Email =document.createElement("td");  Email.innerText=user.email; Email.classList.add("padding");
       const Name =document.createElement("td"); Name.innerText=user.name!=null ? user.name : user.username; Name.classList.add("padding");
       const Birth =document.createElement("td"); Birth.innerText=user.date; Birth.classList.add("textcenter");
       const Gender =document.createElement("td"); Gender.innerText=user.gender; Gender.classList.add("textcenter");
-      const Created =document.createElement("td"); Created.innerText=user.accountCreated; Created.classList.add("padding");
+      const Created =document.createElement("td"); Created.innerText=user.accountCreated; Created.classList.add("textcenter");
       const Setting =document.createElement("td"); Setting.classList.add("textcenter");
 
       const settingmodal = document.getElementById("SettingModal");
@@ -124,13 +137,14 @@ function AuthTableCreate() {
       const avatarPreview = user.avatar ==""|| user.avatar == undefined||user.avatar==null ? "/Assets/Images/default-user-img.webp" : user.avatar;
 
 
-const authSetting = document.createElement("i"); authSetting.classList.add("fa-solid","fa-gear","authSetting");
+const authSetting = document.createElement("i"); authSetting.classList.add("fa-solid","fa-pen","authSetting");
 const authDelete = document.createElement("i"); authDelete.classList.add("fa-solid","fa-trash","authDelete");
 
 
 const modal = `<form id="userForm">
 <div>
-    <img id="avatarPreview" src="${avatarPreview}" alt="Ảnh đại diện">
+    <img id="avatarPreview" src="${avatarPreview}" alt="Ảnh đại diện"> <br/> Avatar
+    <input type="text" id="newAvatarUrl" value="/Assets/Images/default-user-img.webp" style="width:100%;"/>
 </div>
 <div>
     <label for="username">Username:</label>
@@ -145,7 +159,7 @@ const modal = `<form id="userForm">
     <input type="date" id="birth" value="${user.date}" required>
 </div>
 <div>
-    <select name="gender" required>
+    <select name="gender" id="gender" required>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="other">Other</option>
@@ -179,6 +193,13 @@ function OnchangeActive() {
     authDelete.classList.add("fa-rotate-left");
   }
 };
+
+// function OnchangeUserInfo() {
+//   const userForm= document.getElementById("userForm");
+//   userForm.addEventListener("submit", (e)=>{
+//     e.preventDefault();
+//   })
+// };
 OnchangeActive();
 
 
@@ -194,8 +215,48 @@ authSetting.addEventListener("click",()=>{
     const userForm= document.getElementById("userForm");
     userForm.style.display="none";
   });
-  saveBtn.addEventListener("click",()=>{
+
+  function Usernamecheck(abcde) {
+    if (abcde.length <= 6 ||["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(  abcde.charAt(0))||abcde.length >=31) {
+      alert("Username phải trên 6 kí tự, dưới 32 kí tự và bắt đầu bằng 1 kí tự chữ");
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+
+  saveBtn.addEventListener("click", async (e)=>{
+    e.preventDefault();
+    const userDocRef = doc(dbFireStore, "users", user.id);
     const userForm= document.getElementById("userForm");
+    const avatarPreviewChange = document.getElementById("avatarPreview");
+    const newAvatarUrl =document.getElementById("newAvatarUrl");
+    const usernameChange = document.getElementById("username");
+    const emailChange = document.getElementById("email");
+    const birthChange = document.getElementById("birth");
+    const genderChange = document.getElementById("gender");
+    if (user.status.active=="true"||user.status.active==true) {
+      if (Usernamecheck(usernameChange.value)) {
+      try {
+        await updateDoc(userDocRef, {
+          avatar:newAvatarUrl.value,
+          username:usernameChange.value,
+          email:emailChange.value,
+          date:birthChange.value,
+          gender:genderChange.value,
+
+        },{merge: true});
+        resetState();
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      alert("Username phải trên 6 kí tự, dưới 32 kí tự và bắt đầu bằng 1 kí tự chữ");
+    }
+    } else {
+      alert("have to active this user");
+    }
     userForm.style.display="none";
     AuthTableCreate();
   });
@@ -211,11 +272,9 @@ authDelete.addEventListener("click",()=>{
   });
   saveBtn2.addEventListener("click",async ()=>{
       deletemodal.style.display = "none";
-      // Get the user document reference
       const userDocRef = doc(dbFireStore, "users", user.id);
       if (user.status.active=="true"||user.status.active==true) {
       try {
-        // Update the user document's 'active' field to 'false'
         await updateDoc(userDocRef, {
           status: {
             active: false,
@@ -225,7 +284,6 @@ authDelete.addEventListener("click",()=>{
       }
     } else {
       try {
-        // Update the user document's 'active' field to 'false'
         await updateDoc(userDocRef, {
           status: {
             active: true,

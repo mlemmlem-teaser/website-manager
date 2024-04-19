@@ -1,13 +1,9 @@
 //Phần login
 import { dbFireStore, Auth } from "../../../config-firebase.js";
-import {
-  collection,
-  getDocs,
-  getDoc,
-  doc,
-} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+import { collection, getDocs, getDoc, doc,} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
-const name_user = document.querySelector(".name_user");
+const user_info = document.querySelector(".user-info");
+const user_avatar =document.querySelector("#user-avatar");
 const token = localStorage.getItem("token");
 
 if (!token) {
@@ -25,8 +21,10 @@ onAuthStateChanged(Auth, async (user) => {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const data = docSnap.data();
-      // name_user.innerText = data.name;
-      console.log(data.name);
+      console.log(data);
+      user_info.innerText = data.username;
+      user_avatar.url = (data.avatar!=""||data.avatar==null||data.avatar==undefined) ? data.avatar : "/Assets/Images/default-user-img.webp";
+
     } else {
       console.log("No such document!");
     }

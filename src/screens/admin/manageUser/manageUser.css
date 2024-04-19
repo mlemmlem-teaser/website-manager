@@ -1,11 +1,11 @@
 
 #UserManagerContainer {
 
-    background-color: #fafbff;
+
     padding: 1%;
     height: 1000px;
     width: 100vw;
-    padding: 100px 10vw 0 10vw;
+    margin-top: 10vh;
     right: 0;
     display: flex;
     flex-wrap: wrap;
@@ -36,14 +36,12 @@
 }
 #Authentication {
   margin-top: 5vh;
-  width: 92%;
+  width: 100%;
   background-color: rgb(234, 234, 234);
   border-radius: 8px;
   height: fit-content;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  max-height: 600px;
-  overflow-y: auto;
 }
 table {
   border-collapse: collapse;
