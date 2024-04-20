@@ -45,12 +45,22 @@ const logout = () => {
   localStorage.removeItem("token");
   window.location.href = "../../client/Auth/Login/login.html";
 };
+
 function resetState() {
 onAuthStateChanged(Auth, async (user) => {
   if (user) {
     const uid = user.uid;
-    console.log(uid);
-    const docRef = doc(dbFireStore, "users", uid);
+    console.log(user);
+    // function checkRole() {
+    //   if (user.status.role=="admin") {
+    //     return "admin"
+    //   }
+    //   if (user.status.role=="user") {
+    //     return "users"
+    //   }
+      
+    // };
+    const docRef = doc(dbFireStore, "admin", uid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const data = docSnap.data();
