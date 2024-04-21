@@ -188,7 +188,7 @@ label {
   max-height: 100px;
   margin-bottom: 10px;
 }
-#cancelBtn,#saveBtn,#cancelBtn2,#saveBtn2,#adminsaveBtn {
+#cancelBtn,#saveBtn,#cancelBtn2,#saveBtn2,#adminsaveBtn,#cancelBtn3 {
   padding: 6px 14px;
   margin-right: 10px;
   border: none;
@@ -196,6 +196,13 @@ label {
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
+}
+#cancelBtn3:hover{
+  background-color: #0056b3;
+}
+#cancelBtn3:disabled{
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 #adminsaveBtn:hover {
   background-color: #0056b3;

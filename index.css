@@ -132,3 +132,9 @@ section {
   padding: 60px 0;
   overflow: hidden;
 }
+#adminPath {
+  cursor: pointer;
+}
+#adminPath:hover {
+  color: #00dbde;
+}

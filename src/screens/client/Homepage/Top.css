@@ -8,6 +8,11 @@
   padding: 0;
 }
 
+.pressed {
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+}
+
 body {
   width: 100%;
   font-family: "Yusei Magic", sans-serif;
@@ -157,14 +162,13 @@ form {
   background-color: #000000;
   text-align: center;
   transform: translateY(101%);
-  transition: transform 0.3s ease-in;
+  transition: transform 0.2s ease-in;
 }
 .movie_list_item:hover .overview {
   transform: translateY(0%);
 }
 .overview h3 {
   margin-bottom: 15px;
-  color: #0d6efd;
 }
 
 footer {
@@ -223,29 +227,10 @@ footer p {
 }
 
 h3 {
-   background-image: linear-gradient(
-    to left,
-    violet,
-    indigo,
-    blue,
-    green,
-    yellow,
-    orange,
-    red
-  );
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: #fff;
+  text-shadow: 0 0 7px #00fffb, 0 0 10px #005eff, 0 0 21px #fff;
 }
 
 p {
-   background-image: linear-gradient(
-    to left,
-    violet,
-    orange,
-    red
-  );
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: lightblue;
 }

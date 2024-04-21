@@ -1,0 +1,112 @@
+
+  #SignUpAttempt {
+    max-width: 50%;
+    border: rgb(200, 200, 200) 2px solid;
+    background-color: rgb(234, 234, 234);
+    border-radius: 8px;
+    padding: 1em;
+    height: 100%;
+    max-height: 350px;
+  }
+  #AgeRatio,
+  #GenderCompare {
+    width: 20%;
+    height: 100%;
+    max-height: 350px;
+    border: rgb(200, 200, 200) 2px solid;
+    background-color: rgb(234, 234, 234);
+    margin-left: 1%;
+    border-radius: 8px;
+  }
+#AgeRatio ul li {
+  width: 100%;
+  font-size: 20px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+thead {
+  border: none;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid black;
+  max-height: 100px;
+  
+}
+th {
+  background-color: #f5f8fd;
+  text-align: center;
+  color: #041e49;
+  font-weight: 100;
+}
+td {
+  font-weight: 50;
+  font-size: 12px;
+  text-wrap: nowrap;
+  background-color: #fff;
+}
+.textcenter {
+  text-align: center;
+}
+.padding {
+  padding: 0 2.5%;
+}
+
+
+
+  /* PieChart */
+  .pieContainer {
+    height: 100px;
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+  .pie {
+    transition: all 1s;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    clip: rect(0px, 50px, 100px, 0px);
+  }
+  
+  .hold {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+  
+  #pieSlice1 .pie {
+    background-color: #1b458b;
+    transform:rotate(120deg);
+  }
+  
+  #pieSlice2 {
+    transform: rotate(120deg);
+  }
+  
+  #pieSlice2 .pie {
+    background-color: #0a0;
+    transform: rotate(120deg);
+  }
+  
+  #pieSlice3 {
+    transform: rotate(240deg);
+  }
+  
+  #pieSlice3 .pie {
+    background-color: #ff3300;
+    transform: rotate(120deg);
+  }
+/* form */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}

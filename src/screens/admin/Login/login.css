@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    max-width: 400px;
+    width: 90%;
+    padding: 10em 5em;
+    background-color: #0b091e;
+    border-radius: 0px 8px 8px 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    height: max-content;
+    
+  }
+  
+  button[type="submit"] {
+    margin-top: 1.5em;
+  }
+  

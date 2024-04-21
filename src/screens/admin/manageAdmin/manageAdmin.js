@@ -102,8 +102,11 @@ resetState();
   //     }
   //   }
   // });
-
-  
+const form = document.querySelector("#adminForm");
+const cancelBtn3 =document.getElementById("cancelBtn3");
+cancelBtn3.addEventListener("click",()=>{
+  form.style.display="none";
+} )
   const getUserInfo = async (userId) => {
     const docRef = doc(dbFireStore, "admin", userId);
     const docSnap = await getDoc(docRef);
@@ -348,7 +351,7 @@ authDelete.addEventListener("click",()=>{
 };
 AuthTableCreate();
   //admin
-  const form = document.querySelector("#adminForm");
+
   async function CreateAdmin(e) {
       e.preventDefault();
       const { target } = e;
