@@ -26,14 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-
-
-
-
-
-
-
-
 const user_info = document.querySelector(".user-info");
 const user_avatar =document.querySelector("#user-avatar");
 const token = localStorage.getItem("token");
