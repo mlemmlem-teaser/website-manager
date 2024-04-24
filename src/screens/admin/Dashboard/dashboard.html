@@ -15,6 +15,9 @@
     <style id="pie_chart">
 
     </style>
+    <style id="pie_chart2">
+
+    </style>
 </head>
 <body>
   <header id="header" class="fixed-top">
@@ -70,20 +73,20 @@
             <img id="user-avatar" src="/Assets/Images/default-user-img.webp" alt="">
             <div class="user-info">
 
-            </div> 
+            </div>
 
             <a id="logout-btn" class href="/src/screens/client/Auth/Register/register.html">
               <i class="fa-solid fa-right-from-bracket" style="font-size: 20px;"></i>
             </a>
           </div>
           </li>
-          
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
 
-        
+
       </nav>
-      
+
     </div>
   </header>
       <div id="sidebar" style="margin: 5vh 0;">
@@ -103,35 +106,40 @@
         </ul>
       </div>
     </div>
+
+    <!-- chart -->
     <div id="DashboardContainer">
         <div id="SignUpAttempt"><canvas id="myChart" style="max-width: 100%;"></canvas></div>
-
+      <!-- gender -->
         <div id="GenderCompare">
-          <ul>
-            <h4>Gender</h4>
+          <ul id="genderProperties">
+            <!-- <h4>Gender</h4>
             <li>Male:</li>
             <li>Female:</li>
             <li>Other:</li>
-            <figure class="pie-chart">
+            <figure class="pie-chart genderRatio">
               <figcaption>
               Male<span style="color:#4e79a7"></span><br>
               Female<span style="color:#f28e2c"></span><br>
               Other<span style="color:#e15759"></span><br>
               </figcaption>
-            </figure>
+            </figure> -->
           </ul>
         </div>
+        <!-- age -->
         <div id="AgeRatio">
-          <ul>
-            <h4>Age</h4>
+          <ul id="ageProperties">
+            <!-- <h4>Age</h4>
             <li>Below 15:</li>
             <li>From 16 to 65:</li>
             <li>65 or above:</li>
-            <div class="pieContainer">
-              <div id="pieSlice1" class="hold"><div class="pie"></div></div>
-              <div id="pieSlice2" class="hold"><div class="pie"></div></div>
-              <div id="pieSlice3" class="hold"><div class="pie"></div></div>
-            </div>
+            <figure class="pie-chart ageRatio">
+              <figcaption>
+                ≤15<span style="color:#4e79a7"></span><br>
+                15-65<span style="color:#f28e2c"></span><br>
+              65≤<span style="color:#e15759"></span><br>
+              </figcaption>
+            </figure> -->
           </ul>
         </div>
       </div>

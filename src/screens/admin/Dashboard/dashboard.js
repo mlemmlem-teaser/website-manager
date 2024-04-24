@@ -97,8 +97,12 @@ new Chart("myChart", {
     },
   },
 });
+//pie
 const pie = document.getElementById("pie_chart");
-
+const pie2 = document.getElementById("pie_chart2");
+const genderPP = document.getElementById("genderProperties");
+const agePP = document.getElementById("ageProperties");
+//Genderrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 async function calRatioGender() {
   let maleCount = 0;
   let femaleCount = 0;
@@ -118,44 +122,123 @@ async function calRatioGender() {
 
   const total = maleCount + femaleCount + otherCount;
 
-  const maleAngle = (maleCount / total) * 360;
-  const femaleAngle = (femaleCount / total) * 360;
-  const otherAngle = (otherCount / total) * 360;
-console.log(maleAngle,femaleAngle,otherAngle);
-  const piechart = `<style>
-    #pieSlice1 {
-      z-index: 10;
-    }
-    #pieSlice1 .pie {
-      background-color: green;
-      transform: rotate(${maleAngle}deg);
-    }
-
-    #pieSlice2 {
-      transform: rotate(${maleAngle}deg);
-      z-index: 9;
-    }
-
-    #pieSlice2 .pie {
-      background-color: blue;
-      transform: rotate(${femaleAngle}deg);
-    }
-
-    #pieSlice3 {
-      transform: rotate(${maleAngle + femaleAngle}deg);
-      z-index: 8;
-    }
-
-    #pieSlice3 .pie {
-      background-color: red;
-      transform: rotate(${otherAngle}deg);
-    }
-  </style>`;
-
+  const malePercent = (maleCount / total) * 100;
+  const femalePercent = (femaleCount / total) * 100;
+  const otherPercent = (otherCount / total) * 100;
+  console.log(malePercent, femalePercent, otherPercent);
+  const piechart = `
+  .genderRatio {
+    background:
+      radial-gradient(
+        circle closest-side,
+        transparent 66%,
+        rgb(234, 234, 234) 0
+      ),
+      conic-gradient(
+        #4e79a7 0,
+        #4e79a7 ${malePercent}%,
+        #f28e2c 0,
+        #f28e2c ${malePercent + femalePercent}%,
+        #e15759 0,
+        #e15759 ${malePercent + femalePercent + otherPercent}%
+    );
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+    margin: 0;
+    
+  }
+  `;
+  genderPP.innerHTML = `
+  <h4>Gender</h4>
+            <li>Male: ${maleCount} (${malePercent}%)</li>
+            <li>Female: ${femaleCount} (${femalePercent}%)</li>
+            <li>Other: ${otherCount} (${otherPercent}%)</li>
+            <figure class="pie-chart genderRatio">
+              <figcaption>
+              Male<span style="color:#4e79a7"></span><br>
+              Female<span style="color:#f28e2c"></span><br>
+              Other<span style="color:#e15759"></span><br>
+              </figcaption>
+            </figure>`;
   pie.innerHTML = piechart;
 }
 
 calRatioGender();
+
+function calculateAge(birthdate) {
+  const birthday = new Date(birthdate);
+  const today = new Date();
+  let age = today.getFullYear() - birthday.getFullYear();
+  const m = today.getMonth() - birthday.getMonth();
+
+  if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
+    age--;
+  }
+
+  return age;
+}
+
+//Ageeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+async function calRatioAge() {
+  let _below15_ = 0;
+  let _15to65_ = 0;
+  let _above65_ = 0;
+
+  await getAllUsers().then((users) => {
+    users.forEach((user) => {
+      if (calculateAge(user.date) <= 15) {
+        _below15_++;
+      } else if (calculateAge(user.date) <= 65) {
+        _15to65_++;
+      } else {
+        _above65_++;
+      }
+    });
+    console.log(_below15_, _15to65_, _above65_);
+    const total = _below15_ + _15to65_ + _above65_;
+    const kidPercent = (_below15_ / total) * 100;
+    const midPercent = (_15to65_ / total) * 100;
+    const eldPercent = (_above65_ / total) * 100;
+    const piechart = `
+  .ageRatio {
+    background:
+      radial-gradient(
+        circle closest-side,
+        transparent 66%,
+        rgb(234, 234, 234) 0
+      ),
+      conic-gradient(
+        #4e79a7 0,
+        #4e79a7 ${kidPercent}%,
+        #f28e2c 0,
+        #f28e2c ${kidPercent + midPercent}%,
+        #e15759 0,
+        #e15759 ${kidPercent + midPercent + eldPercent}%
+    );
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+    margin: 0;
+    
+  }
+  `;
+    agePP.innerHTML = `<h4>Age</h4>
+    <li>Below 15: ${_below15_} (${kidPercent}%)</li>
+    <li>From 16 to 65: ${_15to65_} (${midPercent}%)</li>
+    <li>65 or above: ${_above65_} (${eldPercent}%)</li>
+    <figure class="pie-chart ageRatio">
+      <figcaption>
+        ≤15<span style="color:#4e79a7"></span><br>
+        15-65<span style="color:#f28e2c"></span><br>
+      65≤<span style="color:#e15759"></span><br>
+      </figcaption>
+    </figure>`;
+    pie2.innerHTML = piechart;
+  });
+}
+calRatioAge();
+
 const getUserInfo = async (userId) => {
   const docRef = doc(dbFireStore, "users", userId);
   const docSnap = await getDoc(docRef);
