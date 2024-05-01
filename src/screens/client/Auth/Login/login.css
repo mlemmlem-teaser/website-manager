@@ -11,7 +11,7 @@ body {
 .container {
   max-width: 400px;
   width: 90%;
-  padding: 10em 5em;
+  padding: 9em 5em;
   background-color: #0b091e;
   border-radius: 0px 8px 8px 0;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
@@ -21,4 +21,12 @@ body {
 
 button[type="submit"] {
   margin-top: 1.5em;
+}
+#DHAA {
+  text-decoration: none;
+  color: #12b1d2;
+}
+#DHAA:hover {
+  text-decoration: underline;
+  color: #14d8ff;
 }

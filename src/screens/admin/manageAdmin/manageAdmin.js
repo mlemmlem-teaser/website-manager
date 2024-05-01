@@ -42,7 +42,7 @@ function resetState() {
 onAuthStateChanged(Auth, async (user) => {
   if (user) {
     const uid = user.uid;
-    console.log(user);
+    console.log(user.uid);
     // function checkRole() {
     //   if (user.status.role=="admin") {
     //     return "admin"
@@ -451,7 +451,7 @@ form.addEventListener("submit", async (e)=> {
   AuthTableCreate();
 })
 function openForm() {
-  (document.getElementById("adminForm")).style.display="inherit";
+  form.style.display="inherit";
 }
 document.getElementById("small-button").addEventListener("click",() => {
   openForm();
