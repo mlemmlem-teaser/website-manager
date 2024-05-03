@@ -119,7 +119,7 @@ const authDelete = document.createElement("i"); authDelete.classList.add("fa-sol
 const modal = `<form id="userForm">
 <div>
     <img id="avatarPreview" src="${avatarPreview}" alt="Ảnh đại diện"> <br/> Avatar
-    <input type="text" id="newAvatarUrl" value="/Assets/Images/default-user-img.webp" style="width:100%;"/>
+    <input type="text" id="newAvatarUrl" value="${avatarPreview}" style="width:100%;"/>
 </div>
 <div>
     <label for="username">Username:</label>
