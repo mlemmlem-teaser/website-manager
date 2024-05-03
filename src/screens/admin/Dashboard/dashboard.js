@@ -28,40 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-const user_info = document.querySelector(".user-info");
-const user_avatar = document.querySelector("#user-avatar");
-const token = localStorage.getItem("token");
 
-if (!token) {
-  window.location.href = "../Login/login.html";
-}
-const logout = () => {
-  localStorage.removeItem("token");
-  window.location.href = "../Login/login.html";
-};
-function resetState() {
-  onAuthStateChanged(Auth, async (user) => {
-    if (user) {
-      const uid = user.uid;
-      console.log(uid);
-      const docRef = doc(dbFireStore, "admin", uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        console.log(data);
-        user_info.innerText = data.username;
-        user_avatar.url =
-          data.avatar != "" || data.avatar == null || data.avatar == undefined
-            ? data.avatar
-            : "/Assets/Images/default-user-img.webp";
-      } else {
-        console.log("No such document!");
-      }
-    } else {
-    }
-  });
-}
-resetState();
 //getall user
 const getAllUsers = async () => {
   const usersCollectionRef = collection(dbFireStore, "users");

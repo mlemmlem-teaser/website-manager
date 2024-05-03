@@ -32,7 +32,9 @@ function resetState() {
         const modal = `<form id="userForm">
 <div>
   <img id="avatarPreview" src="${user.avatar}" alt="Ảnh đại diện"> <br/> Avatar
-  <input type="text" id="newAvatarUrl" value="${user.avatar}" style="width:100%;"/>
+  <input type="text" id="newAvatarUrl" value="${
+    user.avatar
+  }" style="width:100%;"/>
 </div>
 <div>
   <label for="username">Username:</label>
@@ -133,9 +135,10 @@ function resetState() {
         const data = docSnap.data();
         console.log(data);
         user_info.innerText = data.username;
-        user_avatar.src = data.avatar != undefined
-          ? data.avatar
-          : "/Assets/Images/default-user-img.webp";
+        user_avatar.src =
+          data.avatar != undefined
+            ? data.avatar
+            : "/Assets/Images/default-user-img.webp";
         console.log(data.avatar);
         user_avatar.addEventListener("click", async () => {
           await showModal(data);
@@ -144,9 +147,10 @@ function resetState() {
         const data = docSnap2.data();
         console.log(data);
         user_info.innerText = data.username;
-        user_avatar.src = data.avatar != undefined
-          ? data.avatar
-          : "/Assets/Images/default-user-img.webp";
+        user_avatar.src =
+          data.avatar != undefined
+            ? data.avatar
+            : "/Assets/Images/default-user-img.webp";
         console.log(data.avatar);
         user_avatar.addEventListener("click", async () => {
           await showModal(data);
