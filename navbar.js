@@ -117,6 +117,7 @@ function resetState() {
                   { merge: true }
                 );
                 resetState();
+
               } catch (error) {
                 console.error(error);
               }
@@ -163,3 +164,4 @@ function resetState() {
   });
 }
 resetState();
+export {resetState}

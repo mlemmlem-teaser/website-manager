@@ -7,6 +7,7 @@ import {
   doc,
   updateDoc,
 } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("MenuBtn");
   const sidebar = document.getElementById("sidebar");

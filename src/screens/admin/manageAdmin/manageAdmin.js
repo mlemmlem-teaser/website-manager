@@ -3,6 +3,7 @@ import { dbFireStore, Auth } from "../../../config-firebase.js";
 import { collection, getDocs, getDoc, doc,updateDoc,setDoc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 import { role } from "../../../contants/index.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+import { resetState } from "../../../../navbar.js";
 document.addEventListener('DOMContentLoaded', function () {
     const menuBtn = document.getElementById('MenuBtn');
     const sidebar = document.getElementById('sidebar');
@@ -232,6 +233,7 @@ authSetting.addEventListener("click",()=>{
     }
     userForm.style.display="none";
     AuthTableCreate();
+    resetState();
   });
 });
 //authDelete
@@ -408,6 +410,7 @@ form.addEventListener("submit", async (e)=> {
   await CreateAdmin(e);
   form.style.display="none";
   AuthTableCreate();
+  await resetState();
 })
 function openForm() {
   form.style.display="inherit";

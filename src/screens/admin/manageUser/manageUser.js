@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 import { dbFireStore, Auth } from "../../../config-firebase.js";
 import { collection, getDocs, getDoc, doc,updateDoc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+import { resetState } from "../../../../navbar.js";
 document.addEventListener('DOMContentLoaded', function () {
     const menuBtn = document.getElementById('MenuBtn');
     const sidebar = document.getElementById('sidebar');
