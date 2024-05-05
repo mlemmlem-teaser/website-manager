@@ -1,0 +1,22 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "KATARA cos",
+            "price": 200,
+            "image": "/shop/img shop/kitara cos.webp"
+        },
+        {
+            "id": 2,
+            "name": "Product 2",
+            "price": 150,
+            "image": "/shop/img shop/product2.webp"
+        },
+        {
+            "id": 3,
+            "name": "Product 3",
+            "price": 250,
+            "image": "/shop/img shop/product3.webp"
+        }
+    ]
+}

@@ -11,16 +11,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../../../../global_style.css" />
-    <link rel="stylesheet" href="../../../../variable.css" />
+    <link rel="stylesheet" href="/global_style.css" />
     <link rel="stylesheet" href="contact.css" />
+    <script src="/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7a436d10a3.js"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact us</title>
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <header id="header" class="fixed-top">
@@ -72,78 +72,88 @@
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <li><a class="nav-link scrollto" href="#services">Help</a></li>
             <li id="user">
-            <div id="user-info-container">
-              <img id="user-avatar" src="/Assets/Images/default-user-img.webp" alt="">
-              <div class="user-info">
-                mlemmlem
-              </div> 
+              <div id="user-info-container">
+                <img
+                  id="user-avatar"
+                  src="/Assets/Images/default-user-img.webp"
+                  alt=""
+                />
+                <div class="user-info">mlemmlem</div>
 
-              <a id="logout-btn" class href="/src/screens/client/Auth/Register/register.html">
-                <i class="fa-solid fa-right-from-bracket" style="font-size: 20px;"></i>
-              </a>
-            </div>
+                <a
+                  id="logout-btn"
+                  class
+                  href="/src/screens/client/Auth/Register/register.html"
+                >
+                  <i
+                    class="fa-solid fa-right-from-bracket"
+                    style="font-size: 20px"
+                  ></i>
+                </a>
+              </div>
             </li>
-            
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
-
-          
         </nav>
-        
       </div>
     </header>
-    <div class="contact-container">
+
+    <div class="contact-page">
       <div class="contact-info">
-        <h2>Contact Info</h2>
-        <p><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</p>
-        <p><i class="fas fa-envelope"></i> admin@example.com</p>
-        <p><i class="fas fa-phone"></i> +123456789</p>
-      </div>
-      <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form action="#" method="post">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
+        <div class="contact-info-item">
+          <div class="contact-info-content">
+            <h4 style="margin-top: 20px">
+              <i class="fa-solid fa-location-dot"></i> Address
+            </h4>
+            <p>
+              123 không bt,<br />
+              Thanh Pho Ho Chi Minh <br />456
+            </p>
           </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-content">
+            <h4><i class="fas fa-phone"></i> Phone</h4>
+            <p>+84 123 456 789</p>
           </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <div class="form-group">
-            <!-- HTML !-->
-            <button
-              class="button-62"
-              role="button"
-              type="submit"
-              style="width: 335px; height: 50px"
-            >
-              Send<i class="fas fa-paper-plane"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="footer-col">
-            <h4>Follow us</h4>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" style="margin-left: 30px;"><i class="fab fa-twitter"></i></a>
-              <a href="#" style="margin-left: 30px;margin-right: 30px;"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-content">
+            <h4><i class="fas fa-envelope"></i> Email</h4>
+            <p>huongtumlum123@gmail.com</p>
           </div>
         </div>
       </div>
-    </footer>
-    <script type="module" src="/navbar.js"></script>
+      <form class="contact-form">
+        <h4 style="text-align: center; font-family: 'Poppins', sans-serif">
+          <b>Keep in touch</b>
+        </h4>
+        <input type="text" id="firstName" placeholder="First Name" required />
+        <input type="text" id="lastName" placeholder="Last Name" required />
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          style="
+            border: none;
+            width: 290px;
+            border-bottom: 2px solid #fff;
+            border-radius: 0;
+          "
+          required
+        />
+        <input type="text" id="mobile" placeholder="Mobile" required />
+        <input
+          type="text"
+          id="message"
+          placeholder="Type here..."
+          class="textarea"
+        />
+        <input type="submit" value="Send" id="button" />
+      </form>
+    </div>
+
     <script type="module" src="register.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

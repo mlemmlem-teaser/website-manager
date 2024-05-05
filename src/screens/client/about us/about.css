@@ -1,1 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
 
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Poppins", sans-serif;
+  background: -webkit-linear-gradient(45deg, #000000, #140014);
+  background: -o-linear-gradient(45deg, #080078, #16002d);
+  background: -moz-linear-gradient(45deg, #000000, #0b0034);
+  background: linear-gradient(45deg, #0f003a, #000d2c);
+}
+
+.contner {
+  width: 90%;
+  height: 100%;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  grid-gap: 60px;
+  padding: 35px 0;
+}
+.contentLeft,
+.contentRight {
+  width: 100%;
+}
+.contentLeft .row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+.contentLeft .row .imgWrapper {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.15);
+}
+.contentLeft .row .imgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  transition: 0.3s ease;
+}
+.contentLeft .row .imgWrapper:hover img {
+  transform: scale(1.5);
+}
+.contentLeft .row .imgWrapper:nth-child(odd) {
+  transform: translateY(-20px);
+}
+.contentLeft .row .imgWrapper:nth-child(even) {
+  transform: translateY(20px);
+}
+.contentRight .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.contentRight .content h4 {
+  font-size: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+    0 0 35px #5b00d3, 0 0 40px #228dff;
+}
+.contentRight .content h2 {
+  font-size: 40px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+    0 0 35px #228dff, 0 0 40px #228dff;
+  color: #b9dfff;
+  color: #fff;
+}
+.contentRight .content p {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 28px;
+  padding-bottom: 10px;
+}
+.contentRight .content a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 13px 30px;
+  color: #fff;
+  background: #00bfff;
+  background: -webkit-linear-gradient(45deg, #00dbde, #008e98);
+  background: -o-linear-gradient(45deg, #00dbde, #1d7bae);
+  background: -moz-linear-gradient(45deg, #00dbde, #0f4a91);
+  background: linear-gradient(45deg, #00dbde, #0036ca);
+  border-radius: 8px;
+  user-select: none;
+}
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .contentLeft .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contentLeft .row .imgWrapper {
+    height: 150px;
+  }
+  .contentRight .content h4 {
+    font-size: 18px;
+  }
+  .contentRight .content h2 {
+    font-size: 30px;
+  }
+}
+
+.team {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: radial-gradient(#281c3e, #0f051d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.team-content {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  margin-top: 50px;
+}
+.team-content img {
+  width: 100%;
+  height: 350px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.center h1 {
+  color: #fff;
+  font-size: 4rem;
+  text-align: center;
+}
+.box {
+  padding: 16px;
+  background: #1b1229;
+  border-radius: 15px;
+  transition: all 0.38s ease;
+  display: block;
+}
+.box h3 {
+  font-size: 23px;
+  font-weight: 600;
+  color: #b9dfff;
+  color: #fff;
+  margin-bottom: 8px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+    0 0 35px #228dff, 0 0 40px #228dff;
+}
+.box h5 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #b7b4bb;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+.icons i {
+  display: inline-block;
+  color: #b9dfff;
+  color: #fff;
+  font-size: 20px;
+  margin: 0 8px;
+  transition: all 0.38s ease;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+    0 0 35px #228dff, 0 0 40px #228dff;
+}
+.icons i:hover {
+  transform: scale(1.2);
+}
+.box:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+@media (max-width: 1240px) {
+  .team {
+    width: 100%;
+    height: auto;
+    padding: 90px 2%;
+  }
+  .center h1 {
+    font-size: 3.2rem;
+  }
+}
