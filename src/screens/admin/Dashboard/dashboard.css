@@ -127,7 +127,6 @@ body {
   padding: 0;
 }
 #DashboardContainer {
-  margin-top: 20vh;
   display: flex;
   flex-wrap: wrap;
   padding: 3%;

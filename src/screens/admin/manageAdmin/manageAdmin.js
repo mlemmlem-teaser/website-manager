@@ -114,13 +114,19 @@ function AuthTableCreate() {
 
 
 const authSetting = document.createElement("i"); authSetting.classList.add("fa-solid","fa-pen","authSetting");
-const authDelete = document.createElement("i"); authDelete.classList.add("fa-solid","fa-trash","authDelete");
+const authDelete = document.createElement("i"); authDelete.classList.add("fa-solid","fa-toggle-on","authDelete");
 
 
 const modal = `<form id="userForm">
-<div>
-    <img id="avatarPreview" src="${avatarPreview}" alt="Ảnh đại diện"> <br/> Avatar
+<div style="display:flex;">
+    <img id="avatarPreview" src="${avatarPreview}" alt="Ảnh đại diện"> <br/> <div style="display:flex;flex-direction:column;margin: 0 2%;">
+    <div>
+    <label for="created">Ngày tạo:</label>
+    <input type="text" id="created" value="${user.accountCreated}" disabled>
+    </div>
+    Avatar
     <input type="text" id="newAvatarUrl" value="${avatarPreview}" style="width:100%;"/>
+    </div>
 </div>
 <div>
     <label for="username">Username:</label>
@@ -141,32 +147,28 @@ const modal = `<form id="userForm">
         <option value="other">Other</option>
     </select>
 </div>
-<div>
-    <label for="created">Ngày tạo:</label>
-    <input type="text" id="created" value="${user.accountCreated}" disabled>
-</div>
+
 <div>
     <button type="button" id="cancelBtn">Cancel</button>
     <button type="submit" id="saveBtn">Save</button>
 </div>
 </form>`;
-      const modal2=`          Are you sure delete this account?
+      const modal2=`          Are you sure you want to change this user's active status?
       <div id="DelUsername">Name: ${user.username||user.name}</div>
       <div id="DelEmail">Email: ${user.email}</div>
       <button type="button" id="cancelBtn2">Cancel</button>
-      <button type="submit" id="saveBtn2">Delete</button>`
+      <button type="submit" id="saveBtn2">Change</button>`
 //authSetting
 
 function OnchangeActive() {
-  ID.innerText=(user.status.active==(true||"true")?"Active":"Unactive");
-  if (ID.innerText=="Active") {
+  if (user.status.active==true||user.status.active=="true") {
     ID.style.color="green";
-    authDelete.classList.remove("fa-rotate-left");
-    authDelete.classList.add("fa-trash");
+    authDelete.classList.remove("fa-toggle-off");
+    authDelete.classList.add("fa-toggle-on");
   } else {
     ID.style.color="red";
-    authDelete.classList.remove("fa-trash");
-    authDelete.classList.add("fa-rotate-left");
+    authDelete.classList.remove("fa-toggle-on");
+    authDelete.classList.add("fa-toggle-off");
   }
 };
 
@@ -237,40 +239,69 @@ authSetting.addEventListener("click",()=>{
   });
 });
 //authDelete
-authDelete.addEventListener("click",()=>{
-  deletemodal.innerHTML=modal2;
-  deletemodal.style.display="inherit";
-  const cancelBtn2 = document.getElementById("cancelBtn2");
-  const saveBtn2 = document.getElementById("saveBtn2");
-  cancelBtn2.addEventListener("click",()=>{
-    deletemodal.style.display="none";
-  });
-  saveBtn2.addEventListener("click",async ()=>{
+authDelete.addEventListener("click", () => {
+  function IfStatusTrue() {
+    deletemodal.innerHTML = modal2;
+    deletemodal.style.display = "inherit";
+    const cancelBtn2 = document.getElementById("cancelBtn2");
+    const saveBtn2 = document.getElementById("saveBtn2");
+    cancelBtn2.addEventListener("click", () => {
+      deletemodal.style.display = "none";
+    });
+    saveBtn2.addEventListener("click", async () => {
       deletemodal.style.display = "none";
       const userDocRef = doc(dbFireStore, "admin", user.id);
-      if (user.status.active=="true"||user.status.active==true) {
-      try {
-        await updateDoc(userDocRef, {
-          status: {
-            active: false,
-          },
-        },{merge: true});
-      } catch (error) {
+      if (user.status.active == "true" || user.status.active == true) {
+        try {
+          await updateDoc(
+            userDocRef,
+            {
+              status: {
+                active: false,
+              },
+            },
+            { merge: true }
+          );
+        } catch (error) {}
+      } else {
+        try {
+          await updateDoc(
+            userDocRef,
+            {
+              status: {
+                active: true,
+                role: "user",
+              },
+            },
+            { merge: true }
+          );
+        } catch (error) {}
       }
-    } else {
-      try {
-        await updateDoc(userDocRef, {
+      AuthTableCreate();
+    });
+  }
+  async function IfStatusFalse() {
+    const userDocRef = doc(dbFireStore, "admin", user.id);
+    try {
+      await updateDoc(
+        userDocRef,
+        {
           status: {
             active: true,
-            role:"admin",
+            role: "user",
           },
-        },{merge: true});
-      } catch (error) {
-      }
-    }
-      AuthTableCreate();
-  });
-})
+        },
+        { merge: true }
+      );
+    } catch (error) {}
+    AuthTableCreate();
+  }
+if (user.status.active == "true" || user.status.active == true) {
+  IfStatusTrue();
+} else {
+  IfStatusFalse();
+}
+});
 
 
 
@@ -282,7 +313,7 @@ authDelete.addEventListener("click",()=>{
       }
       const tr = document.createElement("tr");
       Setting.appendChild(authSetting);
-      Setting.appendChild(authDelete);
+      ID.appendChild(authDelete);
 
 
 
@@ -416,5 +447,5 @@ function openForm() {
   form.style.display="inherit";
 }
 document.getElementById("small-button").addEventListener("click",() => {
-  openForm();
+ openForm();
 });

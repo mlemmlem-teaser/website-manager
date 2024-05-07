@@ -2,10 +2,9 @@
 #UserManagerContainer {
 
 
-    padding: 1%;
+
     height: 1000px;
-    width: 100vw;
-    margin-top: 10vh;
+    width: 100%;
     right: 0;
     display: flex;
     flex-wrap: wrap;
@@ -35,11 +34,11 @@
   font-size: 20px;
 }
 #Authentication {
-  margin-top: 5vh;
+
   width: 100%;
   background-color: rgb(234, 234, 234);
-  border-radius: 8px;
   height: fit-content;
+  min-height: 800px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -134,7 +133,7 @@ td {
     color: green;
   }
   .authDelete:hover {
-    color: red;
+    color: lime;
   }
 
 
