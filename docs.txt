@@ -200,3 +200,29 @@ const getData = async (url) => {
 };
 
 export { getData, role };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const index = button.dataset.index;
+        get(ref(dbRealTime, "products/" + dataArray[index].id)).then((data) => {
+          if (data.exists()) {
+            console.log(data.val());
+          } else {
+            console.log("No data available");
+          }
+        }
+        )

@@ -1,0 +1,113 @@
+#ProductManagerContainer {
+  height: 1000px;
+  width: 100%;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+#Product {
+
+    width: 100%;
+    background-color: rgb(234, 234, 234);
+    height: fit-content;
+    min-height: 800px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  thead {
+    border: none;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    max-height: 100px;
+    
+  }
+  th {
+    background-color: #f5f8fd;
+    text-align: center;
+    color: #041e49;
+    font-weight: 100;
+  }
+  td {
+    font-weight: 50;
+    font-size: 12px;
+    text-wrap: nowrap;
+    background-color: #fff;
+  }
+  .textcenter {
+    text-align: center;
+  }
+  .padding {
+    padding: 0 2.5%;
+  }
+  #small-button {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 99px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+#productForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f2f2f2;
+  border: 2px solid #ddd;
+  color: #333;
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 30px 800px rgb(0, 0, 0,0.4);
+  font-weight: 100;
+  font-size: 20px;
+  padding: 20px;
+  line-height: 40px;
+  display: none;
+}
+
+.productForm label {
+    font-weight: bold;
+}
+
+.productForm input[type="text"], .productForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.productForm input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.productForm input[type="submit"]:hover {
+    background-color: #45a049;
+}

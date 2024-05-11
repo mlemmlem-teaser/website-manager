@@ -7,6 +7,8 @@ body {
   display: flex;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
+ 
 }
 .container {
   max-width: 400px;
@@ -16,7 +18,6 @@ body {
   border-radius: 0px 8px 8px 0;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   height: max-content;
-  
 }
 
 button[type="submit"] {
@@ -29,4 +30,8 @@ button[type="submit"] {
 #DHAA:hover {
   text-decoration: underline;
   color: #14d8ff;
+}
+
+a {
+  text-shadow: none;
 }

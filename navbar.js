@@ -30,11 +30,15 @@ function resetState() {
       const docSnap2 = await getDoc(docRef2);
       async function showModal(user) {
         const modal = `<form id="userForm">
+<div style="display:flex;">
+<img id="avatarPreview" src="${user.avatar}" alt="Ảnh đại diện"> <br/> <div style="display:flex;flex-direction:column;margin: 0 2%;">
 <div>
-  <img id="avatarPreview" src="${user.avatar}" alt="Ảnh đại diện"> <br/> Avatar
-  <input type="text" id="newAvatarUrl" value="${
-    user.avatar
-  }" style="width:100%;"/>
+<label for="created">Ngày tạo:</label>
+<input type="text" id="created" value="${user.accountCreated}" disabled>
+</div>
+Avatar
+<input type="text" id="newAvatarUrl" value="${user.avatar}" style="width:100%;"/>
+</div>
 </div>
 <div>
   <label for="username">Username:</label>
@@ -56,10 +60,6 @@ function resetState() {
       <option value="female">Female</option>
       <option value="other">Other</option>
   </select>
-</div>
-<div>
-  <label for="created">Ngày tạo:</label>
-  <input type="text" id="created" value="${user.accountCreated}" disabled>
 </div>
 <div>
   <button type="button" id="cancelBtn">Cancel</button>
@@ -117,7 +117,6 @@ function resetState() {
                   { merge: true }
                 );
                 resetState();
-
               } catch (error) {
                 console.error(error);
               }
@@ -164,4 +163,4 @@ function resetState() {
   });
 }
 resetState();
-export {resetState}
+export { resetState };

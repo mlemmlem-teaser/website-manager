@@ -1,3 +1,7 @@
+.footer{
+  margin-top: 500px;
+  border-top: 10px solid black;
+}
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
@@ -16,6 +20,8 @@ body {
   background: -o-linear-gradient(45deg, #080078, #16002d);
   background: -moz-linear-gradient(45deg, #000000, #0b0034);
   background: linear-gradient(45deg, #0f003a, #000d2c);
+  margin-bottom: 500px; /* adjust the value to match the height of your footer */
+
 }
 
 .contner {

@@ -71,6 +71,7 @@ ul {
 }
 
 button {
+  padding: var(--spacing-small) var(--spacing-medium);
   border: none;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -192,7 +193,26 @@ h6 {
   background: -moz-linear-gradient(45deg, #000000, #0b0034);
   background: linear-gradient(45deg, #000000, #000d2c);
   width: 100vw;
-  max-height: 200px;
+  opacity: 0; /* Bắt đầu với độ mờ là 0 */
+  animation: moveDown 2s forwards, fadeIn 2s forwards;
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(-50px); /* Di chuyển từ trên xuống */
+  }
+  to {
+    transform: translateY(0); /* Di chuyển đến vị trí ban đầu */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Bắt đầu với độ mờ là 0 */
+  }
+  to {
+    opacity: 1; /* Kết thúc với độ mờ là 1 */
+  }
 }
 
 #header.header-scrolled,
@@ -220,6 +240,7 @@ h6 {
 
 .navbar {
   padding: 0;
+  animation: nav-load var(--nav-load-time) ease-in;
 }
 
 .navbar ul {
@@ -355,7 +376,6 @@ h6 {
   position: fixed;
   left: 0;
   color: white;
-  margin-left: 2%;
 }
 #MenuBtn:active,
 #MenuBtn:focus {
@@ -418,12 +438,24 @@ h6 {
   border-radius: 99px;
   border-right: 1px solid #47b2e4;
   padding: 1%;
-  background-image: linear-gradient(45deg, rgb(255, 255, 255,0.5),white, rgb(255, 255, 255,0.5),white);
+  background-image: linear-gradient(
+    45deg,
+    rgb(255, 255, 255, 0.5),
+    white,
+    rgb(255, 255, 255, 0.5),
+    white
+  );
   transition: background-image 0.5s ease;
   cursor: pointer;
 }
 #user-avatar:hover {
-  background-image: linear-gradient(45deg, rgb(71, 178, 228),rgb(71, 178, 228,0.5),rgb(71, 178, 228),rgb(71, 178, 228,0.5));
+  background-image: linear-gradient(
+    45deg,
+    rgb(71, 178, 228),
+    rgb(71, 178, 228, 0.5),
+    rgb(71, 178, 228),
+    rgb(71, 178, 228, 0.5)
+  );
 }
 
 .user-info {

@@ -7,14 +7,14 @@ body {
   display: flex;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 .container {
   max-width: 500px;
   width: 90%;
-  padding:5em;
+  padding: 5em;
   background-color: #0b091e;
   border-radius: 0px 8px 8px 0;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   height: max-content;
-  
 }

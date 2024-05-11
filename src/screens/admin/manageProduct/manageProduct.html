@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../global_style.css">
     <link rel="stylesheet" href="../../../../variable.css">
-    <link rel="stylesheet" href="manageUser.css">
+    <link rel="stylesheet" href="manageProduct.css">
     <script src="https://kit.fontawesome.com/7a436d10a3.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <meta charset="UTF-8">
@@ -95,75 +95,61 @@
       <ul>
         <li><i class="fa-solid fa-chart-simple" style="color: lightcoral;"></i> <a href="../Dashboard/dashboard.html">Dashboard</a></li>
         <li><i class="fa-solid fa-crown" style="color: yellow;"></i> <a href="../manageAdmin/manageAdmin.html">Admin</a></li>
-        <li id="alreadyHere"><i class="fa-solid fa-star" style="color: lightblue;"></i> <a href="../manageUser/manageUser.html">User</a></li>
-        <li><i class="fa-solid fa-boxes-stacked" style="color: lightgreen;"> </i><a href="../manageProduct/manageProduct.html">Product</a></li>
+        <li><i class="fa-solid fa-star" style="color: lightblue;"></i> <a href="../manageUser/manageUser.html">User</a></li>
+        <li id="alreadyHere"><i class="fa-solid fa-boxes-stacked" style="color: lightgreen;"></i> <a href="../manageProduct/manageProduct.html">Product</a></li>
 
       </ul>
     </div>
   </div>
-    <h6 style="background-color: white;">aaaaaaaaaaaaaaaaaaaa</h6>
-      <div id="UserManagerContainer">
-        <!-- <div id="SignUpAttempt"><canvas id="myChart" style="max-width: 100%;"></canvas></div>
-        <div id="GenderCompare">
-          <ul>
-            <h4>Gender</h4>
-            <li>Male:</li>
-            <li>Female:</li>
-            <li>Other:</li>
-            <div class="pieContainer">
-              <div id="pieSlice1" class="hold"><div class="pie"></div></div>
-              <div id="pieSlice2" class="hold"><div class="pie"></div></div>
-              <div id="pieSlice3" class="hold"><div class="pie"></div></div>
-            </div>
-          </ul>
-        </div>
-        <div id="AgeRatio">
-          <ul>
-            <h4>Age</h4>
-            <li>Below 15:</li>
-            <li>From 16 to 65:</li>
-            <li>65 or above:</li>
-            <div class="pieContainer">
-              <div id="pieSlice1" class="hold"><div class="pie"></div></div>
-              <div id="pieSlice2" class="hold"><div class="pie"></div></div>
-              <div id="pieSlice3" class="hold"><div class="pie"></div></div>
-            </div>
-          </ul>
-        </div> -->
-        <div id="Authentication" >
-          <table id="AuthManager" class="scrollContainer">
-            <thead>
-                <tr>
-                    <th>Email</th>
-                    <th>Name</th>
-                    <th>Birth</th>
-                    <th>Gender</th>
-                    <th>Created</th>
-                    <th>Active</th>
-                    <th>Setting</th>
-                </tr>
-            </thead>
-            <tbody id="usersInformation">
-                
-            </tbody>
-        </table>
-        </div>
-        
-      </div>
-      <div id="SettingModal">
-        
-      </div>
-      <div id="DeleteModal"> 
+  <div id="DeleteModal"> 
 
-      </div>
-      <div id="showModal">
+  </div>
+  <div id="showModal">
+  
+  </div>
+  <h6 style="background-color: white">aaaaaaaaaaaaaaaaaaaa</h6>
+  <div id="ProductManagerContainer">
+  <div id="Product" >
+    <table id="ProductManager" class="scrollContainer">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Description</th>
+              <th>In stock</th>
+              <th>Total</th>
+          </tr>
+      </thead>
+      <tbody id="ProductInformation"> 
+        
+      </tbody>
+  </table>
+  </div>
+  </div>
+  <button id="small-button">+</button>
+  <div id="addProduct">
+    <form id="productForm" class="productForm">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
       
-      </div>
+      <label for="price">Price:</label><br>
+      <input type="text" id="price" name="price"><br>
+      
+      <label for="description">Description:</label><br>
+      <textarea id="description" name="description" rows="3" cols="50"></textarea><br><br>
+      <button id="cancelBtn">Cancel</button>
+      <button type="submit" id="saveBtn">Save</button>
+  </form>
+  </div>
 
-    
-    
-    
-      <script type="module" src="/navbar.js"></script>
+
+
+
+
+
+
+
+  <script type="module" src="/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -173,7 +159,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-        <script type="module" src="manageUser.js"></script>
+        <script type="module" src="manageProduct.js"></script>
 </body>
 
 </html>
