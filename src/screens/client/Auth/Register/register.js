@@ -1,5 +1,5 @@
 
-import { Auth } from "../../../../config-firebase.js";
+import { Auth } from "/src/config-firebase.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 import { dbFireStore } from "../../../../config-firebase.js";
 import {
@@ -7,7 +7,7 @@ import {
   setDoc,
   doc
 } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
-import { role } from "../../../../contants/index.js";
+import { role } from "/src/contants/index.js";
 const form = document.querySelector(".form_login");
 async function registerUser(e) {
   e.preventDefault();
@@ -108,7 +108,7 @@ async function registerUser(e) {
     } catch (error) {
       console.error(error);
     }
-    window.location = "../Login/login.html";
+    window.location = "/src/screens/client/Auth/Login/login.html";
   }
 }
 form.addEventListener("submit", async (e) => {

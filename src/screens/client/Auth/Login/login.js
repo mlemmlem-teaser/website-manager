@@ -1,4 +1,4 @@
-import { Auth, dbFireStore } from "../../../../config-firebase.js";
+import { Auth, dbFireStore } from "/src/config-firebase.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 
 const formLogin = document.querySelector(".form_login");
@@ -18,7 +18,7 @@ const loginUser = async (e) => {
     const { user } = userCredential;
     localStorage.setItem("token", user.accessToken);
     if (user.accessToken) {
-      window.location.href = "../../Homepage/homepage.html";
+      window.location.href = "/src/screens/client/Homepage/homepage.html";
     }
   } catch (error) {
     alert("Login failed");

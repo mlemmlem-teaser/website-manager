@@ -37,23 +37,9 @@
         </h1>
         <nav id="navbar" class="navbar">
           <ul>
-           
-            <li><a class="nav-link scrollto" href="#about">About us</a></li>
-
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            <li><a class="nav-link scrollto" href="#services">Help</a></li>
-            <!-- <li id="user">
-            <div id="user-info-container">
-              <img id="user-avatar" src="/Assets/Images/default-user-img.webp" alt="">
-              <div class="user-info">
-                mlemmlem
-              </div> 
-
-              <a id="logout-btn" class href="/src/screens/client/Auth/Register/register.html">
-                <i class="fa-solid fa-right-from-bracket" style="font-size: 20px;"></i>
-              </a>
-            </div>
-            </li> -->
+            <li class="nav_about"><a class="nav-link scrollto" href="#about">About us</a></li>
+            <li class="nav_contact"><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li class="nav_help"><a class="nav-link scrollto" href="#services">Help</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -68,12 +54,22 @@
             data-aos-delay="200"
           >
             <h1 class="text">Solution For Movie Lovers</h1>
-            <h2 class="description">We are proud that this is a website worth using.</h2>
+            <h2 class="description">
+              We are proud that this is a website worth using.
+            </h2>
             <div class="d-flex justify-content-center justify-content-lg-start">
-              
-              <a class="button" href="/src/screens/client/Homepage/homepage.html" class="btn-get-started scrollto">Get Started</a>
-              <a href="" class="button" class="glightbox btn-watch-video"
-                style="background: none;"><i class="bi bi-play-circle"></i><span>Watch Video</span></a
+              <a
+                class="button getStarted"
+                href="/src/screens/client/Homepage/homepage.html"
+                class="btn-get-started scrollto"
+                >Get Started</a
+              >
+              <a
+                href=""
+                class="button"
+                class="glightbox btn-watch-video"
+                style="background: none"
+                ><i class="bi bi-play-circle"></i><span>Watch Video</span></a
               >
             </div>
           </div>
@@ -90,9 +86,6 @@
             />
           </div>
         </div>
-      </div>
-      <div style="position: absolute; bottom: 50px; right: 50px" id="adminPath">
-        <i class="fa-solid fa-toolbox"></i>
       </div>
     </section>
     <script
@@ -111,5 +104,6 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="main.js"></script>
+    <script src="navigation.js" type="module"></script>
   </body>
 </html>
