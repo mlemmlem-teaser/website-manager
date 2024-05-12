@@ -6,16 +6,17 @@ body {
   padding: 0;
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
- 
 }
 .container {
   max-width: 400px;
   width: 90%;
-  padding: 9em 5em;
+  padding-left:5em ;
+  padding-right: 5em;
+  padding-bottom: 100px;
+  padding-top: 85px;
   background-color: #0b091e;
-  border-radius: 0px 8px 8px 0;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   height: max-content;
 }

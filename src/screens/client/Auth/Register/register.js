@@ -125,6 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
       item.style.opacity = "1";
       item.style.transform = "translateY(0)";
     }, delay);
-    delay += 95; // Delay in milliseconds between each item appearing
+    delay += 48; // Delay in milliseconds between each item appearing
   });
 });

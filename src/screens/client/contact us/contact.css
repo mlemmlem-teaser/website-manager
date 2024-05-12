@@ -9,8 +9,7 @@
 .contact-info-content {
   font-size: 16px;
   margin-left: 50px;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
-    0 0 35px #228dff, 0 0 40px #228dff;
+  text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 15px #66ccff;
   color: #b9dfff;
   color: #fff;
 }
@@ -22,11 +21,7 @@
 .contact-info {
   margin-top: 80px;
   font-size: 25px;
-  background: #00bfff;
-  background: -webkit-linear-gradient(45deg, #00dbde, #008e98);
-  background: -o-linear-gradient(45deg, #00dbde, #1d7bae);
-  background: -moz-linear-gradient(45deg, #460066, #0f4a91);
-  background: linear-gradient(45deg, #170052, #0036ca);
+  background: rgba(255, 255, 255, 0.1);
   height: 400px;
   border-radius: 15px 0px 0px 15px;
   width: 300px;
@@ -132,6 +127,8 @@
 }
 
 .contact-page form #button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   opacity: 0.7;
 }
 

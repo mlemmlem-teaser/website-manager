@@ -1,91 +1,190 @@
+let listProductHTML = document.querySelector(".listProduct");
+let listCartHTML = document.querySelector(".listCart");
+let iconCart = document.querySelector(".icon-cart");
+let iconCartSpan = document.querySelector(".icon-cart span");
+let body = document.querySelector("body");
+let closeCart = document.querySelector(".close");
+let products = [];
+let cart = [];
 
-const data = [
-  {name:"katara red dress outfit",price:999.999,descripttion:"Anime Avatar: The Last Airbender Aang Red Dress Outfit Cosplay Costume",url:"/src/screens/client/shop/img shop/kitara cos.webp"},
-  {name:"Aang red dress outfit",price:999.999,descripttion:"Anime Avatar: The Last Airbender Aang Red Dress Outfit Cosplay Costume",url:"/src/screens/client/shop/img shop/aang.png"},
-  {name:"Blue Spirit Mask",price:999.999,descripttion:"Blue Spirit Mask | Avatar cosplay | Prince Zuko's Mask | Mask replica | Mask costume | Hand painted | Skull kid mask",url:"/src/screens/client/shop/img shop/blue spirit mask.png"},
-  {name:"TOPH OUTFIT",price:999.999,descripttion:"Toph| Avatar cosplay | TOPH COSPLAY |",url:"/src/screens/client/shop/img shop/toph cosplay.png"},
-  {name:"SOKKA OUTFIT",price:999.999,descripttion:"SOKKA| Avatar cosplay | TOPH COSPLAY || ITEM |",url:"/src/screens/client/shop/img shop/sokka.png"},
-  {name:"sokka boomerang",price:999.999,descripttion:"SOKKA| Avatar cosplay | TOPH COSPLAY || ITEM |",url:"/src/screens/client/shop/img shop/sokka bommerang.png"},
-  {name:"sokka boomerang",price:999.999,descripttion:"ZUKO| Avatar cosplay | ZUKO COSPLAY || COSTUME |",url:"/src/screens/client/shop/img shop/black kid zuko.png"},
-  {name:"sokka boomerang",price:999.999,descripttion:"ZUKO| Avatar cosplay | ZUKO COSPLAY || COSTUME |",url:"/src/screens/client/shop/img shop/Mai retro.png"}
-];
-function incrementProductCount(productId, productCountSpan, totalCartCountSpan) {
-  const currentCount = parseInt(productCountSpan.textContent);
-  productCountSpan.textContent = currentCount + 1;
-
-  const totalCartCount = parseInt(totalCartCountSpan.textContent);
-  totalCartCountSpan.textContent = totalCartCount + 1;
-}
-let i=1;
-let topsaleProduct = document.querySelector(".topsale-pro-list");
-data.forEach((item)=>{
-  const modalProduct = `<li class="topsale-pro">
-  <a href="">
-    <div class="topsale-pro-cover">
-      <img src="${item.url}" alt="" class="img">
-      <br>
-      <div class="product-onfo">
-        <a href="" class="topsale-name">|${item.name}|</a>
-        <p class="price" style="">999.999</p>
-        <button class="popup-trigger" data-popup-id="myPopup${i}" >More Info</button>
-      </div>
-    </div>
-  </a>
-  </li>
-  <div id="myPopup${i}" class="popup hidden">
-  <div class="popup-content">
-    <div class="popup-image">
-      <img src="${item.url}" alt="katara red dress outfit" srcset="">
-    </div>
-    <div class="text-content">
-      <button id="closePopup" class="close-popup">X</button>
-      <h3 class="h3">Aang red dress outfit</h3>
-      <p>Anime Avatar: The Last Airbender Aang Red Dress Outfit Cosplay Costume</p>
-      <button class="addcart pro1-${i} add-to-cart-button" data-product-id="${i}" onclick="incrementProductCount(${i}, document.querySelector('.span-pro1-${i}'), document.getElementById('totalcart-count'))">add to cart <span class="cart-count span-pro1-${i}" id="cart-count-pro${i}">0</span></button>
-    </div>
-  </div>
-  </div>`;
-  topsaleProduct.innerHTML+=modalProduct;
-  i++;
+iconCart.addEventListener("click", () => {
+  body.classList.toggle("showCart");
 });
-const popupTriggers = document.querySelectorAll('.popup-trigger');
-const closePopups = document.querySelectorAll('.close-popup');
-
-popupTriggers.forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const popupId = trigger.getAttribute('data-popup-id');
-    const popup = document.getElementById(popupId);
-    popup.classList.add('show');
-  });
+closeCart.addEventListener("click", () => {
+  body.classList.toggle("showCart");
 });
 
-closePopups.forEach(closePopup => {
-  closePopup.addEventListener('click', () => {
-    const popup = closePopup.closest('.popup');
-    popup.classList.remove('show');
-  });
+const addDataToHTML = () => {
+  // remove datas default from HTML
+
+  // add new datas
+  if (products.length > 0) {
+    // if has data
+    products.forEach((product) => {
+      let newProduct = document.createElement("div");
+      newProduct.dataset.id = product.id;
+      newProduct.classList.add("item");
+      newProduct.innerHTML = `<img src="${product.image}" alt="">
+                <h2>${product.name}</h2>
+                <div class="price">$${product.price}</div>
+                <button class="addCart"><span><b>Add to cart</b></span></button>`;
+      listProductHTML.appendChild(newProduct);
+    });
+  }
+};
+listProductHTML.addEventListener("click", (event) => {
+  let positionClick = event.target;
+  if (positionClick.classList.contains("addCart")) {
+    let id_product = positionClick.parentElement.dataset.id;
+    addToCart(id_product);
+  }
+});
+const addToCart = (product_id) => {
+  let positionThisProductInCart = cart.findIndex(
+    (value) => value.product_id == product_id
+  );
+  if (cart.length <= 0) {
+    cart = [
+      {
+        product_id: product_id,
+        quantity: 1,
+      },
+    ];
+  } else if (positionThisProductInCart < 0) {
+    cart.push({
+      product_id: product_id,
+      quantity: 1,
+    });
+  } else {
+    cart[positionThisProductInCart].quantity =
+      cart[positionThisProductInCart].quantity + 1;
+  }
+  addCartToHTML();
+  addCartToMemory();
+};
+const addCartToMemory = () => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
+const addCartToHTML = () => {
+  listCartHTML.innerHTML = "";
+  let totalQuantity = 0;
+  if (cart.length > 0) {
+    cart.forEach((item) => {
+      totalQuantity = totalQuantity + item.quantity;
+      let newItem = document.createElement("div");
+      newItem.classList.add("item");
+      newItem.dataset.id = item.product_id;
+
+      let positionProduct = products.findIndex(
+        (value) => value.id == item.product_id
+      );
+      let info = products[positionProduct];
+      listCartHTML.appendChild(newItem);
+      newItem.innerHTML = `
+            <div class="image">
+                    <img src="${info.image}" style="width: 74px;height: 100px">
+                    <a class="delete">Delete</a>
+                </div>
+                <div class="name">
+                ${info.name}
+                </div>
+                <div class="totalPrice">$${info.price * item.quantity}</div>
+                <div class="quantity">
+                    <span class="minus"><</span>
+                    <span>${item.quantity}</span>
+                    <span class="plus">></span>
+                </div>
+            `;
+    });
+  }
+  iconCartSpan.innerText = totalQuantity;
+};
+
+listCartHTML.addEventListener("click", (event) => {
+  let positionClick = event.target;
+  if (
+    positionClick.classList.contains("minus") ||
+    positionClick.classList.contains("plus")
+  ) {
+    let product_id = positionClick.parentElement.parentElement.dataset.id;
+    let type = "minus";
+    if (positionClick.classList.contains("plus")) {
+      type = "plus";
+    }
+    changeQuantityCart(product_id, type);
+  }
+});
+const changeQuantityCart = (product_id, type) => {
+  let positionItemInCart = cart.findIndex(
+    (value) => value.product_id == product_id
+  );
+  if (positionItemInCart >= 0) {
+    let info = cart[positionItemInCart];
+    switch (type) {
+      case "plus":
+        cart[positionItemInCart].quantity =
+          cart[positionItemInCart].quantity + 1;
+        break;
+
+      default:
+        let changeQuantity = cart[positionItemInCart].quantity - 1;
+        if (changeQuantity > 0) {
+          cart[positionItemInCart].quantity = changeQuantity;
+        } else {
+          cart.splice(positionItemInCart, 1);
+        }
+        break;
+    }
+  }
+  addCartToHTML();
+  addCartToMemory();
+};
+
+const initApp = () => {
+  // get data product
+  fetch("shop.json")
+    .then((response) => response.json())
+    .then((data) => {
+      products = data;
+      addDataToHTML();
+
+      // get data cart from memory
+      if (localStorage.getItem("cart")) {
+        cart = JSON.parse(localStorage.getItem("cart"));
+        addCartToHTML();
+      }
+    });
+};
+initApp();
+
+
+document.querySelector(".checkOut").addEventListener("click", () => {
+  let cartElement = document.querySelector(".cartTab");
+  cartElement.style.opacity = 0;
+  setTimeout(() => {
+    cart = [];
+    localStorage.removeItem("cart");
+    addCartToHTML();
+    cartElement.style.opacity = 1;
+  }, 500);
 });
 
-const cartTab = document.getElementById('cart-tab');
-const cartLink = document.querySelector('.header-right .shopping-cart-link');
-const cartClose = document.getElementById('cart-close');
 
-cartLink.addEventListener('click', function(e) {
-  e.preventDefault();
-  cartTab.classList.remove('hidden');
-  cartTab.classList.add('show');
-
-  // Set the right property to 0 with a transition
-  cartTab.style.right = '0';
-  cartTab.style.transition = 'right 0.3s ease-out';
-});
-
-cartClose.addEventListener('click', function() {
-  cartTab.classList.remove('show');
-  cartTab.classList.add('hidden');
-
-  // Reset the right property to its initial value
-  cartTab.style.right = '';
-  cartTab.style.transition = '';
+document.querySelector(".listCart").addEventListener("click", (event) => {
+  let positionClick = event.target;
+  if (positionClick.classList.contains("delete")) {
+    let product_id = positionClick.parentElement.parentElement.dataset.id;
+    let positionItemInCart = cart.findIndex(
+      (value) => value.product_id == product_id
+    );
+    let item = positionClick.parentElement.parentElement;
+    item.style.opacity = 1;
+    setTimeout(() => {
+      cart.splice(positionItemInCart, 1);
+      addCartToHTML();
+      addCartToMemory();
+      item.style.opacity = 1;
+    }, 300);
+  }
 });
 

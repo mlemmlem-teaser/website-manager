@@ -34,23 +34,22 @@
         />
       </video>
       <h2
-        style="
-        "
         class="item"
       >
         <b>Register</b>
       </h2>
-      <form action="#" class="form_login item">
-        Username <br />
-        <input type="text" placeholder="Username" name="username" required />
-        Email <br />
-        <input type="email" placeholder="Email" name="email" required />
-        Password <br />
+      <form action="#" class="form_login">
+        <label for="username" class="item">Username</label> <br class="item" />
+        <input type="text" placeholder="Username" name="username" required class="item" />
+        <label for="email" class="item">Email</label> <br/>
+        <input type="email" placeholder="Email" name="email" required class="item" />
+        <label for="password" class="item">Password</label><br class="item" />
         <input
           type="password"
           placeholder="Password"
           name="password"
           required
+          class="item"
         />
         <div class="BandD item">Birth and Gender</div>
         <div style="display: flex" class="item">
@@ -65,9 +64,9 @@
               class="item"
             />
           </div>
-          <div class="item">
-            <select name="gender" required class="item">
-              <option value="" disabled selected>Choose your gender</option>
+          <div class="item" style="margin-left: 14px;">
+            <select name="gender" class="item" style="height: 49px;">
+              <option value="">Choose your gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>

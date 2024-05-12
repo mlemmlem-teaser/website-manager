@@ -14,210 +14,130 @@
     <link rel="stylesheet" href="/global_style.css" />
     <link rel="stylesheet" href="/variable.css" />
     <!-- <link rel="stylesheet" href="/SPCK(nhóm)/website-manager/shop/shop.html" /> -->
-    <link rel="stylesheet" href="/src/screens/client/Homepage/homepage.css">
-    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="/src/screens/client/Homepage/homepage.css" />
+    <link rel="stylesheet" href="shop.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
 
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-        crossorigin="anonymous"
-      />
-   
-  <body class="show-cart">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
-          <h1 class="logo me-auto"><a href="/src/screens/client/Homepage/homepage.html">Mọt phim</a></h1>
-          <a href="index.html" class="logo me-auto"
-            ><img
-              src="/Assets/Images/logo-modified.png"
-              alt=""
-              class="img-fluid"
-          /></a>
-  
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link scrollto active" href="/src/screens/client/Homepage/homepage.html">Home</a></li>
-              <li><a class="nav-link scrollto" href="/src/screens/client/contact us/about.html">About</a></li>
-              <li><a class="nav-link scrollto" href="#services">Services</a></li>
-              <li>
-                <a class="nav-link scrollto" href="#portfolio">Shop</a>
-              </li>
-              <li><a class="nav-link scrollto" href="#team">Team</a></li>
-              <li class="dropdown">
-                <a href="#"
-                  ><span>More</span> <i class="bi bi-chevron-down"></i
-                ></a>
-                <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li class="dropdown">
-                    <a href="#"
-                      ><span>Deep Drop Down</span>
-                      <i class="bi bi-chevron-right"></i
-                    ></a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link scrollto" href="/src/screens/client/contact us/contact.html">Contact</a></li>
+      <div class="container d-flex align-items-center">
+        <button id="MenuBtn"><i class="fa-solid fa-bars"></i></button>
+        <h1 class="logo">
+          <a href="index.html"
+            ><b>Net<span style="color: red">flex</span></b></a
+          >
+        </h1>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="/src/screens/client/Homepage/homepage.html"
+                >Home</a
+              >
+            </li>
+            <li><a class="nav-link scrollto" href="#about">Top</a></li>
+            <li>
+              <a class="nav-link scrollto" href="#portfolio">Gallery</a>
+            </li>
+            <li><a class="nav-link scrollto" href="#team">Season</a></li>
+            <li class="dropdown">
+              <a href="#">
+                <span>Genres</span> <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul>
+                <li><a href="#">Drop Down 1</a></li>
+                <li class="dropdown">
+                  <a href="#">
+                    <span>Deep Drop Down</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down 2</a></li>
+                <li><a href="#">Drop Down 3</a></li>
+                <li><a href="#">Drop Down 4</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="nav-link scrollto" href="#services">Help</a></li>
+            <li id="user">
+              <div id="user-info-container">
+                <img
+                  id="user-avatar"
+                  src="/Assets/Images/default-user-img.webp"
+                  alt=""
+                />
+                <div class="user-info">mlemmlem</div>
 
-              <li>
                 <a
-                  class="getstarted scrollto"
-                  href="#about"
-                  style="margin-left: 180px"
-                  >Get Started</a>
+                  id="logout-btn"
+                  class
+                  href="/src/screens/client/Auth/Register/register.html"
+                >
+                  <i
+                    class="fa-solid fa-right-from-bracket"
+                    style="font-size: 20px"
+                  ></i>
+                </a>
+              </div>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+      </div>
+    </header>
 
-                  <li><a class="nav-link scrollto" href="#services">
-
-                    <div class="header-right">
-                      <a href="#" class="shopping-cart-link">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="totalcart-count" id="totalcart-count">0</span>
-                      </a>
-                    </div>
-
-                  </a></li>
-              </li>
-            </ul>
-           
-          </div>
-          </nav>
+    <div class="ctn">
+      <header>
+        <div
+          class="title"
+          style="
+            margin-top: 100px;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+              0 0 20px #228dff, 0 0 35px #228dff, 0 0 40px #228dff;
+            color: #b9dfff;
+            color: #fff;
+          "
+        >
+          <b>Product Plaza</b>
+        </div>
+        <div class="icon-cart" style="margin-top: 100px;">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>0</span>
         </div>
       </header>
-
-    <div id="h1">
-        <h1>MỌT PHIM SHOP</h1>
-       
+      <div class="listProduct"></div>
     </div>
-    <ul id="top-product">
-        <li class="top-pro">
-            <a href="#">ANIME</a>
-            <ul class="dropdown">
-                <li><a href="#">Deep Drop Down 1</a></li>
-                <li><a href="#">Deep Drop Down 2</a></li>
-                <li><a href="#">Deep Drop Down 3</a></li>
-                <li><a href="#">Deep Drop Down 4</a></li>
-                <li><a href="#">Deep Drop Down 5</a></li>
-            </ul>
-        </li>
-        <li class="top-pro" >
-            <a href="#">GAME</a>
-            <ul class="dropdown">
-                <li><a href="#">Deep Drop Down 1</a></li>
-                <li><a href="#">Deep Drop Down 2</a></li>
-                <li><a href="#">Deep Drop Down 3</a></li>
-                <li><a href="#">Deep Drop Down 4</a></li>
-                <li><a href="#">Deep Drop Down 5</a></li>
-            </ul>
-        </li>
-
-        <li class="top-pro"> <a href="">NEW ARRIVAL</a> </li>
-        <li class="top-pro">
-            <a href="#">MOVIE</a>
-            <ul class="dropdown">
-                <li><a href="#">Deep Drop Down 1</a></li>
-                <li><a href="#">Deep Drop Down 2</a></li>
-                <li><a href="#">Deep Drop Down 3</a></li>
-                <li><a href="#">Deep Drop Down 4</a></li>
-                <li><a href="#">Deep Drop Down 5</a></li>
-            </ul>
-        </li>
-
-        <li class="top-pro">
-            <a href="#">WIG</a>
-            <ul class="dropdown">
-                <li><a href="#">Deep 1</a></li>
-                <li><a href="#">Deep 2</a></li>
-                <li><a href="#">Deep 3</a></li>
-                <li><a href="#">Deep 4</a></li>
-                <li><a href="#">Deep 5</a></li>
-            </ul>
-        </li>
-
-        <li class="top-pro">
-            <a href="#">SHOP HOME</a>
-            <ul class="dropdown">
-                <li><a href="#">12345678912</a></li>
-                <li><a href="#">Deep 2</a></li>
-                <li><a href="#">Deep 3</a></li>
-                <li><a href="#">Deep 4</a></li>
-                <li><a href="#">Deep 5</a></li>
-            </ul>
-
-            
-        </li>
-    </ul>
-    
-    <div id="product">
-      <h3 id="h1"> TOP SẢN PHẢM</h3>
-      <div class="" id="topsale">
-        <ul id="topsale-product">
-     
-          
-          <div class="topsale-container" >
-            <h3 > AVATAR THE LAST AIR BENDER</h3>
-            <hr color="black">
-            <ul class="topsale-pro-list">
-
-        </div>
-        </ul>
-    
-          <div id="cart-tab" class="">
-            <h2 class="cart-tab-title" style="text-align: center;">Your Cart</h2>
-            <div class="cart-tab-content">
-             
-              <div class="cart-tab-item">
-             
-                <div class="carti">
-                  <div class="cart-i-img">
-                    <img src="/src/screens/client/shop/img shop/kitara cos.webp" alt="" srcset="">
-                  </div>
-                  </div>
-                  <div class="name">
-                  <p>katara</p>
-                 </div>
-                  <div class="price">
-                    <span>200</span>
-                  </div>
-                  <div class="quanity">
-                  
-                      <span class="minus1">-</span>
-                      <span>0</span>
-                      <span class="add1">+</span>
-                  </div>
-
-                  
-                  
-              </div>
-            </div>
-            
-
-            
-              <div id="cart-buttons" style="position: fixed; ">
-                <button class="close-popup" id="cart-close">Close</button>
-                <button class="close-popup" id="cart-checkout">check out</button>
-              </div>
-
-                
-            </div>
-          </div>
+    <div class="cartTab">
+      <h4 style="margin-top: 0; margin-left: 30px">Shopping Cart</h4>
+      <div class="listCart"></div>
+      <div class="totalPrice"></div>
+      <div class="btn">
+        <button class="close">CLOSE</button>
+        <button class="checkOut">CLEAR</button>
+      </div>
+    </div>
   </body>
   <script src="shop.js"></script>
+  <script
+    src="https://kit.fontawesome.com/7a436d10a3.js"
+    crossorigin="anonymous"
+  ></script>
   <!-- <script type="module" src="/src/screens/client/Homepage/homepage.js"></script> -->
 </html>
-
-

@@ -12,9 +12,11 @@ body {
 .container {
   max-width: 400px;
   width: 90%;
-  padding: 7.5em 5em;
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-bottom: 40px;
+  padding-top: 89px;
   background-color: #0b091e;
-  border-radius: 0px 8px 8px 0;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   height: max-content;
 }
