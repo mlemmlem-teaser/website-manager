@@ -90,9 +90,9 @@ const addCartToHTML = () => {
                 </div>
                 <div class="totalPrice">$${info.price * item.quantity}</div>
                 <div class="quantity">
-                    <span class="minus"><</span>
+                    <span class="minus" style="background: none;color:#fff">◀</span>
                     <span>${item.quantity}</span>
-                    <span class="plus">></span>
+                    <span class="plus" style="background: none;color:#fff">▶</span>
                 </div>
             `;
     });
@@ -157,7 +157,6 @@ const initApp = () => {
 };
 initApp();
 
-
 document.querySelector(".checkOut").addEventListener("click", () => {
   let cartElement = document.querySelector(".cartTab");
   cartElement.style.opacity = 0;
@@ -168,7 +167,6 @@ document.querySelector(".checkOut").addEventListener("click", () => {
     cartElement.style.opacity = 1;
   }, 500);
 });
-
 
 document.querySelector(".listCart").addEventListener("click", (event) => {
   let positionClick = event.target;
@@ -188,3 +186,5 @@ document.querySelector(".listCart").addEventListener("click", (event) => {
   }
 });
 
+
+document.querySelector(".listCart").style.overflowY = "scroll";

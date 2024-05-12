@@ -10,15 +10,13 @@ body {
   overflow: hidden;
 }
 .container {
-  max-width: 400px;
+  max-width: 500px;
   width: 90%;
-  padding-left: 5em;
-  padding-right: 5em;
-  padding-bottom: 40px;
-  padding-top: 89px;
+  padding-left: 7%;
+  padding-right: 7%;
   background-color: #0b091e;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  height: max-content;
+  height: 100vh;
 }
 button[type="submit"] {
   margin-top: 1.5em;

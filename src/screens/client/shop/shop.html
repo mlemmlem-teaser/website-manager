@@ -117,7 +117,7 @@
         >
           <b>Product Plaza</b>
         </div>
-        <div class="icon-cart" style="margin-top: 100px;">
+        <div class="icon-cart" style="margin-top: 100px">
           <i class="fa-solid fa-cart-shopping"></i>
           <span>0</span>
         </div>
@@ -127,7 +127,10 @@
     <div class="cartTab">
       <h4 style="margin-top: 0; margin-left: 30px">Shopping Cart</h4>
       <div class="listCart"></div>
-      <div class="totalPrice"></div>
+      <div class="cart-total" style="text-align: center;">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price">$0</span>
+      </div>
       <div class="btn">
         <button class="close">CLOSE</button>
         <button class="checkOut">CLEAR</button>
@@ -135,6 +138,7 @@
     </div>
   </body>
   <script src="shop.js"></script>
+  <script src="/navbar.js"></script>
   <script
     src="https://kit.fontawesome.com/7a436d10a3.js"
     crossorigin="anonymous"

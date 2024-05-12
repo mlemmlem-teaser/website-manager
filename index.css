@@ -1,4 +1,3 @@
-
 #hero {
   width: 100%;
   height: 80vh;
@@ -7,6 +6,92 @@
   background: -o-linear-gradient(45deg, #00dbde, #1d7bae);
   background: -moz-linear-gradient(45deg, #00dbde, #0f4a91);
   background: linear-gradient(45deg, #00dbde, #0036ca);
+}
+
+.text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid rgb(0, 0, 0);
+  animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation-fill-mode: forwards;
+}
+
+.description {
+  display: inline-block;
+  position: relative;
+  opacity: 0; /* Bắt đầu với độ mờ là 0 */
+  animation: wave 1s infinite linear, fadeIn 3s forwards;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Lùi lên */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Kết thúc với độ mờ là 1 */
+  }
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background: #00bfff;
+  background: -webkit-linear-gradient(45deg, #00dbde, #008e98);
+  background: -o-linear-gradient(45deg, #1900d6, #1d7bae);
+  background: -moz-linear-gradient(45deg, #00fbff, #00d9ff);
+  background: linear-gradient(45deg, #007bff, #0036ca);
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.5); /* Bắt đầu với kích thước thu gọn */
+  opacity: 0; /* Bắt đầu với độ mờ là 0 */
+  animation: zoomIn 2s forwards, fadeIn 3s forwards; /* Sử dụng hiệu ứng phóng vào và hiệu ứng xuất hiện */
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 113%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(0, 0, 0);
+  }
 }
 
 #hero .container {
@@ -137,4 +222,17 @@ section {
 }
 #adminPath:hover {
   color: #00dbde;
+}
+
+.hero-img {
+  display: block;
+  height: auto; /* Đảm bảo tỷ lệ khung hình được duy trì */
+  opacity: 0; /* Bắt đầu với độ mờ là 0 */
+  animation: fadeIn 3s forwards; /* Sử dụng hiệu ứng xuất hiện */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Kết thúc với độ mờ là 1 */
+  }
 }

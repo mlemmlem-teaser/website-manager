@@ -133,16 +133,17 @@ header {
 
 /* cart */
 .cartTab {
-  width: 400px;
+  width: 500px;
   background-color: #353432;
   color: #eee;
   position: fixed;
   top: 0;
-  right: -400px;
+  right: -500px;
   bottom: 0;
   display: grid;
   grid-template-rows: 70px 1fr 70px;
   transition: 0.5s;
+  margin-top: 80px;
 }
 body.showCart .cartTab {
   right: 0;
@@ -191,6 +192,7 @@ body.showCart .ctn {
 }
 .listCart .item img {
   width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 .listCart .item {
   display: grid;
@@ -240,6 +242,10 @@ body.showCart .ctn {
   .listProduct {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+a {
+  border-radius: 0 0 10px 10px;
 }
 
 .cartTab button {
