@@ -136,35 +136,39 @@
               <th>Name</th>
               <th>Price</th>
               <th>Description</th>
+              <th>On sale</th>
               <th>In stock</th>
               <th>Total</th>
-            </tr>
-          </thead>
-          <tbody id="ProductInformation"></tbody>
-        </table>
-      </div>
-    </div>
-    <button id="small-button">+</button>
-    <div id="addProduct">
-      <form id="productForm" class="productForm">
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" /><br />
+          </tr>
+      </thead>
+      <tbody id="ProductInformation"> 
+        
+      </tbody>
+  </table>
+  </div>
+  </div>
+  <button id="small-button">+</button>
+  <div id="addProduct">
+    <form id="productForm" class="productForm">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      
+      <label for="price">Price:</label><br>
+      <input type="text" id="price" name="price"><br>
+      
+      <label for="description">Description:</label><br>
+      <textarea id="description" name="description" rows="3" cols="50"></textarea><br><br>
+      <button id="cancelBtn">Cancel</button>
+      <button type="submit" id="saveBtn">Save</button>
+  </form>
+  </div>
 
-        <label for="price">Price:</label><br />
-        <input type="text" id="price" name="price" /><br />
 
-        <label for="description">Description:</label><br />
-        <textarea
-          id="description"
-          name="description"
-          rows="3"
-          cols="50"
-        ></textarea
-        ><br /><br />
-        <button id="cancelBtn">Cancel</button>
-        <button type="submit" id="saveBtn">Save</button>
-      </form>
-    </div>
+
+
+
+
+
 
     <script type="module" src="/navbar.js"></script>
     <script
