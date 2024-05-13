@@ -226,3 +226,7 @@ const index = button.dataset.index;
           }
         }
         )
+
+import { dbRealTime } from "config-firebase.js";
+import { dbFireStore, Auth } from "config-firebase.js";
+import { collection, getDocs, getDoc, doc,updateDoc,setDoc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";

@@ -100,17 +100,17 @@ function getClassByRate(vote) {
     return "red";
   }
 }
-// FOR SEARCH SUBMIT
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const searchTerm = search.value;
-  if (searchTerm && searchTerm !== "") {
-    getMovies(SEARCH_API + searchTerm);
-    search.value = "";
-  } else {
-    window.location.reload();
-  }
-});
+// // FOR SEARCH SUBMIT
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const searchTerm = search.value;
+//   if (searchTerm && searchTerm !== "") {
+//     getMovies(SEARCH_API + searchTerm);
+//     search.value = "";
+//   } else {
+//     window.location.reload();
+//   }
+// });
 $(document).ready(function () {
   var lastScrollTop = 0;
   var navbar = $("#header");
