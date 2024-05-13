@@ -81,6 +81,51 @@ header {
   letter-spacing: 7px;
   font-size: small;
 }
+.icon-cart span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  top: 60%;
+  right: -10px;
+  font-size: 15px;
+}
+
+.listProduct .item img {
+  transition: all 0.5s;
+}
+
+.listProduct .item:hover img {
+  transform: scale(1.1);
+}
+
+@keyframes slideDownAnimation {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.slide-down-animation {
+  animation: slideDownAnimation 3s ease-in-out forwards;
+}
+
+
+
+.advert {
+  transition: transform 0.5s;
+}
+
+.advert:hover {
+  transform: scale(1.1);
+}
+
 .listProduct .item button {
   line-height: 40px;
   font-size: 10px;

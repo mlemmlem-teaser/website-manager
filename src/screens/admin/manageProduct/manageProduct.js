@@ -97,3 +97,4 @@ saveBtn.addEventListener("click", async (e) => {
   productForm.style.display = "none";
   resetTable();
 });
+

@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 #ProductManagerContainer {
-  height: 1000px;
   width: 100%;
   right: 0;
   display: flex;
@@ -10,86 +9,83 @@
 }
 
 #Product {
-    padding: 0.2%;
-    width: 100%;
-    background-color: rgb(234, 234, 234);
-    height: fit-content;
-    min-height: 800px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 2px rgb(0, 0, 0,0.8) groove;
-  }
-  thead {
-    border: none;
-    
-  }
-  th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid black;
-    max-height: 100px;
-    
-  }
-  th {
-    background-color: #f5f8fd;
-    text-align: left;
-    color: #062c6a;
-    font-weight: 100;
-    border-left: 1px rgb(0, 0, 0,0.2) solid;
-    border-right: 1px rgb(0, 0, 0,0.2) solid;
-  }
-  td {
-    font-weight: 50;
-    font-size: 12px;
-    text-wrap: nowrap;
-    background-color: #fff;
-    padding-left: 5%;
-  }
-  .textcenter {
-    text-align: center;
-  }
-  .padding {
-    padding: 0 2.5%;
-  }
-  thead tr th {
-    font-size: 35px;
-    font-weight: 500;
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    color: #333;
-  }
-  .number {
-    color: rgb(18, 158, 158);
-    text-shadow: 1px 1px rgb(255, 0, 0,0.2);
-  }
-  #ProductInformation {
-    font-size: 20px;
-    font-weight: 100;
-
-  }
-  #small-button {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 99px;
-    background-color: rgb(18, 158, 158);;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
+  padding: 0.2%;
+  width: 100%;
+  background-color: rgb(234, 234, 234);
+  height: fit-content;
+  min-height: 800px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px rgb(0, 0, 0, 0.8) groove;
+}
+thead {
+  border: none;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid black;
+  max-height: 100px;
+}
+th {
+  background-color: #f5f8fd;
+  text-align: left;
+  color: #062c6a;
+  font-weight: 100;
+  border-left: 1px #000 solid;
+  border-right: 1px #000 solid;
+}
+td {
+  font-weight: 50;
+  font-size: 12px;
+  text-wrap: nowrap;
+  background-color: #fff;
+  padding-left: 5%;
+}
+.textcenter {
+  text-align: center;
+}
+.padding {
+  padding: 0 2.5%;
+}
+thead tr th {
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+.number {
+  color: rgb(0, 0, 0);
+}
+#ProductInformation {
+  font-size: 20px;
+  font-weight: 100;
+}
+#small-button {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 99px;
+  background-color: rgb(0, 123, 130);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
 #productForm {
   position: fixed;
   top: 50%;
@@ -101,7 +97,7 @@
   padding: 10px 20px;
   margin: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 30px 800px rgb(0, 0, 0,0.4);
+  box-shadow: 0 0 30px 800px rgb(0, 0, 0, 0.4);
   font-weight: 100;
   font-size: 20px;
   padding: 20px;
@@ -110,29 +106,30 @@
 }
 
 .productForm label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-.productForm input[type="text"], .productForm textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.productForm input[type="text"],
+.productForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .productForm input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .productForm input[type="submit"]:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 .switch {
   position: relative;
@@ -141,7 +138,7 @@
   height: 34px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -155,8 +152,8 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -167,16 +164,16 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: rgb(18, 158, 158);;
+  background-color: rgb(0, 0, 0);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px rgb(18, 158, 158);;
+  box-shadow: 0 0 1px rgb(18, 158, 158);
 }
 
 input:checked + .slider:before {

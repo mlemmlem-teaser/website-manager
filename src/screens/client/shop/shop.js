@@ -95,9 +95,15 @@ const addCartToHTML = () => {
                     <span class="plus" style="background: none;color:#fff">▶</span>
                 </div>
             `;
+      totalPrice = info.price * item.quantity;
     });
   }
   iconCartSpan.innerText = totalQuantity;
+  let totalPriceAll = 0;
+  listCartHTML.querySelectorAll(".totalPrice").forEach((element) => {
+    totalPriceAll = totalPriceAll + parseInt(element.innerText.slice(1));
+  });
+  document.querySelector(".total-price").innerText = `${totalPriceAll}`;
 };
 
 listCartHTML.addEventListener("click", (event) => {
@@ -186,5 +192,9 @@ document.querySelector(".listCart").addEventListener("click", (event) => {
   }
 });
 
-
 document.querySelector(".listCart").style.overflowY = "scroll";
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  let elementToSlideDown = document.querySelector(".advert");
+  elementToSlideDown.classList.add("slide-down-animation");
+});

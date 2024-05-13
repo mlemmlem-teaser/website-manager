@@ -1,40 +1,33 @@
-
 #UserManagerContainer {
-
-
-
-    height: 1000px;
-    width: 100%;
-    right: 0;
-    display: flex;
-    flex-wrap: wrap;
-    
-  }
-  #SignUpAttempt {
-    max-width: 50%;
-    border: rgb(200, 200, 200) 2px solid;
-    background-color: rgb(234, 234, 234);
-    border-radius: 8px;
-    padding: 1em;
-    height: 100%;
-    max-height: 350px;
-  }
-  #AgeRatio,
-  #GenderCompare {
-    width: 20%;
-    height: 100%;
-    max-height: 350px;
-    border: rgb(200, 200, 200) 2px solid;
-    background-color: rgb(234, 234, 234);
-    margin-left: 1%;
-    border-radius: 8px;
-  }
+  width: 100%;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+#SignUpAttempt {
+  max-width: 50%;
+  border: rgb(200, 200, 200) 2px solid;
+  background-color: rgb(234, 234, 234);
+  border-radius: 8px;
+  padding: 1em;
+  height: 100%;
+  max-height: 350px;
+}
+#AgeRatio,
+#GenderCompare {
+  width: 20%;
+  height: 100%;
+  max-height: 350px;
+  border: rgb(200, 200, 200) 2px solid;
+  background-color: rgb(234, 234, 234);
+  margin-left: 1%;
+  border-radius: 8px;
+}
 #AgeRatio ul li {
   width: 100%;
   font-size: 20px;
 }
 #Authentication {
-
   width: 100%;
   background-color: rgb(234, 234, 234);
   height: fit-content;
@@ -49,12 +42,12 @@ table {
 thead {
   border: none;
 }
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid black;
   max-height: 100px;
-  
 }
 th {
   background-color: #f5f8fd;
@@ -75,67 +68,65 @@ td {
   padding: 0 2.5%;
 }
 
+/* PieChart */
+.pieContainer {
+  height: 100px;
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.pie {
+  transition: all 1s;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+}
 
+.hold {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
 
-  /* PieChart */
-  .pieContainer {
-    height: 100px;
-    position: relative;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-  }
-  .pie {
-    transition: all 1s;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    clip: rect(0px, 50px, 100px, 0px);
-  }
-  
-  .hold {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    clip: rect(0px, 100px, 100px, 50px);
-  }
-  
-  #pieSlice1 .pie {
-    background-color: #1b458b;
-    transform:rotate(120deg);
-  }
-  
-  #pieSlice2 {
-    transform: rotate(120deg);
-  }
-  
-  #pieSlice2 .pie {
-    background-color: #0a0;
-    transform: rotate(120deg);
-  }
-  
-  #pieSlice3 {
-    transform: rotate(240deg);
-  }
-  
-  #pieSlice3 .pie {
-    background-color: #ff3300;
-    transform: rotate(120deg);
-  }
-  .authSetting,.authDelete {
-    margin: 0 2%;
-    color: #444444;
-    font-size: 20px;
-  }
-  .authSetting:hover {
-    color: green;
-  }
-  .authDelete:hover {
-    color: lime;
-  }
+#pieSlice1 .pie {
+  background-color: #1b458b;
+  transform: rotate(120deg);
+}
 
+#pieSlice2 {
+  transform: rotate(120deg);
+}
+
+#pieSlice2 .pie {
+  background-color: #0a0;
+  transform: rotate(120deg);
+}
+
+#pieSlice3 {
+  transform: rotate(240deg);
+}
+
+#pieSlice3 .pie {
+  background-color: #ff3300;
+  transform: rotate(120deg);
+}
+.authSetting,
+.authDelete {
+  margin: 0 2%;
+  color: #444444;
+  font-size: 20px;
+}
+.authSetting:hover {
+  color: green;
+}
+.authDelete:hover {
+  color: lime;
+}
 
 /* form */
 body {
@@ -154,7 +145,7 @@ body {
   padding: 10px 20px;
   margin: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 30px 800px rgb(0, 0, 0,0.4);
+  box-shadow: 0 0 30px 800px rgb(0, 0, 0, 0.4);
   display: none;
   font-weight: 100;
   font-size: 20px;
@@ -162,21 +153,21 @@ body {
   line-height: 40px;
 }
 #small-button {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 99px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 99px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
