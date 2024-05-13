@@ -190,3 +190,34 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+<<<<<<< HEAD
+=======
+/* form sửa sp */
+.product-form {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+}
+
+.product-image img {
+  max-width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.product-details {
+  flex-grow: 1;
+}
+
+.cancel-button,
+.save-button,
+.delete-button {
+  background-color: #0074D9;
+  color: #FFF;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+>>>>>>> 864f560090ffd4b9c2bf1c9260510a1a12dc2956

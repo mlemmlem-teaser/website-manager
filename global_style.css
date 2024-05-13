@@ -22,7 +22,7 @@ h5,
 h6 {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-bold);
-  margin: var(--spacing-medium) 0 var(--spacing-small);
+
 }
 
 h1 {
@@ -49,8 +49,6 @@ h6 {
   font-size: var(--font-size-small);
 }
 
-p {
-}
 
 a {
   text-decoration: none;
@@ -117,7 +115,9 @@ h5,
 h6 {
   font-family: "Jost", sans-serif;
 }
-
+nav {
+  flex-direction: row;
+}
 #preloader {
   position: fixed;
   top: 0;
@@ -404,7 +404,9 @@ h6 {
 }
 #user {
   display: flex;
-  margin-left: 200px;
+  margin-left: 120%;
+  text-align: right;
+  
 }
 #user-info-container {
   border: 1px solid #47b2e4;
