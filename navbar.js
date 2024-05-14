@@ -13,7 +13,6 @@ const token = localStorage.getItem("token");
 const showMdl = document.querySelector("#showModal");
 const location = window.location.href;
 const logoutbtn = document.querySelector("#logout-btn");
-console.log(token);
 if (!token&&location.includes("/src/screens/client/")||token==null) {
   window.location.href = "/src/screens/client/Auth/Login/login.html";
 }

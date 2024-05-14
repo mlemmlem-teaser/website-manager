@@ -38,9 +38,11 @@ async function getAllProduct() {
 }
 let ProductInformation = document.getElementById("ProductInformation");
 function resetTable() {
+  ProductInformation.innerHTML="";
 getAllProduct().then((items) => {
   items.forEach((item) => {
-    console.log(item);
+    const imgurl = item.imageurl_?item.imageurl_:"/Assets/Images/Bảo.jpg";
+    console.log(imgurl);
     const modal = `
   <tr>
   <th class="padding">${item.nameProduct}</th>
@@ -51,10 +53,10 @@ getAllProduct().then((items) => {
   <span class="slider round"></span>
   </label>
   </th>
-  <th class="number textcenter">999</th>
-  <th class="number padding">${item.price * 999} $</th>
+  <th class="imgKeeper"><img src="${imgurl}" alt="" width="50px"><button class="editBtn">edit</button></th>
+  <th class="padding textcenter"><i class="fa-solid fa-pen-to-square"></i></th>
 </tr>
-`;
+`;  
     ProductInformation.innerHTML += modal;
   });
 });
@@ -76,10 +78,16 @@ function openForm() {
 addProduct.addEventListener("click", () => {
   openForm();
 });
+
 const cancelBtn = document.getElementById("cancelBtn");
 cancelBtn.addEventListener("click", (e) => {
   e.preventDefault();
   productForm.style.display = "none";
+});
+const imageurl = document.getElementById("imageurl");
+const ProductPreview= document.getElementById("ProductPreview");
+imageurl.addEventListener("change", ()=>{
+  ProductPreview.src=imageurl.value;
 });
 const saveBtn = document.getElementById("saveBtn");
 saveBtn.addEventListener("click", async (e) => {
@@ -88,11 +96,17 @@ saveBtn.addEventListener("click", async (e) => {
   const name = document.getElementById("name");
   const price = document.getElementById("price");
   const description = document.getElementById("description");
+  const imageurl = document.getElementById("imageurl");
+  const ProductPreview= document.getElementById("ProductPreview");
+  imageurl.addEventListener("change", ()=>{
+    ProductPreview.src=imageurl.value;
+  })
   await set(ref(dbRealTime, "products/" + generateUUID()), {
     id: generateUUID(),
     nameProduct: name.value,
     price: price.value,
     description: description.value,
+    imageurl_:imageurl.value,
   });
   productForm.style.display = "none";
   resetTable();
