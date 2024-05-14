@@ -14,6 +14,26 @@ body {
   line-height: 1.6;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #006eff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #005acd;
+}
+
 h1,
 h2,
 h3,
@@ -22,7 +42,6 @@ h5,
 h6 {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-bold);
-
 }
 
 h1 {
@@ -48,7 +67,6 @@ h5 {
 h6 {
   font-size: var(--font-size-small);
 }
-
 
 a {
   text-decoration: none;
@@ -406,7 +424,6 @@ nav {
   display: flex;
   margin-left: 120%;
   text-align: right;
-  
 }
 #user-info-container {
   border: 1px solid #47b2e4;
@@ -494,7 +511,7 @@ nav {
   border-radius: 20px;
   font-size: 20px;
   width: 300px;
-  color: rgb(0, 0, 0,0.8);
+  color: rgb(0, 0, 0, 0.8);
   background-color: #ffffffcc;
 }
 
@@ -516,7 +533,7 @@ nav {
 
 .search-button {
   background-color: #ffffffcc;
-  border: 2px  #007bff solid;
+  border: 2px #007bff solid;
   border-radius: 99px;
   font-size: 20px;
   font-weight: 100;
@@ -545,7 +562,11 @@ nav {
   font-size: 20px;
 }
 .Item ul li:hover {
-  background-image: linear-gradient(to bottom,rgb(255, 255, 255,0.001),#31ae91);
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255, 0.001),
+    #31ae91
+  );
   border-bottom: 2px #47b2e4 solid;
 }
 .Item a {
@@ -559,16 +580,18 @@ nav {
 
 .Item a:hover {
   color: white;
-
 }
 #alreadyHere {
-  background-image: linear-gradient(to bottom,rgb(255, 255, 255,0.001),rgb(128, 240, 234));
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255, 0.001),
+    rgb(128, 240, 234)
+  );
 }
 
-
-
 /* Auth */
-#userForm,#adminForm {
+#userForm,
+#adminForm {
   width: 50vw;
   margin: 20px 25vw;
   padding: 20px;
@@ -578,21 +601,19 @@ nav {
   position: fixed;
   display: none;
   font-size: 20px;
-  box-shadow: 0 0 30px 600px rgb(0, 0, 0,0.4);
+  box-shadow: 0 0 30px 600px rgb(0, 0, 0, 0.4);
   height: 500px;
 }
 #userForm div {
   margin-bottom: 10px;
-
 }
 #adminForm div {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 label {
   display: inline-block;
   width: 120px;
-
 }
 
 #username,
@@ -608,14 +629,18 @@ label {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
-
 }
 #avatarPreview {
   max-width: 100px;
   max-height: 100px;
   margin-bottom: 10px;
 }
-#cancelBtn,#saveBtn,#cancelBtn2,#saveBtn2,#adminsaveBtn,#cancelBtn3 {
+#cancelBtn,
+#saveBtn,
+#cancelBtn2,
+#saveBtn2,
+#adminsaveBtn,
+#cancelBtn3 {
   padding: 6px 14px;
   margin-right: 10px;
   border: none;
@@ -624,10 +649,10 @@ label {
   color: #fff;
   cursor: pointer;
 }
-#cancelBtn3:hover{
+#cancelBtn3:hover {
   background-color: #0056b3;
 }
-#cancelBtn3:disabled{
+#cancelBtn3:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
@@ -666,10 +691,10 @@ label {
   background-color: #ccc;
   cursor: not-allowed;
 }
-#SettingModal,#showModal {
+#SettingModal,
+#showModal {
   position: fixed;
   top: 10vh;
   max-height: 80vh;
   width: 100%;
-
 }

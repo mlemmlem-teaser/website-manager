@@ -8,6 +8,7 @@ body {
   text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 15px #66ccff;
   color: #b9dfff;
   color: #fff;
+  margin-top: 13%;
 }
 
 .delete button {
@@ -116,8 +117,6 @@ header {
   animation: slideDownAnimation 3s ease-in-out forwards;
 }
 
-
-
 .advert {
   transition: transform 0.5s;
 }
@@ -127,53 +126,53 @@ header {
 }
 
 .listProduct .item button {
-  line-height: 40px;
-  font-size: 10px;
-  font-family: sans-serif;
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 5px;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 3px;
   text-decoration: none;
-  color: #333;
-  border: 2px solid #636363;
-  letter-spacing: 2px;
-  text-align: center;
-  position: relative;
-  transition: all 0.35s;
-  border-radius: 3px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+.listProduct .item button:active,
+.listProduct .item button:hover {
+  outline: 0;
 }
 
 .listProduct .item button span {
-  position: relative;
-  z-index: 2;
-}
-
-.listProduct .item button:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(45deg, #000000, #140014);
-  background: -o-linear-gradient(45deg, #000000, #16002d);
-  background: -moz-linear-gradient(45deg, #000000, #0b0034);
-  background: linear-gradient(45deg, #000000, #000d2c);
-  transition: all 0.35s;
-  border-radius: 30px;
-}
-
-.listProduct .item button:hover {
-  color: #fff;
-  border-radius: 30px;
-}
-
-.listProduct .item button:hover:after {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
   width: 100%;
-  border-radius: 30px;
+  height: 100%;
+  transition: 300ms;
 }
 
-.listProduct .item button {
-  padding: 2px 40px;
-  font-size: 8px;
+.listProduct .item button:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .listProduct .item button {
+    font-size: 24px;
+    min-width: 196px;
+  }
 }
 
 /* cart */
@@ -300,4 +299,18 @@ a {
 .cartTab button:hover {
   transform: translateY(2px);
   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.item {
+  height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+     transition: transform 0.5s;
+}
+
+.item:hover {
+  transform: scale(1.1);
 }

@@ -3,6 +3,7 @@
   right: 0;
   display: flex;
   flex-wrap: wrap;
+  background-color: rgb(161, 161, 161);
 }
 #SignUpAttempt {
   max-width: 50%;
@@ -48,6 +49,7 @@ td {
   text-align: left;
   border-bottom: 1px solid black;
   max-height: 100px;
+  border: 1px #000 solid;
 }
 th {
   background-color: #f5f8fd;
