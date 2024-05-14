@@ -5,13 +5,12 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <script src="/main.js"></script>
     <link
       rel="shortcut icon"
       href="/Assets/Icons/favicon.ico"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="{% static 'about.css' %}" />
+    <link rel="stylesheet" href="about.css" />
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -19,7 +18,6 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="team.css" />
 
     <link
       rel="stylesheet"
@@ -52,7 +50,7 @@
       <div class="container d-flex align-items-center">
         <button id="MenuBtn"><i class="fa-solid fa-bars"></i></button>
         <h1 class="logo">
-          <a href="index.html"
+          <a href="/index.html"
             ><b>Net<span style="color: red">flex</span></b></a
           >
         </h1>
@@ -65,63 +63,42 @@
                 >Home</a
               >
             </li>
-            <li><a class="nav-link scrollto" href="#about">Top</a></li>
-            <li>
-              <a class="nav-link scrollto" href="#portfolio">Gallery</a>
-            </li>
-            <li><a class="nav-link scrollto" href="#team">Season</a></li>
-            <li class="dropdown">
-              <a href="#">
-                <span>Genres</span> <i class="bi bi-chevron-down"></i>
-              </a>
-              <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown">
-                  <a href="#">
-                    <span>Deep Drop Down</span>
-                    <i class="bi bi-chevron-right"></i>
-                  </a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-              </ul>
-            </li>
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            <li><a class="nav-link scrollto" href="#services">Help</a></li>
+            <li class="nav_contact"><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li class="nav_about"><a class="nav-link scrollto" href="#services">About Us</a></li>
             <li id="user">
-              <div id="user-info-container">
-                <img
-                  id="user-avatar"
-                  src="/Assets/Images/default-user-img.webp"
-                  alt=""
-                />
-                <div class="user-info">mlemmlem</div>
+            <div id="user-info-container">
+              <img id="user-avatar" src="/Assets/Images/default-user-img.webp" alt="">
+              <div class="user-info">
+                mlemmlem
+              </div> 
 
-                <a
-                  id="logout-btn"
-                  class
-                  href="/src/screens/client/Auth/Register/register.html"
-                >
-                  <i
-                    class="fa-solid fa-right-from-bracket"
-                    style="font-size: 20px"
-                  ></i>
-                </a>
-              </div>
+              <a id="logout-btn" class="logout" href="/src/screens/client/Auth/Login/login.html">
+                <i class="fa-solid fa-right-from-bracket" style="font-size: 20px;"></i>
+              </a>
+            </div>
             </li>
+            
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
+
+          
         </nav>
+        
       </div>
     </header>
+    <div id="sidebar">
+      <div class="Item">
+        <ul>
+          <h5 style="color: white;
+          text-shadow: black 0.1em 0.1em 0.2em;margin-bottom: 5%;text-indent: 10px;padding: 3%;text-align: center;"> ★ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab hic sunt, aliquam <br> ✧──────✧</h5>
+          <li  id="alreadyHere"><i class="fa-solid fa-house" style="color: lightcoral;"></i> <a href="../Homepage/homepage.html">Home</a></li>
+          <li><i class="fa-solid fa-shop" style="color: yellow;"></i> <a href="../shop/shop.html">Shop</a></li>
+          <li><i class="fa-solid fa-phone" style="color: lightblue;"></i> <a href="../contactUs/contact.html">Help</a></li>
+          <li><i class="fa-solid fa-right-from-bracket" style="color: lightgreen;"> </i> <a href="../Auth/Login/login.html">Logout</a></li>
+  
+        </ul>
+      </div>
+    </div>
     <div class="main">
       
     </div>
@@ -209,5 +186,8 @@
         </div>
       </div>
     </section>
+    <script src="about.js"></script>
+    <script type="module" src="/navbar.js"></script>
+    <script type="module" src="/navigation.js"></script>
   </body>
 </html>

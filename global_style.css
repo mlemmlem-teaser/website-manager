@@ -481,7 +481,7 @@ nav {
   padding: 1%;
   transition: transform 0.2s ease-in-out, display 0.2s ease-in-out;
   overflow: hidden;
-  z-index: 2000;
+  z-index: 9999;
   bottom: 0;
   font-size: 20px;
   font-weight: 100;
@@ -541,6 +541,8 @@ nav {
   padding-left: 3%;
   margin-top: 1%;
   transition: background-image 1s;
+  font-weight: 300;
+  font-size: 20px;
 }
 .Item ul li:hover {
   background-image: linear-gradient(to bottom,rgb(255, 255, 255,0.001),#31ae91);

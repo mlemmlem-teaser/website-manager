@@ -11,17 +11,25 @@ const user_info = document.querySelector(".user-info");
 const user_avatar = document.querySelector("#user-avatar");
 const token = localStorage.getItem("token");
 const showMdl = document.querySelector("#showModal");
-
-if (!token) {
+const location = window.location.href;
+const logoutbtn = document.querySelector("#logout-btn");
+console.log(token);
+if (!token&&location.includes("/src/screens/client/")||token==null) {
   window.location.href = "/src/screens/client/Auth/Login/login.html";
 }
+
 const logout = () => {
   localStorage.removeItem("token");
   window.location.href = "/src/screens/client/Auth/Login/login.html";
 };
+logoutbtn.addEventListener("click", ()=>{
+  logout();
+})
 function resetState() {
+
   onAuthStateChanged(Auth, async (user) => {
     if (user) {
+      console.log(user);
       const uid = user.uid;
       console.log(uid);
       const docRef = doc(dbFireStore, "users", uid);
@@ -135,6 +143,10 @@ Avatar
         const data = docSnap.data();
         console.log(data);
         user_info.innerText = data.username;
+        const _status_ = data.status.role;
+        if (_status_=="user"&&location.includes("/src/screens/admin/")) {
+          window.location.href="/src/screens/client/Auth/Login/login.html";
+        }
         user_avatar.src =
           data.avatar != undefined
             ? data.avatar
@@ -147,6 +159,10 @@ Avatar
         const data = docSnap2.data();
         console.log(data);
         user_info.innerText = data.username;
+        const _status_ = data.status.role;
+        if (_status_=="user"&&location.includes("/src/screens/admin/")) {
+          window.location.href="/src/screens/client/Auth/Login/login.html";
+        }
         user_avatar.src =
           data.avatar != undefined
             ? data.avatar

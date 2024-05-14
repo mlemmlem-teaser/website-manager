@@ -132,7 +132,7 @@
   opacity: 0.7;
 }
 
-#header {
+/* #header {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
@@ -440,4 +440,4 @@
 
 .Item a:hover {
   color: white;
-}
+} */

@@ -17,7 +17,7 @@ const loginUser = async (e) => {
       password
     );
     const { user } = userCredential;
-    localStorage.setItem("token", user.accessToken);
+    // localStorage.setItem("token", user.accessToken);
     onAuthStateChanged(Auth, async (user_) => {
         if (user_) {
           const uid = user_.uid;
@@ -27,7 +27,7 @@ const loginUser = async (e) => {
           if (docSnap.exists()) {
             const data = docSnap.data();
             console.log(data);
-            if (user.accessToken&&data.status.role=="admin") {
+            if (data.status.role=="admin") {
                 window.location.href = "../Dashboard/dashboard.html";
               } else {
                 window.location.href="../../client/Homepage/homepage.html";

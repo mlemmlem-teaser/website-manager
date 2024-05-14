@@ -8,16 +8,36 @@ const logout = document.querySelector(".logout");
 const login = document.querySelector(".login")
 //navigation client
 navAbout.addEventListener("click",()=>{
-    window.location.href=`${firstlink}aboutUs/about.html`;
+    try {
+        window.location.href=`${firstlink}aboutUs/about.html`;
+    } catch (error) {
+        
+    }
+
 })
 navContact.addEventListener("click", ()=>{
-    window.location.href=`${firstlink}contactUs/contact.html`;
+    try {
+        window.location.href=`${firstlink}contactUs/contact.html`;
+    } catch (error) {
+        
+    }
+
 })
 getStarted.addEventListener("click", ()=>{
-    window.location.href=`${firstlink}Homepage/homepage.html`;
+    try {
+        window.location.href=`${firstlink}Homepage/homepage.html`;
+    } catch (error) {
+        
+    }
+
 })
 logout.addEventListener("click", ()=>{
-    window.location.href=`${firstlink}Auth/Login/login.html`;
+    try {
+        window.location.href=`${firstlink}Auth/Login/login.html`;
+    } catch (error) {
+        
+    }
+
 })
 
 
