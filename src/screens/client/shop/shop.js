@@ -103,7 +103,7 @@ const addCartToHTML = () => {
   listCartHTML.querySelectorAll(".totalPrice").forEach((element) => {
     totalPriceAll = totalPriceAll + parseInt(element.innerText.slice(1));
   });
-  document.querySelector(".total-price").innerText = `${totalPriceAll}`;
+  document.querySelector(".total-price").innerText = `$${totalPriceAll}`;
 };
 
 listCartHTML.addEventListener("click", (event) => {
