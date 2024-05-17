@@ -46,12 +46,17 @@ td {
   background-color: #fff;
   padding-left: 5%;
 }
+/* css chung  */
 .textcenter {
   text-align: center;
 }
 .padding {
   padding: 0 2.5%;
 }
+.larger {
+  font-size: 200%;
+}
+/* table */
 thead tr th {
   font-size: 35px;
   font-weight: 500;
@@ -59,6 +64,10 @@ thead tr th {
   font-family: "Roboto", sans-serif;
   color: #333;
 }
+tr {
+  height: auto;
+}
+
 .number {
   color: rgb(0, 0, 0);
 }
@@ -85,7 +94,7 @@ thead tr th {
   padding: 0;
   margin: 0;
 }
-#productForm {
+#productForm,#productForm2 {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -127,10 +136,36 @@ thead tr th {
   cursor: pointer;
 }
 
-.productForm input[type="submit"]:hover {
+.productForm2 input[type="submit"]:hover {
   background-color: #45a049;
 }
-#addImage {
+.productForm2 label {
+  font-weight: bold;
+}
+
+.productForm2 input[type="text"],
+.productForm2 textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.productForm2 input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.productForm2 input[type="submit"]:hover {
+  background-color: #45a049;
+}
+#addImage,#addImage2 {
   position: absolute;
   left: -49%;
   width: 50%;
@@ -146,17 +181,29 @@ thead tr th {
   justify-content: center;
 }
 .editBtn {
-  height: 10px;
-  width: 50px;
+  height: 15px;
+  width: 70px;
   padding: 0;
   border-radius: 10px;
-  background-color: antiquewhite;
-  border: 1px grey solid;
-  font-size: 30%;
+  background-color: rgba(38, 10, 129, 0.9);
+  border: 2px rgba(14, 56, 4, 0.8) solid;
+  font-size: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: rgb(166, 255, 118);
+  box-shadow: 0px 0px 5px 5px  rgb(0, 0, 0,0.3) ;
+  transition: font-weight 0.2s ease;
 }
+.editBtn:hover {
+  font-weight: 700;
+}
+.Product_Setting:hover {
+  color: lightseagreen;
+  cursor: pointer;
+}
+
 
 .switch {
   position: relative;
