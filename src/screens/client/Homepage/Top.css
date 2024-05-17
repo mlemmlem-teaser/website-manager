@@ -19,7 +19,6 @@ body {
   background-color: #f8f8f8;
 }
 
-/* ScrollBar */
 body::-webkit-scrollbar {
   width: 4px;
 }
@@ -71,36 +70,6 @@ nav {
 }
 form {
   position: relative;
-}
-.search_input {
-  width: 550px;
-  padding: 15px 58px 15px 20px;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.87);
-  border-radius: 30px;
-  border: 0px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-::-webkit-input-placeholder {
-  text-transform: uppercase;
-}
-::-moz-placeholder {
-  text-transform: uppercase;
-}
-.search_input:focus {
-  border: 0;
-  outline: 0;
-}
-.search_icon {
-  position: absolute;
-  top: 10px;
-  right: 24px;
-}
-.search_icon img {
-  width: 20px;
 }
 
 /* Movies List */
@@ -162,51 +131,18 @@ form {
   background-color: #000000;
   text-align: center;
   transform: translateY(101%);
-  transition: transform 0.2s ease-in;
+  transition: transform 0.75s ease-in;
 }
 .movie_list_item:hover .overview {
   transform: translateY(0%);
 }
 .overview h3 {
   margin-bottom: 15px;
+  text-decoration: underline;
+  color: #b9dfff;
+  color: #fff;
 }
 
-footer {
-  width: 100%;
-  padding: 50px 0px;
-  text-align: center;
-}
-footer p {
-  font-size: 18px;
-}
-
-/* RESPONSIVE */
-
-/* For Mobile */
-@media screen and (max-width: 767px) {
-  nav {
-    padding: 30px 0px 0px;
-  }
-  .logo {
-    margin-bottom: 30px;
-  }
-  .search_input {
-    width: 100%;
-  }
-  .search_icon {
-    top: 12px;
-  }
-  .movie_list_ul {
-    grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 30px;
-    padding: 40px 15px;
-  }
-  .movie_list_item img {
-    height: auto;
-  }
-}
-
-/* For Tab */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .movie_list_ul {
     grid-template-columns: repeat(2, 1fr);
@@ -216,7 +152,6 @@ footer p {
   }
 }
 
-/* For Big Screens */
 @media screen and (min-width: 1599px) {
   .movie_list_ul {
     grid-template-columns: repeat(4, 1fr);
@@ -227,8 +162,9 @@ footer p {
 }
 
 h3 {
+  text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 15px #66ccff;
+  color: #b9dfff;
   color: #fff;
-  text-shadow: 0 0 7px #00fffb, 0 0 10px #005eff, 0 0 21px #fff;
 }
 
 p {

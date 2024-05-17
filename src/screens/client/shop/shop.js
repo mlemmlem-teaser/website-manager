@@ -82,13 +82,13 @@ const addCartToHTML = () => {
       listCartHTML.appendChild(newItem);
       newItem.innerHTML = `
             <div class="image">
-                    <img src="${info.image}" style="width: 74px;height: 100px">
-                    <a class="delete">Delete</a>
+                    <img src="${info.image}" style="width: 100px;height: 100px">
+                    <a class="delete" style="padding-left: 15px;padding-right: 11px">Delete</a>
                 </div>
-                <div class="name">
+                <div class="name" style="position: relative;margin-left: 30%">
                 ${info.name}
                 </div>
-                <div class="totalPrice">$${info.price * item.quantity}</div>
+                <div class="totalPrice" style="position: relative;margin-left: 30%">$${info.price * item.quantity}</div>
                 <div class="quantity">
                     <span class="minus" style="background: none;color:#fff">◀</span>
                     <span>${item.quantity}</span>

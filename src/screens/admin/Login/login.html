@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="shortcut icon" href="/Assets/Icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="/src/screens/client/Auth/Auth.css">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="/Assets/Icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="/src/screens/client/Auth/Auth.css" />
 
+    <script
+      src="https://kit.fontawesome.com/7a436d10a3.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+  </head>
+  <body>
+    <div class="container lol">
+      <video
+        id="video_background"
+        class="lol"
+        preload="auto"
+        autoplay="true"
+        loop="loop"
+        muted
+        volume="0"
+      >
+        <source
+          src="../../../../Assets/Images/zhongli-and-xiao-lanterns-rite-moewalls-com.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <h2><span class="_grey_ lol">Register</span>/Login</h2>
 
-    <script src="https://kit.fontawesome.com/7a436d10a3.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-      <div class="container">
-        <video id="video_background" preload="auto" autoplay="true" loop="loop" muted volume="0"><source src="../../../../Assets/Images/raining-in-the-mystical-forest-moewalls-com.mp4" type="video/mp4"/></video>
-        <h2><span class="_grey_">Register</span>/Login</h2>
+      <form action="#" class="form_login lol">
+        Email <br />
+        <input type="email" placeholder="Email" name="email" required />
+        Password <br />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+        />
 
-        <form action="#" class="form_login">
-            Email <br>
-            <input type="email" placeholder="Email" name="email" required>
-            Password <br>
-            <input type="password" placeholder="Password" name="password" required>
-            
-            <button type="submit">Login</button>
-        </form>
-        <h5>or sign up with</h5>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-
+        <button type="submit">Login</button>
+      </form>
+      <h5>or sign up with</h5>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
     </div>
 
-    
     <script type="module" src="login.js"></script>
-</body>
-
+  </body>
 </html>

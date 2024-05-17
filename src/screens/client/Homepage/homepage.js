@@ -59,7 +59,7 @@ const ul = document.getElementById("movieUl");
 const form = document.getElementById("searchForm");
 const search = document.getElementById("search");
 
-// initial Movies
+// :))
 getMovies(API_URL);
 
 async function getMovies(url) {
@@ -77,13 +77,13 @@ function showMovies(movies) {
     const movieItem = document.createElement("li");
     movieItem.classList.add("movie_list_item");
     movieItem.innerHTML = `
-     <img src="${IMG_PATH + poster_path}" alt="${title}" />
+     <img src="${IMG_PATH + poster_path}" alt="${title}" style="height:580px"/>
      <div class="movie_info">
        <h3>${title}</h3>
        <span class="${getClassByRate(vote_average)}">${vote_average}</span>
      </div>
      <div class="overview">
-      <h3>Overview</h3>
+      <h3>${title}</h3>
       <p>${overview}</p>
      </div>
     `;
@@ -100,17 +100,7 @@ function getClassByRate(vote) {
     return "red";
   }
 }
-// // FOR SEARCH SUBMIT
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   const searchTerm = search.value;
-//   if (searchTerm && searchTerm !== "") {
-//     getMovies(SEARCH_API + searchTerm);
-//     search.value = "";
-//   } else {
-//     window.location.reload();
-//   }
-// });
+
 $(document).ready(function () {
   var lastScrollTop = 0;
   var navbar = $("#header");

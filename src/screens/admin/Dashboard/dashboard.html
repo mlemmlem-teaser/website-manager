@@ -26,7 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dashboard</title>
     <style id="pie_chart"></style>
     <style id="pie_chart2"></style>
   </head>
@@ -48,54 +48,80 @@
                 >Home</a
               >
             </li>
-            <li class="nav_contact"><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            <li class="nav_about"><a class="nav-link scrollto" href="#services">About Us</a></li>
-            <li id="user">
-            <div id="user-info-container">
-              <img id="user-avatar" src="/Assets/Images/default-user-img.webp" alt="">
-              <div class="user-info">
-                mlemmlem
-              </div> 
-  
-              <a id="logout-btn" class="logout" href="/src/screens/client/Auth/Login/login.html">
-                <i class="fa-solid fa-right-from-bracket" style="font-size: 20px;"></i>
-              </a>
-            </div>
+            <li class="nav_contact">
+              <a class="nav-link scrollto" href="#contact">Contact</a>
             </li>
-            
+            <li class="nav_about">
+              <a class="nav-link scrollto" href="#services">About Us</a>
+            </li>
+            <li id="user">
+              <div id="user-info-container">
+                <img
+                  id="user-avatar"
+                  src="/Assets/Images/default-user-img.webp"
+                  alt=""
+                />
+                <div class="user-info">mlemmlem</div>
+
+                <a
+                  id="logout-btn"
+                  class="logout"
+                  href="/src/screens/client/Auth/Login/login.html"
+                >
+                  <i
+                    class="fa-solid fa-right-from-bracket"
+                    style="font-size: 20px"
+                  ></i>
+                </a>
+              </div>
+            </li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
-  
-          
         </nav>
-        
       </div>
     </header>
 
     <div id="sidebar">
-      <div id="searchBar">
-        <input type="text" class="search-input" placeholder="Search..." />
-        <button type="submit" class="search-button">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div>
-
       <div class="Item">
         <ul>
-          <h5 style="color: white;
-              text-shadow: black 0.1em 0.1em 0.2em;margin-bottom: 5%;text-indent: 10px;padding: 3%;text-align: center;"> ★ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab hic sunt, aliquam <br> ✧──────✧</h5>
-          <li id="alreadyHere"><i class="fa-solid fa-chart-simple" style="color: lightcoral;"></i> <a href="../Dashboard/dashboard.html">Dashboard</a></li>
-          <li><i class="fa-solid fa-crown" style="color: yellow;"></i> <a href="../manageAdmin/manageAdmin.html">Admin</a></li>
-          <li><i class="fa-solid fa-star" style="color: lightblue;"></i> <a href="../manageUser/manageUser.html">User</a></li>
-          <li><i class="fa-solid fa-boxes-stacked" style="color: lightgreen;"></i> <a href="../manageProduct/manageProduct.html">Product</a></li>
-
+          <h5
+            style="
+              color: white;
+              text-shadow: black 0.1em 0.1em 0.2em;
+              margin-bottom: 5%;
+              text-indent: 10px;
+              padding: 3%;
+              text-align: center;
+              margin-top: 50px;
+            "
+          >
+            ★ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab
+            hic sunt, aliquam <br />
+            ✧──────✧
+          </h5>
+          <li id="alreadyHere">
+            <i class="fa-solid fa-chart-simple" style="color: lightcoral"></i>
+            <a href="../Dashboard/dashboard.html">Dashboard</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-crown" style="color: yellow"></i>
+            <a href="../manageAdmin/manageAdmin.html">Admin</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-star" style="color: lightblue"></i>
+            <a href="../manageUser/manageUser.html">User</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-boxes-stacked" style="color: lightgreen"></i>
+            <a href="../manageProduct/manageProduct.html">Product</a>
+          </li>
         </ul>
       </div>
     </div>
 
     <!-- chart -->
-    <div style="margin-top: 19vh;"></div>
-    <div id="DashboardContainer" style="margin-left: 50px;">
+    <div style="margin-top: 19vh"></div>
+    <div id="DashboardContainer" style="margin-left: 50px">
       <div id="SignUpAttempt">
         <canvas id="myChart" style="max-width: 100%"></canvas>
       </div>
@@ -133,7 +159,7 @@
       </div>
     </div>
     <div id="showModal"></div>
-    
+
     <script type="module" src="/navbar.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

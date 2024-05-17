@@ -1,10 +1,10 @@
 @import url(variable.css);
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-primary);
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -403,23 +403,7 @@ nav {
 .navbar-hidden {
   top: -100px;
 }
-.search-bar {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
 
-.search-bar input[type="text"] {
-  padding: 8px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-}
-
-.search-bar button {
-  background: none;
-  border: none;
-  padding: 8px;
-}
 #user {
   display: flex;
   margin-left: 120%;
@@ -490,65 +474,20 @@ nav {
 #sidebar {
   position: fixed;
   left: 0;
-  height: 89vh;
-  width: 30vw;
+  height: 100%;
+  width: 20vw;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   flex-direction: column;
   padding: 1%;
   transition: transform 0.2s ease-in-out, display 0.2s ease-in-out;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 1;
   bottom: 0;
   font-size: 20px;
   font-weight: 100;
 }
 
-.search-input {
-  padding: 10px;
-  transition: box-shadow 0.75s;
-  border: 2px #007bff solid;
-  border-radius: 20px;
-  font-size: 20px;
-  width: 300px;
-  color: rgb(0, 0, 0, 0.8);
-  background-color: #ffffffcc;
-}
-
-.search-input:focus {
-  box-shadow: 0 0 40px #007bff;
-}
-.search-input:active {
-  border-color: #73c5eb;
-}
-
-#SearchBar {
-  display: flex;
-  align-items: center;
-  width: 300px;
-  margin: 0 auto;
-  transition: box-shadow 1s;
-  height: 100%;
-}
-
-.search-button {
-  background-color: #ffffffcc;
-  border: 2px #007bff solid;
-  border-radius: 99px;
-  font-size: 20px;
-  font-weight: 100;
-  height: 100%;
-  border-radius: 99px;
-  width: 80px;
-  transition: border-color 0.3s ease, text-shadow 0.3s ease, color 0.3 ease;
-  color: #0056b3;
-}
-
-.search-button:hover {
-  color: #31a9e1;
-  border-color: #73c5eb;
-  text-shadow: 0 0 50px #007bff;
-}
 .Item {
   margin-top: 2vh;
 }
@@ -560,6 +499,7 @@ nav {
   transition: background-image 1s;
   font-weight: 300;
   font-size: 20px;
+  transition: all 1s ease-in-out;
 }
 .Item ul li:hover {
   background-image: linear-gradient(
@@ -580,6 +520,7 @@ nav {
 
 .Item a:hover {
   color: white;
+  transition: all 1s ease-in-out;
 }
 #alreadyHere {
   background-image: linear-gradient(

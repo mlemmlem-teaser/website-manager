@@ -26,7 +26,7 @@
   {
     "id": 4,
     "name": "Razor gối Cover",
-    "price": 200,
+    "price": 40,
     "image": "https://lzd-img-global.slatic.net/g/p/076c5ea1dd9b88c638121a4b7b333052.jpg_400x400q75.jpg_.webp"
   },
   {
@@ -38,7 +38,7 @@
   {
     "id": 6,
     "name": "Móc khóa phóng lợn",
-    "price": 200,
+    "price": 76,
     "image": "https://lzd-img-global.slatic.net/g/p/3c22383144184e9e6b4965687ad85a19.jpg_400x400q75.jpg_.webp"
   },
   {
@@ -56,19 +56,19 @@
   {
     "id": 9,
     "name": "Móc khóa Sara",
-    "price": 290,
+    "price": 50,
     "image": "https://down-vn.img.susercontent.com/file/fef3d30399b9d0f452b00911d24d3249"
   },
   {
     "id": 10,
     "name": "Móc khóa Kequing",
-    "price": 290,
+    "price": 50,
     "image": "https://down-vn.img.susercontent.com/file/8eb6acd59bb77a918501ce6f3fb46549"
   },
   {
     "id": 11,
     "name": "Hộp bút dạ quang",
-    "price": 290,
+    "price": 90,
     "image": "https://down-vn.img.susercontent.com/file/sg-11134201-23030-0j91gyhfdyovde"
   }
 ]

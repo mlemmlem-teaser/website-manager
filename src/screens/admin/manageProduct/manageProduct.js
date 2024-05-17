@@ -53,7 +53,7 @@ getAllProduct().then((items) => {
   <span class="slider round"></span>
   </label>
   </th>
-  <th class="imgKeeper"><img src="${imgurl}" alt="" width="50px"><button class="editBtn">edit</button></th>
+  <th class="imgKeeper"><img src="${imgurl}" alt="" height="40px;" width="40px;"><button class="editBtn">edit</button></th>
   <th class="padding textcenter"><i class="fa-solid fa-pen-to-square"></i></th>
 </tr>
 `;  

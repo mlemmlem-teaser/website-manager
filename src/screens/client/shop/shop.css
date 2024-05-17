@@ -12,7 +12,7 @@ body {
 }
 
 .delete button {
-  width: 70px;
+  color: #eee;
 }
 
 img {
@@ -69,17 +69,19 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
+  margin: 0 auto;
 }
 .listProduct .item {
   background-color: #2e2e2e;
   padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
 }
 .listProduct .item h2 {
   font-weight: 500;
   font-size: large;
 }
 .listProduct .item .price {
-  letter-spacing: 7px;
+  letter-spacing: 3px;
   font-size: small;
 }
 .icon-cart span {
@@ -119,6 +121,7 @@ header {
 
 .advert {
   transition: transform 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
 }
 
 .advert:hover {
@@ -177,7 +180,6 @@ header {
 
 /* cart */
 .cartTab {
-  width: 500px;
   background-color: #353432;
   color: #eee;
   position: fixed;
@@ -188,6 +190,8 @@ header {
   grid-template-rows: 70px 1fr 70px;
   transition: 0.5s;
   margin-top: 80px;
+  overflow-x: hidden;
+  width: 500px;
 }
 body.showCart .cartTab {
   right: 0;
@@ -244,7 +248,10 @@ body.showCart .ctn {
   gap: 10px;
   text-align: center;
   align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+
 .listCart .quantity span {
   display: inline-block;
   width: 25px;
