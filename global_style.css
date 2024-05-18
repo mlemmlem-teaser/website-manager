@@ -638,4 +638,5 @@ label {
   top: 10vh;
   max-height: 80vh;
   width: 100%;
+  z-index: 1000;
 }

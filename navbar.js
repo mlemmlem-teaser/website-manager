@@ -166,7 +166,7 @@ Avatar
           data.avatar != undefined
             ? data.avatar
             : "/Assets/Images/default-user-img.webp";
-        console.log(data.avatar);
+        
         user_avatar.addEventListener("click", async () => {
           await showModal(data);
         });

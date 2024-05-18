@@ -118,7 +118,7 @@
         <div id="addImage">
           <label for="imageurl">Image:</label> <br>
           <input type="text" id="imageurl" name="imageurl" placeholder="Image url">
-          <img width="100%" style="border: 2px rgb(138, 43, 226,0.7) solid;border-radius: 8px;" id="ProductPreview" src="/Assets/Images/Bảo.jpg" alt="">
+          <img width="100%" height="70%" style="border: 2px rgb(138, 43, 226,0.7) solid;border-radius: 8px;" id="ProductPreview" src="/Assets/Images/Bảo.jpg" alt="">
       </div>
       <div>
         <label for="name">Name:</label><br />
@@ -140,7 +140,36 @@
       </div>
       </form>
     </div>
-  </div>
+    <div id="addProduct2">
+      <form id="productForm2" class="productForm2">
+        <div id="addImage2">
+          <label for="imageurl2">Image:</label> <br>
+          <input type="text" id="imageurl2" name="imageurl2" placeholder="Image url" value="">
+          <img width="100%" height="70%" style="border: 2px rgb(138, 43, 226,0.7) solid;border-radius: 8px;" id="ProductPreview2" src="" alt="">
+      </div>
+      <div>
+        <label for="name2">Name:</label><br/>
+        <input type="text" id="name2" name="name2" value=""/><br />
+    
+        <label for="price2">Price:</label><br />
+        <input type="text" id="price2" name="price2" value=""/><br />
+    
+        <label for="description2">Description:</label><br />
+        <textarea
+          id="description2"
+          name="description2"
+          rows="3"
+          cols="50"
+        ></textarea
+        ><br /><br />
+        <button id="cancelBtn2">Cancel</button>
+        <button type="submit" id="saveBtn2">Save</button>
+      </div>
+      </form>
+    </div>
+    
+
+    
 
     <script type="module" src="/navbar.js"></script>
     <script
