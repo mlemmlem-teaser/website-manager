@@ -13,13 +13,16 @@
     />
     <link rel="stylesheet" href="/global_style.css" />
     <link rel="stylesheet" href="/variable.css" />
-    <!-- <link rel="stylesheet" href="/SPCK(nhóm)/website-manager/shop/shop.html" /> -->
     <link rel="stylesheet" href="/src/screens/client/Homepage/homepage.css" />
     <link rel="stylesheet" href="shop.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop</title>
-<link rel="shortcut icon" href="/Assets/Icons/logo.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="/Assets/Icons/logo.ico"
+      type="image/x-icon"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -32,9 +35,9 @@
       <div class="container d-flex align-items-center">
         <button id="MenuBtn"><i class="fa-solid fa-bars"></i></button>
         <h1 class="logo">
-          <a href="/index.html"
-            ><b>Net<span style="color: red">flex</span></b></a
-          >
+          <a href="/index.html">
+            <b>Net<span style="color: red">flex</span></b>
+          </a>
         </h1>
         <nav id="navbar" class="navbar">
           <ul>
@@ -45,32 +48,50 @@
                 >Home</a
               >
             </li>
-            <li class="nav_contact"><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            <li class="nav_about"><a class="nav-link scrollto" href="#services">About Us</a></li>
-            <li id="user">
-            <div id="user-info-container">
-              <img id="user-avatar" src="/Assets/Images/default-user-img.webp" alt="">
-              <div class="user-info">
-                mlemmlem
-              </div> 
-
-              <a id="logout-btn" class="logout" href="/src/screens/client/Auth/Login/login.html">
-                <i class="fa-solid fa-right-from-bracket" style="font-size: 20px;"></i>
-              </a>
-            </div>
+            <li class="nav_contact">
+              <a class="nav-link scrollto" href="#contact">Contact</a>
             </li>
-            
+            <li class="nav_about">
+              <a class="nav-link scrollto" href="#services">About Us</a>
+            </li>
+            <li id="user">
+              <div id="user-info-container">
+                <img
+                  id="user-avatar"
+                  src="/Assets/Images/default-user-img.webp"
+                  alt=""
+                />
+                <div class="user-info">mlemmlem</div>
+                <a
+                  id="logout-btn"
+                  class="logout"
+                  href="/src/screens/client/Auth/Login/login.html"
+                >
+                  <i
+                    class="fa-solid fa-right-from-bracket"
+                    style="font-size: 20px"
+                  ></i>
+                </a>
+              </div>
+            </li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
-
-          
         </nav>
-        
       </div>
     </header>
 
-    <img src="image/newpr.jpg" class="advert" style="margin-left:10%;width: 80vw;margin-top: 100px;height: 330px;margin-bottom: 0;border: 7px #fff solid;"/>
-
+    <img
+      src="image/newpr.jpg"
+      class="advert"
+      style="
+        margin-left: 10%;
+        width: 80vw;
+        margin-top: 100px;
+        height: 400px;
+        margin-bottom: 0;
+        border: 7px #fff solid;
+      "
+    />
     <div class="ctn">
       <header>
         <div
@@ -87,7 +108,7 @@
         </div>
         <div class="icon-cart" style="margin-top: 100px">
           <i class="fa-solid fa-cart-shopping"></i>
-          <span style="background-color: red;font-size: 10;">0</span>
+          <span style="background-color: red; font-size: 10">0</span>
         </div>
       </header>
       <div class="listProduct"></div>
@@ -103,25 +124,45 @@
         <button class="checkOut">CLEAR</button>
       </div>
     </div>
-    <div id="showModal">
-      
-    </div>
+    <div id="showModal"></div>
     <div id="sidebar">
       <div class="Item">
         <ul>
-          <h5 style="color: white;
-          text-shadow: black 0.1em 0.1em 0.2em;margin-bottom: 5%;text-indent: 10px;padding: 3%;text-align: center;margin-top: 50px;"> ★ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab hic sunt, aliquam <br> ✧──────✧</h5>
-          <li><i class="fa-solid fa-house" style="color: lightcoral;"></i> <a href="/src/screens/client/Homepage/homepage.html">Home</a></li>
-          <li id="alreadyHere"><i class="fa-solid fa-shop" style="color: yellow;"></i> <a href="../shop/shop.html">Shop</a></li>
-          <li><i class="fa-solid fa-phone" style="color: lightblue;"></i> <a href="../help/help.html">Help</a></li>
-          <li><i class="fa-solid fa-right-from-bracket" style="color: lightgreen;"> </i><a href="../Auth/Login/login.html">Logout</a></li>
-  
+          <h5
+            style="
+              color: white;
+              text-shadow: black 0.1em 0.1em 0.2em;
+              margin-bottom: 5%;
+              text-indent: 10px;
+              padding: 3%;
+              text-align: center;
+              margin-top: 50px;
+            "
+          >
+            ★ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab
+            hic sunt, aliquam <br />
+            ✧──────✧
+          </h5>
+          <li>
+            <i class="fa-solid fa-house" style="color: lightcoral"></i>
+            <a href="/src/screens/client/Homepage/homepage.html">Home</a>
+          </li>
+          <li id="alreadyHere">
+            <i class="fa-solid fa-shop" style="color: yellow"></i>
+            <a href="../shop/shop.html">Shop</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone" style="color: lightblue"></i>
+            <a href="../help/help.html">Help</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-right-from-bracket" style="color: lightgreen">
+            </i
+            ><a href="../Auth/Login/login.html">Logout</a>
+          </li>
         </ul>
       </div>
     </div>
-    </div>
-
-
   </body>
   <script src="shop.js"></script>
   <script type="module" src="/navbar.js"></script>
@@ -130,6 +171,5 @@
     src="https://kit.fontawesome.com/7a436d10a3.js"
     crossorigin="anonymous"
   ></script>
-  <script></script>
   <!-- <script type="module" src="/src/screens/client/Homepage/homepage.js"></script> -->
 </html>

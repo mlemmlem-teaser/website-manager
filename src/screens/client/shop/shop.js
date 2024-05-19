@@ -27,11 +27,15 @@ const addDataToHTML = () => {
       newProduct.innerHTML = `<img src="${product.image}" alt="">
                 <h2>${product.name}</h2>
                 <div class="price">$${product.price}</div>
-                <button class="addCart"><span><b>Add to cart</b></span></button>`;
+                <button class="addCart"><span>Add to cart</span></button>
+                <button class="addCart" onclick="showMessage()" id="buy" style="margin-top: 5px"><span>Buy</span></button>`;
       listProductHTML.appendChild(newProduct);
     });
   }
 };
+function showMessage() {
+  alert("Buyed");
+}
 listProductHTML.addEventListener("click", (event) => {
   let positionClick = event.target;
   if (positionClick.classList.contains("addCart")) {
@@ -88,7 +92,9 @@ const addCartToHTML = () => {
                 <div class="name" style="position: relative;margin-left: 30%">
                 ${info.name}
                 </div>
-                <div class="totalPrice" style="position: relative;margin-left: 30%">$${info.price * item.quantity}</div>
+                <div class="totalPrice" style="position: relative;margin-left: 30%">$${
+                  info.price * item.quantity
+                }</div>
                 <div class="quantity">
                     <span class="minus" style="background: none;color:#fff">◀</span>
                     <span>${item.quantity}</span>
@@ -216,3 +222,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+

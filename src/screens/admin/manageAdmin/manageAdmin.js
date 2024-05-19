@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
               sidebar.style.transform = 'translateX(0)';
           },200)
         } else {
-            sidebar.style.transform = 'translateX(-20vw)';
+            sidebar.style.transform = 'translateX(-30vw)';
             // UserManagerContainer.style.padding="100px 10vw 0 10vw"
             setTimeout(() => {
                 sidebar.style.display = 'none';

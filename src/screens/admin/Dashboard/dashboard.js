@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.style.transform = "translateX(0)";
       }, 200);
     } else {
-      sidebar.style.transform = "translateX(-20vw)";
+      sidebar.style.transform = "translateX(-30vw)";
       // UserManagerContainer.style.padding="100px 10vw 0 10vw"
       setTimeout(() => {
         sidebar.style.display = "none";
@@ -99,22 +99,22 @@ async function calRatioGender() {
     background:
       radial-gradient(
         circle closest-side,
-        transparent 66%,
-        rgb(234, 234, 234) 0
+        transparent 60%,
+        rgb(27, 32, 44) 0
       ),
       conic-gradient(
         #4e79a7 0,
-        #4e79a7 ${malePercent}%,
-        #f28e2c 0,
-        #f28e2c ${malePercent + femalePercent}%,
-        #e15759 0,
-        #e15759 ${malePercent + femalePercent + otherPercent}%
+        #38598b ${malePercent}%,
+        #a2a8d3 0,
+        #a2a8d3 ${malePercent + femalePercent}%,
+        #28518a 0,
+        #28518a ${malePercent + femalePercent + otherPercent}%
     );
     position: relative;
     width: 100%;
     min-height: 150px;
     margin: 0;
-    
+    margin-left: 20px;
   }
   `;
   genderPP.innerHTML = `
@@ -124,9 +124,9 @@ async function calRatioGender() {
             <li>Other: ${otherCount} (${otherPercent}%)</li>
             <figure class="pie-chart genderRatio">
               <figcaption>
-              Male<span style="color:#4e79a7"></span><br>
-              Female<span style="color:#f28e2c"></span><br>
-              Other<span style="color:#e15759"></span><br>
+              Male<span style="color:#38598b"></span><br>
+              Female<span style="color:#a2a8d3"></span><br>
+              Other<span style="color:#28518a"></span><br>
               </figcaption>
             </figure>`;
   pie.innerHTML = piechart;
@@ -173,33 +173,33 @@ async function calRatioAge() {
     background:
       radial-gradient(
         circle closest-side,
-        transparent 66%,
-        rgb(234, 234, 234) 0
+        transparent 60%,
+        rgb(27, 32, 44) 0
       ),
       conic-gradient(
-        #4e79a7 0,
-        #4e79a7 ${kidPercent}%,
-        #f28e2c 0,
-        #f28e2c ${kidPercent + midPercent}%,
-        #e15759 0,
-        #e15759 ${kidPercent + midPercent + eldPercent}%
+        #28518a 0,
+        #28518a ${kidPercent}%,
+        teal 0,
+        teal ${kidPercent + midPercent}%,
+        #3ab1c8 0,
+        #3ab1c8 ${kidPercent + midPercent + eldPercent}%
     );
     position: relative;
     width: 100%;
     min-height: 150px;
     margin: 0;
-    
+    margin-left: 20px;
   }
   `;
-    agePP.innerHTML = `<h4>Age</h4>
+    agePP.innerHTML = `<h4 style="margin-top: 150px">Age</h4>
     <li>Below 15: ${_below15_} (${kidPercent}%)</li>
-    <li>From 16 to 65: ${_15to65_} (${midPercent}%)</li>
+    <li>From 16-65: ${_15to65_} (${midPercent}%)</li>
     <li>65 or above: ${_above65_} (${eldPercent}%)</li>
     <figure class="pie-chart ageRatio">
       <figcaption>
-        ≤15<span style="color:#4e79a7"></span><br>
-        15-65<span style="color:#f28e2c"></span><br>
-      65≤<span style="color:#e15759"></span><br>
+        ≤15<span style="color:#28518a"></span><br>
+        15-65<span style="color:teal"></span><br>
+      65≤<span style="color:#3ab1c8"></span><br>
       </figcaption>
     </figure>`;
     pie2.innerHTML = piechart;
@@ -228,3 +228,5 @@ getUserInfo(userId)
   .catch((error) => {
     console.log("Error fetching user data:", error);
   });
+
+  

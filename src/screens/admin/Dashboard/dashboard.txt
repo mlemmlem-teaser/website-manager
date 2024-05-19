@@ -1,0 +1,8 @@
+ <!-- chart -->
+    <div style="margin-top: 19vh"></div>
+    <div id="DashboardContainer" style="margin-left: 50px">
+      <div id="SignUpAttempt">
+        <canvas id="myChart" style="max-width: 100%"></canvas>
+      </div>
+      
+      

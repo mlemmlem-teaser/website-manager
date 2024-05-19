@@ -8,14 +8,15 @@ body {
   align-items: center;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 .container {
   max-width: 400px;
   width: 90%;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-bottom: calc(100vh - 85px);
+  padding-left: 9%;
+  padding-right: 9%;
   padding-top: 5%;
+  padding-bottom: calc(100% - 60%);
   background-color: #0b091e;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   height: max-content;

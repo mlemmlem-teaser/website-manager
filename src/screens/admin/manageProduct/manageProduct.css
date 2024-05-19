@@ -31,16 +31,15 @@ td {
   text-align: left;
   border-bottom: 1px solid black;
   max-height: 100px;
+  font-weight: 300;
 }
 th {
   background-color: #f5f8fd;
   text-align: left;
   color: #062c6a;
-  font-weight: 100;
   border-right: 1px #000 solid;
 }
 td {
-  font-weight: 50;
   font-size: 12px;
   text-wrap: nowrap;
   background-color: #fff;
@@ -94,7 +93,8 @@ tr {
   padding: 0;
   margin: 0;
 }
-#productForm,#productForm2 {
+#productForm,
+#productForm2 {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -165,7 +165,8 @@ tr {
 .productForm2 input[type="submit"]:hover {
   background-color: #45a049;
 }
-#addImage,#addImage2 {
+#addImage,
+#addImage2 {
   position: absolute;
   left: -49%;
   width: 50%;
@@ -193,7 +194,7 @@ tr {
   align-items: center;
   position: absolute;
   color: rgb(166, 255, 118);
-  box-shadow: 0px 0px 5px 5px  rgb(0, 0, 0,0.3) ;
+  box-shadow: 0px 0px 5px 5px rgb(0, 0, 0, 0.3);
   transition: font-weight 0.2s ease;
 }
 .editBtn:hover {
@@ -203,7 +204,6 @@ tr {
   color: lightseagreen;
   cursor: pointer;
 }
-
 
 .switch {
   position: relative;

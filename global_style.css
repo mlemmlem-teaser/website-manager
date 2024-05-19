@@ -1,10 +1,12 @@
 @import url(variable.css);
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
 }
 
 body {
@@ -476,7 +478,11 @@ nav {
   left: 0;
   height: 100%;
   width: 20vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #000000, #140014);
+  background: -o-linear-gradient(45deg, #000000, #16002d);
+  background: -moz-linear-gradient(45deg, #000000, #0b0034);
+  background: linear-gradient(45deg, #000000, #000d2c);
   display: none;
   flex-direction: column;
   padding: 1%;

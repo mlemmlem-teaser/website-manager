@@ -81,6 +81,49 @@
       </div>
     </header>
 
+    <div style="margin-top: 40px"></div>
+    <div id="DashboardContainer">
+      <div id="SignUpAttempt">
+        <canvas id="myChart"></canvas>
+      </div>
+      <!-- gender -->
+      <div id="GenderCompare" style="position: absolute; right: 39px">
+        <ul id="genderProperties">
+          <h4>Gender</h4>
+          <li>Male:</li>
+          <li>Female:</li>
+          <li>Other:</li>
+          <figure
+            class="pie-chart genderRatio"
+            style="background-color: transparent"
+          >
+            <figcaption>
+              Male<span style="color: #4e79a7"></span><br />
+              Female<span style="color: #f28e2c"></span><br />
+              Other<span style="color: #e15759"></span><br />
+            </figcaption>
+          </figure>
+        </ul>
+      </div>
+      <!-- age -->
+      <div id="AgeRatio" style="position: absolute; right: 39px; bottom: 0">
+        <ul id="ageProperties">
+          <h4>Age</h4>
+          <li>Below 15:</li>
+          <li>From 16 to 65:</li>
+          <li>65 or above:</li>
+          <figure class="pie-chart ageRatio">
+            <figcaption>
+              ≤15<span style="color: #4e79a7"></span><br />
+              15-65<span style="color: #f28e2c"></span><br />
+              65≤<span style="color: #e15759"></span><br />
+            </figcaption>
+          </figure>
+        </ul>
+      </div>
+      
+    </div>
+
     <div id="sidebar">
       <div class="Item">
         <ul>
@@ -119,45 +162,6 @@
       </div>
     </div>
 
-    <!-- chart -->
-    <div style="margin-top: 19vh"></div>
-    <div id="DashboardContainer" style="margin-left: 50px">
-      <div id="SignUpAttempt">
-        <canvas id="myChart" style="max-width: 100%"></canvas>
-      </div>
-      <!-- gender -->
-      <div id="GenderCompare">
-        <ul id="genderProperties">
-          <!-- <h4>Gender</h4>
-            <li>Male:</li>
-            <li>Female:</li>
-            <li>Other:</li>
-            <figure class="pie-chart genderRatio">
-              <figcaption>
-              Male<span style="color:#4e79a7"></span><br>
-              Female<span style="color:#f28e2c"></span><br>
-              Other<span style="color:#e15759"></span><br>
-              </figcaption>
-            </figure> -->
-        </ul>
-      </div>
-      <!-- age -->
-      <div id="AgeRatio">
-        <ul id="ageProperties">
-          <!-- <h4>Age</h4>
-            <li>Below 15:</li>
-            <li>From 16 to 65:</li>
-            <li>65 or above:</li>
-            <figure class="pie-chart ageRatio">
-              <figcaption>
-                ≤15<span style="color:#4e79a7"></span><br>
-                15-65<span style="color:#f28e2c"></span><br>
-              65≤<span style="color:#e15759"></span><br>
-              </figcaption>
-            </figure> -->
-        </ul>
-      </div>
-    </div>
     <div id="showModal"></div>
 
     <script type="module" src="/navbar.js"></script>
@@ -176,6 +180,7 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+
     <script type="module" src="dashboard.js"></script>
   </body>
 </html>
