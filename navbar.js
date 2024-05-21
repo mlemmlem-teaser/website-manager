@@ -28,9 +28,7 @@ function resetState() {
 
   onAuthStateChanged(Auth, async (user) => {
     if (user) {
-      console.log(user);
       const uid = user.uid;
-      console.log(uid);
       const docRef = doc(dbFireStore, "users", uid);
       const docRef2 = doc(dbFireStore, "admin", uid);
       const docSnap = await getDoc(docRef);
@@ -156,7 +154,6 @@ Avatar
         });
       } else if (docSnap2.exists()) {
         const data = docSnap2.data();
-        console.log(data);
         user_info.innerText = data.username;
         const _status_ = data.status.role;
         if (_status_=="user"&&location.includes("/src/screens/admin/")) {

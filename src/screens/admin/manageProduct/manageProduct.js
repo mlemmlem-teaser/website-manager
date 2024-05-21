@@ -25,7 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
+//fix
+const productForm2 = document.getElementById("productForm2");
+const cancelBtn2 = document.getElementById("cancelBtn2");
+const saveBtn2 = document.getElementById("saveBtn2");
+const imageurl2 = document.getElementById("imageurl2");
+const ProductPreview2 = document.getElementById("ProductPreview2");
+const name2 = document.getElementById("name2");
+const price2 = document.getElementById("price2");
+const description2 = document.getElementById("description2");
+const masp = document.getElementById("masp");
 //table
 async function getAllProduct() {
   const data = await get(ref(dbRealTime, "products/"));
@@ -36,10 +45,10 @@ async function getAllProduct() {
   });
   return arrayProduct;
 }
-let ProductInformation = document.getElementById("ProductInformation");
-function resetTable() {
+let ProductInformation = document.getElementById("ProductInformation") ;
+async function resetTable() {
   ProductInformation.innerHTML = "";
-  getAllProduct().then((items) => {
+  await getAllProduct().then((items) => {
     items.forEach((item) => {
       const tr = document.createElement("tr");
       const imgurl = item.imageurl_ ? item.imageurl_ : "/Assets/Images/Bảo.jpg";
@@ -80,40 +89,60 @@ function resetTable() {
       tr.appendChild(Setting);
       ProductInformation.appendChild(tr);
       icon.addEventListener("click", () => {
-        const productForm2 = document.getElementById("productForm2");
         productForm2.style.display = "inherit";
-        const imageurl2 = document.getElementById("imageurl2");
-        const ProductPreview = document.getElementById("ProductPreview2");
-        const name2 = document.getElementById("name2");
-        const price2 = document.getElementById("price2");
-        const description2 = document.getElementById("description2");
-        const cancelBtn2 = document.getElementById("cancelBtn2");
-        const saveBtn2 = document.getElementById("saveBtn2");
         imageurl2.value = item.imageurl_;
-        ProductPreview.src = item.imageurl_;
+        ProductPreview2.src = item.imageurl_;
         name2.value = item.nameProduct;
         price2.value = item.price;
         description2.value = item.description;
-        cancelBtn2.addEventListener("click", (e) => {
-          e.preventDefault();
-          productForm2.style.display = "none";
-        });
-        saveBtn2.addEventListener("click", (e) => {
-          e.preventDefault();
-          get(ref(dbRealTime, `products/${item.id}`)).then((data) => {
-            if (data.exists()) {
-              const Prd = data.val();
-              console.log(Prd);
-            } else {
-              console.log("No data available");
-            }
-          });
-          productForm2.style.display = "none";
-        });
+        masp.innerText=item.id;
+      });
+      button.addEventListener("click", () => {
+        productForm2.style.display = "inherit";
+        imageurl2.value = item.imageurl_;
+        ProductPreview2.src = item.imageurl_;
+        name2.value = item.nameProduct;
+        price2.value = item.price;
+        description2.value = item.description;
+        masp.innerText=item.id;
       });
     });
   });
 }
+
+cancelBtn2.addEventListener("click", (e) => {
+  e.preventDefault();
+  productForm2.style.display = "none";
+});
+saveBtn2.addEventListener("click", (e) => {
+  e.preventDefault();
+  productForm2.style.display = "none";
+  const db = getDatabase();
+  set(ref(db, "products/" + masp.innerText), {
+    nameProduct: name2.value,
+    price: price2.value,
+    description: description2.value,
+    imageurl_: imageurl2.value,
+    id:masp.innerText,
+  });
+  resetTable();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 resetTable();
 //uuid
 function generateUUID() {
@@ -144,7 +173,6 @@ imageurl.addEventListener("change", () => {
 });
 const saveBtn = document.getElementById("saveBtn");
 saveBtn.addEventListener("click", async (e) => {
-  console.log(generateUUID());
   e.preventDefault();
   const name = document.getElementById("name");
   const price = document.getElementById("price");
@@ -154,8 +182,9 @@ saveBtn.addEventListener("click", async (e) => {
   imageurl.addEventListener("change", () => {
     ProductPreview.src = imageurl.value;
   });
-  await set(ref(dbRealTime, "products/" + generateUUID()), {
-    id: generateUUID(),
+  const uuid_ = generateUUID();
+  await set(ref(dbRealTime, "products/" + uuid_), {
+    id: uuid_,
     nameProduct: name.value,
     price: price.value,
     description: description.value,

@@ -230,3 +230,36 @@ const index = button.dataset.index;
 import { dbRealTime } from "config-firebase.js";
 import { dbFireStore, Auth } from "config-firebase.js";
 import { collection, getDocs, getDoc, doc,updateDoc,setDoc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+1715696446734-1e7010
+: 
+{description: 'báo nhì thế giới(sau Hưng)', id: '1715696446734-302bc7', imageurl_: '/Assets/Images/Bảo.jpg', nameProduct: 'Báo phó', price: '123456'}
+1715696514080-b58098
+: 
+{description: 'báo nhất thế giới', id: '1715696514080-26bb19', imageurl_: '/Assets/Images/Hưng.jpg', nameProduct: 'Báo trưởng', price: '123456'}
+1715842817711-0dd768
+: 
+{description: 'Hàng nóng đó chơi cẩn thận', id: '1715842817712-debbb8', imageurl_: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjPvPtX5yUh1SKQTCHpPEinpQ7hJ0q8AbRFQ&s', nameProduct: 'Sokka Bommerang', price: '200'}
+1715843450834-584af5
+: 
+{description: 'MlemMlem', id: '1715843450835-a60717', imageurl_: 'https://lzd-img-global.slatic.net/g/p/7bec8bb3e7993fc4aa505f8998f4d61e.jpg_400x400q75.jpg_.webp', nameProduct: 'Hutao Cosplay', price: '250'}
+1715843481562-762afa
+: 
+{description: 'MlemMlem', id: '1715843481562-c42dda', imageurl_: 'https://lzd-img-global.slatic.net/g/p/fffb343e8bcf5cd9e65d40c506bd6f7f.jpg_400x400q75.jpg_.webp', nameProduct: 'Yae Miko Cosplay', price: '250'}
+1715843511368-ff0ee0
+: 
+{description: 'MlemMlem', id: '1715843511368-5ec893', imageurl_: 'https://lzd-img-global.slatic.net/g/p/0e5549f3edd6a248df7f1d7a7a028e2d.jpg_400x400q75.jpg_.webp', nameProduct: 'Klee Cosplay', price: '290'}
+1715843559612-008c2e
+: 
+{description: 'Mấy chị mê lắm', id: '1715843559612-610d1a', imageurl_: 'https://lzd-img-global.slatic.net/g/p/076c5ea1dd9b88c638121a4b7b333052.jpg_400x400q75.jpg_.webp', nameProduct: 'Razor gối Cover', price: '40'}
+1715843611241-479f3c
+: 
+{description: 'Mấy anh mê lắm', id: '1715843611241-29927e', imageurl_: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…mmf7T24D7q8B8+dSelKxNtu2TFKUrgFKUoBSlKAUpSgP/2Q==', nameProduct: 'Furina Cosplay', price: '300'}
+1715843653339-cd78f3
+: 
+{description: 'Mấy anh báo mê lắm', id: '1715843653339-7b83a3', imageurl_: 'https://lzd-img-global.slatic.net/g/p/3c22383144184e9e6b4965687ad85a19.jpg_400x400q75.jpg_.webp', nameProduct: 'Móc khóa phóng lợn', price: '76'}
+1715843693194-036602
+: 
+{description: 'Mấy anh trẻ trâu mê lắm', id: '1715843693194-8d38cb', imageurl_: 'image/7.png', nameProduct: 'Kamen Rider Armor', price: '200'}
+1715843772034-af9a4e
+: 
+{description: 'Mấy anh trẻ trâu mê lắm', id: '1715843772034-7fb17e', imageurl_: 'https://down-vn.img.susercontent.com/file/sg-11134201-23030-0j91gyhfdyovde', nameProduct: 'Hộp bút dạ quang', price: '200'}
