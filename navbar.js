@@ -13,7 +13,10 @@ const token = localStorage.getItem("token");
 const showMdl = document.querySelector("#showModal");
 const location = window.location.href;
 const logoutbtn = document.querySelector("#logout-btn");
-if (!token&&location.includes("/src/screens/client/")||token==null) {
+if (location.includes("admin")) {
+  window.location.href = "/src/screens/admin/Login/login.html";
+
+} else if (!token||token==null) {
   window.location.href = "/src/screens/client/Auth/Login/login.html";
 }
 
@@ -154,6 +157,7 @@ Avatar
         });
       } else if (docSnap2.exists()) {
         const data = docSnap2.data();
+        console.log(data);
         user_info.innerText = data.username;
         const _status_ = data.status.role;
         if (_status_=="user"&&location.includes("/src/screens/admin/")) {

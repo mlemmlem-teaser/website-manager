@@ -258,6 +258,7 @@ authDelete.addEventListener("click", () => {
             {
               status: {
                 active: false,
+                role:"admin",
               },
             },
             { merge: true }
@@ -270,7 +271,7 @@ authDelete.addEventListener("click", () => {
             {
               status: {
                 active: true,
-                role: "user",
+                role: "admin",
               },
             },
             { merge: true }
@@ -288,7 +289,7 @@ authDelete.addEventListener("click", () => {
         {
           status: {
             active: true,
-            role: "user",
+            role: "admin",
           },
         },
         { merge: true }

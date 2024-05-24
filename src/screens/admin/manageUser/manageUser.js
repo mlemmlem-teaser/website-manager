@@ -282,6 +282,7 @@ function AuthTableCreate() {
                     {
                       status: {
                         active: false,
+                        role:"users"
                       },
                     },
                     { merge: true }
@@ -294,7 +295,7 @@ function AuthTableCreate() {
                     {
                       status: {
                         active: true,
-                        role: "user",
+                        role: "users",
                       },
                     },
                     { merge: true }
@@ -312,7 +313,7 @@ function AuthTableCreate() {
                 {
                   status: {
                     active: true,
-                    role: "user",
+                    role: "users",
                   },
                 },
                 { merge: true }

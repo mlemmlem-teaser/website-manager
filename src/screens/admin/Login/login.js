@@ -36,10 +36,10 @@ const loginUser = async (e) => {
         if (docSnap.exists()) {
           const data = docSnap.data();
           console.log(data);
-          if (data.status.role == "admin") {
+          if (data.status.role == "admin"&&data.status.active==true) {
             window.location.href = "../Dashboard/dashboard.html";
           } else {
-            window.location.href = "../../client/Homepage/homepage.html";
+            alert("Have to active this account");
           }
         } else {
           console.log("No such document!");
@@ -48,7 +48,7 @@ const loginUser = async (e) => {
     });
   } catch (error) {
     console.error(error);
-    alert("Login failed");
+    alert("Have to active this account");
   }
 };
 

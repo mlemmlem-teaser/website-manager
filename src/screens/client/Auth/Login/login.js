@@ -1,7 +1,25 @@
 import { Auth, dbFireStore } from "/src/config-firebase.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
-
+import {
+  getDoc,
+  doc,
+} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 const formLogin = document.querySelector(".form_login");
+
+const getUserInfo = async (userId) => {
+  const docRef = doc(dbFireStore, "users", userId);
+  const docRef2 = doc(dbFireStore, "admin", userId);
+  const docSnap = await getDoc(docRef);
+  const docSnap2 = await getDoc(docRef2);
+  if (docSnap.exists()) {
+    return docSnap.data();
+  } else if (docSnap2.exists()) {
+    return docSnap2.data();
+  } else {
+    console.log("???????");
+    return null;
+  }
+};
 
 const loginUser = async (e) => {
   e.preventDefault();
@@ -18,7 +36,14 @@ const loginUser = async (e) => {
     const { user } = userCredential;
     localStorage.setItem("token", user.accessToken);
     if (user.accessToken) {
-      window.location.href = "/src/screens/client/Homepage/homepage.html";
+      getUserInfo(user.uid).then((data) => {
+        if (data.status.active == true) {
+          window.location.href = "/src/screens/client/Homepage/homepage.html";
+        } else {
+          console.log(data);
+          alert("Have to active this account");
+        }
+      });
     }
   } catch (error) {
     alert("Login failed");
