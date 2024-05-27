@@ -72,7 +72,7 @@ function showMovies(movies) {
   console.log(movies);
   ul.innerHTML = "";
   movies.slice(0, 20).forEach((movie) => {
-    const { title, poster_path, vote_average, overview } = movie;
+    const { title, poster_path, vote_average, overview, id } = movie;
     const movieItem = document.createElement("li");
     movieItem.classList.add("movie_list_item");
     movieItem.innerHTML = `
@@ -87,12 +87,14 @@ function showMovies(movies) {
      <div class="overview">
       <h5>${title}</h5>
       <p>${overview}</p>
-      <button class="watch_now_btn" id="watchnow">Watch Now</button> 
+      <button class="watch_now_btn" id="watchnow"">Watch Now</button> 
      </div>
     `;
     ul.appendChild(movieItem);
   });
 }
+
+
 
 // WHEN CLICK POPULAR, CHANGE h2 TITLE TO Popular
 document.querySelector("#popular").addEventListener("click", () => {
@@ -208,7 +210,7 @@ document.addEventListener("click", function (e) {
       "fadeOut 0.5s ease-in-out forwards";
     setTimeout(function () {
       document.querySelector(".search-results").style.display = "none";
-    }, 500);
+    }, 400);
   }
 });
 
