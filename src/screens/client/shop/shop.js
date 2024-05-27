@@ -27,8 +27,8 @@ const addDataToHTML = () => {
       newProduct.innerHTML = `<img src="${product.image}" alt="">
                 <h2>${product.name}</h2>
                 <div class="price">$${product.price}</div>
-                <button class="addCart"><span>Add to cart</span></button>
-                <button class="addCart" onclick="showMessage()" id="buy" style="margin-top: 5px"><span>Buy</span></button>`;
+                <button class="addCart">Add</button>
+                <button class="addCart" onclick="showMessage()" id="buy" style="margin-top: 20px">Buy</button>`;
       listProductHTML.appendChild(newProduct);
     });
   }

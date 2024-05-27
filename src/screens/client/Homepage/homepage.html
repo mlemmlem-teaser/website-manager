@@ -64,7 +64,59 @@
             <li class="nav_about">
               <a class="nav-link scrollto" href="#services">About Us</a>
             </li>
-            <li id="user">
+            <li class="dropdown">
+              <a
+                class="nav-link dropdown-toggle scrollto"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Discover
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" id="popular" href="#">Popular</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" id="top_rated" href="#">Top Rated</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" id="upcoming" href="#">Upcoming</a>
+                </li>
+                <li class="dropdown">
+                  <a
+                    class="dropdown-item dropdown-toggle"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLinkDeep1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Genres
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuLinkDeep1"
+                  >
+                    <li>
+                      <a class="dropdown-item" id="action" href="#">Action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" id="animation" href="#"
+                        >Animation</a
+                      >
+                    </li>
+                    <li class="dropdown">
+                      <a class="dropdown-item" id="comedy" href="#"> Comedy </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li id="user" style="margin-left: 81%">
               <div id="user-info-container">
                 <img
                   id="user-avatar"
@@ -123,6 +175,7 @@
                 <i class="fa-solid fa-phone" style="color: lightblue"></i>
                 <a href="../help/help.html">Help</a>
               </li>
+
               <li>
                 <i
                   class="fa-solid fa-right-from-bracket"
@@ -134,39 +187,22 @@
             </ul>
           </div>
         </div>
-        <div class="top1">
-          <h2
-            style="
-              margin-top: 22%;
-              margin-left: 4%;
-              text-shadow: 0 0 2px #989898, 0 0 5px #757575, 0 0 8px #848484,
-                0 0 15px #15242c;
-              color: #b9dfff;
-              color: #ffffff;
-            "
-          >
-            <strong>Dune: Part Two</strong>
-          </h2>
-          <!-- HTML !-->
-          <button class="button-64" role="button">
-            <a class="text" href="https://youtu.be/CniNDTjuYYQ">Watch now!</a>
-          </button>
+        <div class="titles">
+          <h2>POPULAR</h2>
+          <h5>Movies</h5>
         </div>
-        <h1
-          style="
-            margin-top: 10%;
-            margin-left: 4%;
-            text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 8px #fff,
-              0 0 15px #00aaff;
-            color: #b9dfff;
-            color: #fff;
-          "
-        >
-          Top Movie 2024
-        </h1>
+        <div class="search-container">
+          <form class="search-form">
+            <input type="text" class="search-input" placeholder="Search..." />
+            <button type="submit" class="search-button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
         <ul class="movie_list_ul" id="movieUl"></ul>
       </div>
     </div>
+
     <!-- Change -->
     <div id="showModal"></div>
 

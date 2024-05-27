@@ -68,28 +68,100 @@ async function getMovies(url) {
   showMovies(data.results);
 }
 
+
+
 // SHOW MOVIES LIST
 function showMovies(movies) {
   console.log(movies);
   ul.innerHTML = "";
-  movies.forEach((movie) => {
+  movies.slice(0, 20).forEach((movie) => {
     const { title, poster_path, vote_average, overview } = movie;
     const movieItem = document.createElement("li");
     movieItem.classList.add("movie_list_item");
     movieItem.innerHTML = `
      <img src="${IMG_PATH + poster_path}" alt="${title}" style="height:580px"/>
      <div class="movie_info">
-       <h3>${title}</h3>
-       <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+       <h5>${title}</h5>
+       <span class="${getClassByRate(
+         vote_average
+       )}" style="display: flex;justify-content: center;"> ☆ ${vote_average}</span>
      </div>
      <div class="overview">
-      <h3>${title}</h3>
+      <h5>${title}</h5>
       <p>${overview}</p>
      </div>
     `;
     ul.appendChild(movieItem);
   });
 }
+
+// WHEN CLICK POPULAR, CHANGE h2 TITLE TO Popular
+document.querySelector("#popular").addEventListener("click", () => {
+  const title = document.querySelector("h2");
+  title.innerText = "POPULAR";
+});
+
+// WHEN CLICK TOP RATED, CHANGE h2 TITLE TO Top Rated
+document.querySelector("#top_rated").addEventListener("click", () => {
+  const title = document.querySelector("h2");
+  title.innerText = "TOP RATED";
+});
+
+// WHEN CLICK UPCOMING, CHANGE h2 TITLE TO Upcoming
+document.querySelector("#upcoming").addEventListener("click", () => {
+  const title = document.querySelector("h2");
+  title.innerText = "UPCOMING";
+});
+
+
+// WHEN CLICK POPULAR, LOAD POPULAR MOVIES
+document.querySelector("#popular").addEventListener("click", () => {
+  getMovies(API_URL);
+});
+
+// WHEN CLICK TOP RATED, LOAD TOP RATED MOVIES
+document.querySelector("#top_rated").addEventListener("click", () => {
+  getMovies(API_URL_TOP_RATED);
+});
+
+const API_URL_TOP_RATED =
+  "https://api.themoviedb.org/3/movie/top_rated?sort_by=vote_average.desc&api_key=6bfaa39b0a3a25275c765dcaddc7dae7&page=1";
+
+// WHEN CLICK UPCOMING, LOAD UPCOMING MOVIES
+document.querySelector("#upcoming").addEventListener("click", () => {
+  getMovies(API_URL_UPCOMING);
+});
+
+const API_URL_UPCOMING =
+  "https://api.themoviedb.org/3/movie/upcoming?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&page=1";
+
+// WHEN CLICK COMEDY, CHANGE h2 TITLE TO Comedy AND LOAD COMEDY MOVIES
+document.querySelector("#comedy").addEventListener("click", () => {
+  getMovies(API_URL_COMEDY);
+  const title = document.querySelector("h2");
+  title.innerText = "COMEDY";
+});
+
+const API_URL_COMEDY =
+  "https://api.themoviedb.org/3/discover/movie?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&with_genres=35&sort_by=popularity.desc&page=1";
+// WHEN CLICK ACTION, CHANGE h2 TITLE TO Action AND LOAD ACTION MOVIES
+document.querySelector("#action").addEventListener("click", () => {
+  getMovies(API_URL_ACTION);
+  const title = document.querySelector("h2");
+  title.innerText = "ACTION";
+});
+
+const API_URL_ACTION =
+  "https://api.themoviedb.org/3/discover/movie?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&with_genres=28&sort_by=popularity.desc&page=1";
+// WHEN CLICK ANIMATION, CHANGE h2 TITLE TO Animation AND LOAD ANIMATION MOVIES
+document.querySelector("#animation").addEventListener("click", () => {
+  getMovies(API_URL_ANIMATION);
+  const title = document.querySelector("h2");
+  title.innerText = "ANIMATION";
+});
+
+const API_URL_ANIMATION =
+  "https://api.themoviedb.org/3/discover/movie?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&with_genres=16&sort_by=popularity.desc&page=1";
 // FOR RATE
 function getClassByRate(vote) {
   if (vote >= 8) {
@@ -116,3 +188,5 @@ $(document).ready(function () {
     lastScrollTop = scrollTop;
   });
 });
+
+
