@@ -214,7 +214,8 @@ nav {
   background: linear-gradient(45deg, #000000, #000d2c);
   width: 100vw;
   opacity: 0; /* Bắt đầu với độ mờ là 0 */
-  animation: moveDown 2s forwards, fadeIn 2s forwards;
+  animation: moveDown 2s forwards, fadeIn 2s forwards; 
+  z-index: 7000;
 }
 
 @keyframes moveDown {

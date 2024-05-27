@@ -1,4 +1,3 @@
-
 // const userId = "your_user_id_here";
 // getUserInfo(userId)
 //   .then((userData) => {
@@ -68,8 +67,6 @@ async function getMovies(url) {
   showMovies(data.results);
 }
 
-
-
 // SHOW MOVIES LIST
 function showMovies(movies) {
   console.log(movies);
@@ -79,6 +76,7 @@ function showMovies(movies) {
     const movieItem = document.createElement("li");
     movieItem.classList.add("movie_list_item");
     movieItem.innerHTML = `
+    
      <img src="${IMG_PATH + poster_path}" alt="${title}" style="height:580px"/>
      <div class="movie_info">
        <h5>${title}</h5>
@@ -89,6 +87,7 @@ function showMovies(movies) {
      <div class="overview">
       <h5>${title}</h5>
       <p>${overview}</p>
+      <button class="watch_now_btn" id="watchnow">Watch Now</button> 
      </div>
     `;
     ul.appendChild(movieItem);
@@ -112,7 +111,6 @@ document.querySelector("#upcoming").addEventListener("click", () => {
   const title = document.querySelector("h2");
   title.innerText = "UPCOMING";
 });
-
 
 // WHEN CLICK POPULAR, LOAD POPULAR MOVIES
 document.querySelector("#popular").addEventListener("click", () => {
@@ -188,5 +186,74 @@ $(document).ready(function () {
     lastScrollTop = scrollTop;
   });
 });
+
+document.querySelector(".search-input").addEventListener("click", function () {
+  document.querySelector(".search-results").style.opacity = 0;
+  document.querySelector(".search-results").style.display = "block";
+  setTimeout(function () {
+    document.querySelector(".search-results").style.opacity = 1;
+    document.querySelector(".search-results").style.animation =
+      "fadeIn 0.5s ease-in-out forwards";
+  }, 10);
+});
+document.querySelector(".search-results").style.display = "none";
+
+// When not click search input, search results will be hidden
+document.addEventListener("click", function (e) {
+  if (
+    !e.target.closest(".search-input") &&
+    document.querySelector(".search-results").style.display !== "none"
+  ) {
+    document.querySelector(".search-results").style.animation =
+      "fadeOut 0.5s ease-in-out forwards";
+    setTimeout(function () {
+      document.querySelector(".search-results").style.display = "none";
+    }, 500);
+  }
+});
+
+document.querySelector(".search-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const searchTerm = document.querySelector(".search-input").value;
+  fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&query=${searchTerm}&language=en-US&page=1&include_adult=false`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      const searchResult = document.querySelector(".search-results");
+      searchResult.innerHTML = "";
+      data.results.forEach((movie) => {
+        const movieCard = `
+          <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" />
+            <h5 class="movie-title">${movie.title}</h5>
+            <div class="movie-info"><p class="movie-overview">${movie.overview}</p>
+            <p class="movie-release-date">Date: ${movie.release_date}</p>
+            <p class="movie-rating">Rating: ☆ ${movie.vote_average}</p></div>
+          </div>
+        `;
+        searchResult.insertAdjacentHTML("beforeend", movieCard);
+      });
+    })
+    .catch((error) => console.error(error));
+});
+
+document.querySelector(".search-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const searchTerm = document.querySelector(".search-input").value;
+  fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&query=${searchTerm}&language=en-US&page=1&include_adult=false`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.results.length === 0) {
+        alert("Can't find any results for this query");
+      }
+    })
+    .catch((error) => {
+      alert("Error fetching search results:", error);
+    });
+});
+
 
 

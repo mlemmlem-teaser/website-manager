@@ -51,19 +51,11 @@
   }
 }
 
-.top1 {
-  background-image: url(/Assets/Images/top1\ movie.jpg);
-  padding-top: 14%;
-  background-repeat: no-repeat;
-  padding-bottom: 10%;
-  margin-left: 5%;
-  opacity: 0.5;
-}
-
 .search-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 80px;
 }
 
 /* Style the search form */
@@ -73,6 +65,7 @@
   border-radius: 50px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
+  z-index: 2000;
 }
 
 .search-form:hover {
@@ -97,17 +90,55 @@
   color: #bdc3c7;
 }
 
-/* Style the search button */
 .search-button {
   color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
-  cursor: pointer;
   transition: color 0.3s ease;
-  background-color: #ffffff;
+  background-color: transparent;
+  position: absolute;
+  margin-left: 340px;
+  padding-top: 5px;
+  z-index: 3000;
 }
 
 .search-button:hover {
   color: #2980b9;
 }
 
+.search-results {
+  position: absolute;
+  background-color: #ffffff;
+  height: 300px;
+  padding: 100px;
+  width: 400px;
+  z-index: 1000;
+  margin-top: 300px;
+  border-radius: 10px;
+  padding-left: 0;
+  padding-top: 40px;
+  padding-right: 0;
+}
+
+/**
+ * Fade In
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/**
+ * Fade Out
+ */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
