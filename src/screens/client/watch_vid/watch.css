@@ -1,0 +1,244 @@
+ 
+.cover {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+
+
+.poster {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+.tomtat{
+  max-width: 700px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+.info h3 {
+  margin-bottom: 10px;
+}
+
+.info h5 {
+  margin-bottom: 10px;
+}
+
+.rating-system {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.face-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #b5ad0c;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.face-icon:hover {
+  opacity: 1;
+}
+
+.face-icon i {
+  font-size: 24px;
+}
+
+.counter {
+  margin-left: 10px;
+}
+
+.info p {
+  margin-top: 10px;
+}
+/** episo**/
+.ep-select{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+
+}
+.tap{
+  color: white;
+  margin-left: 10px;
+  background-color:rgb(62, 62, 39);
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+/**side bar trending movie**/
+
+
+.vid-container {
+  position: relative;
+  width: 100%;
+}
+
+.video {
+  float: left;
+  width: 700px;
+  height: 400px;
+}
+
+.episodes {
+  clear: left;
+  width: 300px;
+  float: left;
+}
+
+.sidebar_ {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  overflow-y: auto;
+ margin-top: 70px;
+  
+}
+
+/* other CSS rules */
+
+.sidebar_ h2 {
+  margin-top: 0;
+}
+
+.sidebar_ ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar_ li {
+  padding: 10px;
+}
+
+.sidebar_ img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.sidebar_ h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.sidebar_ p {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+
+/** thể loại  phim đang xem **/
+.tittle{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: rgb(101, 51, 137);
+  
+}
+.gener{
+  padding-left: 100px;
+}
+
+/**share**/
+.share {
+  display: flex;
+  align-items: center;
+}
+
+.share h4, .share span, .share a {
+  margin-right: 10px;
+}
+
+/** comment **/
+.comment-section  {
+  max-width: 800px;
+  padding: 20px;
+  background-color: #672196;
+  border-radius: 30px ;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.comment-author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-date {
+  font-size: 14px;
+  color: #000000;
+}
+
+.comment-form {
+  padding: 20px;
+}
+
+.comment-form input,.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.comment-form button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.comment-text{
+  color: black;
+}
+.comment-name{
+  color: black;
+}
