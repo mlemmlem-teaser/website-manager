@@ -29,24 +29,7 @@
 //   }
 // }
 // document.getElementById("MenuBtn").addEventListener("click",RunSideBar());
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.getElementById("MenuBtn");
-  const sidebar = document.getElementById("sidebar");
 
-  menuBtn.addEventListener("click", function () {
-    if (sidebar.style.display === "none") {
-      sidebar.style.display = "flex";
-      setTimeout(() => {
-        sidebar.style.transform = "translateX(0)";
-      }, 200);
-    } else {
-      sidebar.style.transform = "translateX(-30vw)";
-      setTimeout(() => {
-        sidebar.style.display = "none";
-      }, 200);
-    }
-  });
-});
 
 const API_URL =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6bfaa39b0a3a25275c765dcaddc7dae7&page=1&include_video=true";
