@@ -90,9 +90,10 @@ ul {
 
 button {
   padding: var(--spacing-small) var(--spacing-medium);
-  border: none;
   cursor: pointer;
   transition: color 0.3s ease;
+  outline: 0;
+  border: 0;
 }
 
 /* input {
@@ -214,7 +215,7 @@ nav {
   background: linear-gradient(45deg, #000000, #000d2c);
   width: 100vw;
   opacity: 0; /* Bắt đầu với độ mờ là 0 */
-  animation: moveDown 2s forwards, fadeIn 2s forwards; 
+  animation: moveDown 2s forwards, fadeIn 2s forwards;
   z-index: 7000;
 }
 
@@ -234,6 +235,10 @@ nav {
   to {
     opacity: 1; /* Kết thúc với độ mờ là 1 */
   }
+}
+
+button:focus {
+  outline: none;
 }
 
 #header.header-scrolled,

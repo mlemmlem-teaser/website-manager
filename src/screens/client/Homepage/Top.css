@@ -86,22 +86,23 @@ form {
 
 .movie-card {
   display: flex;
-  margin-top: 10px;
+  margin-top: 10%;
 }
 
 .movie-info p {
   font-size: 10px;
   color: #000000;
-  width: 150px;
+  width: 240px;
   margin-left: 40px;
 }
 
 .movie-title {
   color: midnightblue;
   text-shadow: none;
-  width: 100px;
+  width: 60px;
   display: flex;
   flex-direction: column;
+  font-size: 20px;
 }
 
 .movie-card img {

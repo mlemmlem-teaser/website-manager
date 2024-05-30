@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const API_URL =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6bfaa39b0a3a25275c765dcaddc7dae7&page=1";
+  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6bfaa39b0a3a25275c765dcaddc7dae7&page=1&include_video=true";
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API =
   'https://api.themoviedb.org/3/search/movie?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&query="';
@@ -85,9 +85,8 @@ function showMovies(movies) {
        )}" style="display: flex;justify-content: center;"> ☆ ${vote_average}</span>
      </div>
      <div class="overview">
-      <h5>${title}</h5>
+      <h5 style="cursor:pointer" >${title}</h5>
       <p>${overview}</p>
-      <button class="watch_now_btn" id="watchnow"">Watch Now</button> 
      </div>
     `;
     ul.appendChild(movieItem);
@@ -228,8 +227,8 @@ document.querySelector(".search-form").addEventListener("submit", function (e) {
         const movieCard = `
           <div class="movie-card">
             <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" />
-            <h5 class="movie-title">${movie.title}</h5>
-            <div class="movie-info"><p class="movie-overview">${movie.overview}</p>
+            <h5 class="movie-title" style="display:block;position:absolute;margin-top:100px">${movie.title}</h5>
+            <div class="movie-info" style="margin-left:40px"><p class="movie-overview">${movie.overview}</p>
             <p class="movie-release-date">Date: ${movie.release_date}</p>
             <p class="movie-rating">Rating: ☆ ${movie.vote_average}</p></div>
           </div>
@@ -239,6 +238,8 @@ document.querySelector(".search-form").addEventListener("submit", function (e) {
     })
     .catch((error) => console.error(error));
 });
+
+
 
 document.querySelector(".search-form").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -256,6 +257,3 @@ document.querySelector(".search-form").addEventListener("submit", function (e) {
       alert("Error fetching search results:", error);
     });
 });
-
-
-

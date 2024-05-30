@@ -14,6 +14,8 @@ navAbout.addEventListener("click",()=>{
         
     }
 
+
+    
 })
 navContact.addEventListener("click", ()=>{
     try {
