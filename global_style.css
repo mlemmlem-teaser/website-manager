@@ -423,6 +423,7 @@ button:focus {
   display: flex;
   transition: background-color 2s ease;
   overflow: hidden;
+  z-index: 9000;
 }
 #logout-btn {
   height: 50px;
@@ -478,6 +479,7 @@ button:focus {
   justify-content: center;
   font-size: 15px;
   padding: 2%;
+  z-index: 9000;
 }
 #sidebar {
   position: fixed;
@@ -494,7 +496,7 @@ button:focus {
   padding: 1%;
   transition: transform 0.2s ease-in-out, display 0.2s ease-in-out;
   overflow: hidden;
-  z-index: 1;
+  z-index: 6000;
   bottom: 0;
   font-size: 20px;
   font-weight: 100;
@@ -556,9 +558,11 @@ button:focus {
   font-size: 20px;
   box-shadow: 0 0 30px 600px rgb(0, 0, 0, 0.4);
   height: 500px;
+  z-index: 9000;
 }
 #userForm div {
   margin-bottom: 10px;
+  z-index: 9000;
 }
 #adminForm div {
   margin-bottom: 10px;

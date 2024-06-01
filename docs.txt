@@ -47,7 +47,21 @@ form.addEventListener("submit", async (e) => {
 });
 
 
-
+<img src="${IMG_PATH + poster_path}" alt="${title}" style="height:480px"/>
+     <div class="movie_info">
+       <h5>${title}</h5>
+       <span class="${getClassByRate(
+         vote_average
+       )}" style="display: flex;justify-content: center;"> ☆ ${vote_average}</span>
+     </div>
+     <div class="overview">
+      <h5 style="cursor:pointer" >${title}</h5>
+      <p>${overview}</p>
+      <p style=" color: #fff;
+text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #fff, 0 0 12px #fff;font-weight:bold;">Date:${new Date(
+      movie.release_date
+    ).toLocaleDateString()}</p>
+     </div>
 
 
 

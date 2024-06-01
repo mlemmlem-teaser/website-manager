@@ -204,5 +204,3 @@ window.addEventListener("DOMContentLoaded", (event) => {
   let elementToSlideDown = document.querySelector(".advert");
   elementToSlideDown.classList.add("slide-down-animation");
 });
-
-

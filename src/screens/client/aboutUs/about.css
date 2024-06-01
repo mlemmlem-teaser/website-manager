@@ -18,6 +18,12 @@ body {
   background: linear-gradient(45deg, #0f003a, #000d2c);
 }
 
+.item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 .contner {
   width: 90%;
   height: 100%;

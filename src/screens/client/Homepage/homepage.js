@@ -30,7 +30,6 @@
 // }
 // document.getElementById("MenuBtn").addEventListener("click",RunSideBar());
 
-
 const API_URL =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6bfaa39b0a3a25275c765dcaddc7dae7&page=1&include_video=true";
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
@@ -60,7 +59,7 @@ function showMovies(movies) {
     movieItem.classList.add("movie_list_item");
     movieItem.innerHTML = `
     
-     <img src="${IMG_PATH + poster_path}" alt="${title}" style="height:580px"/>
+     <img src="${IMG_PATH + poster_path}" alt="${title}" style="height:480px"/>
      <div class="movie_info">
        <h5>${title}</h5>
        <span class="${getClassByRate(
@@ -70,13 +69,64 @@ function showMovies(movies) {
      <div class="overview">
       <h5 style="cursor:pointer" >${title}</h5>
       <p>${overview}</p>
+      <p style=" color: #fff;
+text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #fff, 0 0 12px #fff;font-weight:bold;">Date:${new Date(
+      movie.release_date
+    ).toLocaleDateString()}</p>
      </div>
     `;
     ul.appendChild(movieItem);
   });
 }
 
+// Hiển thị bộ phim nổi tiếng nhất trong class top
+async function showTopRatedMovie() {
+  const res = await fetch(
+    "https://api.themoviedb.org/3/movie/top_rated?api_key=6bfaa39b0a3a25275c765dcaddc7dae7"
+  );
+  const data = await res.json();
+  const topRatedMovies = data.results;
+  let currentIndex = 0;
 
+  function displayMovie() {
+    const topRatedMovie = topRatedMovies[currentIndex];
+    const { title, poster_path, vote_average, overview } = topRatedMovie;
+    const topRatedMovieItem = document.querySelector(".top");
+    topRatedMovieItem.innerHTML = `
+    <div class="lol" style="background-image: url('${
+      IMG_PATH + poster_path
+    }');background-size: cover;background-repeat: no-repeat;background-position: center;height: 550px;padding-right: 130px;">
+    
+     <div class="movie_info" style=" margin-top: 65px;
+  margin-left: 1000px;">
+  <div class="toxt" style="text-shadow: 0 0 3px rgba(255,255,255,0.7), 0 0 6px rgba(255,255,255,0.7), 0 0 9px rgba(255,255,255,0.7), 0 0 12px rgba(255,255,255,0.7);">
+       <h3 style="position:absolute;color: black;left:4%;z-index: 1000;">${title}</h3>
+       <p  style="position:absolute;color: #000;font-size: 20px;left:4%;width: 500px;margin-top: 60px;z-index: 1000">${overview}</p>
+       <p style="position:absolute;color: #000;font-size: 15px;left:4%;width: 500px;bottom:-150px;z-index: 1000">Date:${new Date(
+      topRatedMovie.release_date
+    ).toLocaleDateString()}</p>
+       </div>
+       <div class="lop">
+        <img src="${
+          IMG_PATH + poster_path
+        }" alt="${title}" class="poster" style="height:430px;width:270px;padding:0;opacity: 0; animation: fadeIn 1s forwards;padding:0;margin-top: 12px;z-index: 1000">
+         <span class="${getClassByRate(
+           vote_average
+         )}" style="display: flex;justify-content: center;border-radius: 0px;width: 270px;z-index: 1000;opacity: 0; animation: fadeIn 1s forwards;"> ☆ ${vote_average}</span>
+       </div>
+      </div>
+    </div>
+     
+    `;
+
+    currentIndex = (currentIndex + 1) % topRatedMovies.length;
+    setTimeout(displayMovie, 3000);
+  }
+
+  setTimeout(displayMovie, 1000);
+}
+
+showTopRatedMovie();
 
 // WHEN CLICK POPULAR, CHANGE h2 TITLE TO Popular
 document.querySelector("#popular").addEventListener("click", () => {
@@ -206,37 +256,49 @@ document.querySelector(".search-form").addEventListener("submit", function (e) {
     .then((data) => {
       const searchResult = document.querySelector(".search-results");
       searchResult.innerHTML = "";
-      data.results.forEach((movie) => {
+      const movies = data.results.filter(
+        (movie) =>
+          movie.poster_path &&
+          movie.title &&
+          movie.vote_average &&
+          movie.overview &&
+          movie.release_date
+      );
+      movies.forEach((movie) => {
         const movieCard = `
-          <div class="movie-card">
+          <li class="movie_list_item" style="border-radius: 0px;overflow-y:auto;background-color: #000000">
             <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" />
-            <h5 class="movie-title" style="display:block;position:absolute;margin-top:100px">${movie.title}</h5>
-            <div class="movie-info" style="margin-left:40px"><p class="movie-overview">${movie.overview}</p>
-            <p class="movie-release-date">Date: ${movie.release_date}</p>
-            <p class="movie-rating">Rating: ☆ ${movie.vote_average}</p></div>
-          </div>
+            <div class="movie_info" style="height:auto">
+               <h5>${movie.title}</h5>
+               <p class="movie-overview" style="font-size: 12px;">${movie.overview}</p>
+               <p class="movie-release-date" style="font-size: 12px;">Date: ${movie.release_date}</p>
+               <span class="movie-rating" style="font-size: 12px;color: #FFC107;">
+                <span style="display: flex; width: 100%; text-align: center;">
+                  <span style="display: flex; width: ${movie.vote_average*10}%; background-color: #FFC107;position: absolute;justify-content: center;"></span>
+                </span>
+                
+               ☆ ${movie.vote_average}
+               </span>
+            </div>
+          </li>
         `;
         searchResult.insertAdjacentHTML("beforeend", movieCard);
       });
     })
-    .catch((error) => console.error(error));
-});
-
-
-
-document.querySelector(".search-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const searchTerm = document.querySelector(".search-input").value;
-  fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=6bfaa39b0a3a25275c765dcaddc7dae7&query=${searchTerm}&language=en-US&page=1&include_adult=false`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.results.length === 0) {
-        alert("Can't find any results for this query");
-      }
-    })
     .catch((error) => {
       alert("Error fetching search results:", error);
     });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".item");
+
+  let delay = 0;
+  items.forEach((item, index) => {
+    setTimeout(() => {
+      item.style.opacity = "1";
+      item.style.transform = "translateY(0)";
+    }, delay);
+    delay += 200; // Delay in milliseconds between each item appearing
+  });
 });
