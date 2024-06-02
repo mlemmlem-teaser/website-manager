@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watch</title>
+    <link rel="icon" type="image/x-icon" href="/Assets/Icons/favicon.ico" />
+    <link rel="stylesheet" href="watch.css" />
+    <script src="watch.js" defer></script>
+    <link rel="stylesheet" href="/variable.css" />
+    <link rel="stylesheet" href="/global_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/7a436d10a3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center" style="font-size: 26px">
+        <button id="MenuBtn" style="margin-left: 30px">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h1 class="logo" style="margin-left: 38.45px">
+          <b style="color: aliceblue"
+            >Net<span style="color: red">flex</span></b
+          >
+        </h1>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="/src/screens/client/Homepage/homepage.html"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav_contact">
+              <a class="nav-link scrollto" href="#contact">Contact</a>
+            </li>
+            <li class="nav_about">
+              <a class="nav-link scrollto" href="#services">About Us</a>
+            </li>
+
+            <li id="user" style="margin-left: 81%">
+              <div id="user-info-container">
+                <img
+                  id="user-avatar"
+                  src="/Assets/Images/default-user-img.webp"
+                  alt=""
+                />
+                <div class="user-info">mlemmlem</div>
+
+                <a
+                  id="logout-btn"
+                  class="logout"
+                  href="/src/screens/client/Auth/Login/login.html"
+                  style="text-decoration: none"
+                >
+                  <i
+                    class="fa-solid fa-right-from-bracket"
+                    style="font-size: 20px"
+                  ></i>
+                </a>
+              </div>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+      </div>
+    </header>
+    <div class="content">
+      <!-- header start -->
+      <!-- header end -->
+
+      <!-- banner section -->
+      <div class="banner-section" id="banner-section" style="margin-top: 90px">
+        <div class="banner_fadeBottom"></div>
+      </div>
+      <!-- banner section end -->
+
+      <!-- movies sections -->
+      <div
+        class="movies-cont container"
+        id="movies-cont"
+        onclick="document.querySelector('.content').style.display = 'none'; document.querySelector('.watch').style.display = 'block'"
+      >
+        <div class="video-container" style="display: none">
+          <iframe width="935" height="526" src="https://www.youtube.com/embed/itYsDNr0UCw" title="BEST UPCOMING MOVIES 2024 (Trailers)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <!-- movies sections end -->
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <div class="watch" style="display: none">
+      <style>
+        body {
+          background-color: #1c1e21; /* Dark background */
+          color: white;
+          margin: 0;
+          padding: 0;
+        }
+        .video-container {
+          max-width: 800px;
+          margin: 2rem auto;
+          background-color: #242526;
+          padding: 1rem;
+          border-radius: 0.5rem;
+        }
+        .video-player {
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 aspect ratio */
+          height: 0;
+          overflow: hidden;
+        }
+        .video-player iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .video-details {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.5rem 0;
+        }
+        .video-buttons {
+          display: flex;
+          gap: 0.5rem;
+        }
+      </style>
+
+      <div class="video-container">
+        <div class="video-player">
+          <iframe width="935" height="526" src="https://www.youtube.com/embed/itYsDNr0UCw" title="BEST UPCOMING MOVIES 2024 (Trailers)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-controls flex justify-between items-center py-2">
+          <div class="left-controls flex items-center space-x-4">
+            <button onclick="updateLikeCount()" class="text-blue-500">
+              <i class="fas fa-thumbs-up"></i> <span id="likeCount">1</span>
+            </button>
+            <script>
+              function updateLikeCount() {
+                const likeCountElement = document.getElementById("likeCount");
+                const currentCount = parseInt(likeCountElement.textContent);
+                likeCountElement.textContent = currentCount + 1;
+              }
+            </script>
+            <button class="text-blue-500">
+              <i class="fas fa-share"></i> Chia sẻ
+            </button>
+          </div>
+        </div>
+        <div class="video-description py-2">
+          <h2 class="text-xl">Movie-8K</h2>
+          <div class="flex items-center space-x-2"></div>
+          <div
+            class="rating flex items-center space-x-2 py-2"
+            onclick="updateRating(1)"
+          >
+            <span class="text-yellow-500" id="ratingValue">
+              <span id="ratingValueText">0</span>
+              <i class="fas fa-star"></i>
+            </span>
+          </div>
+
+          <button
+            class="text-white"
+            onclick="document.querySelector('.watch').style.display = 'none'; document.querySelector('.content').style.display = 'block'"
+          >
+            <i class="fas fa-times"></i> Thoát
+          </button>
+          <script>
+            function updateRating(rating) {
+              const ratingValueText =
+                document.getElementById("ratingValueText");
+              const currentRating = parseInt(ratingValueText.textContent);
+              ratingValueText.textContent = currentRating + rating;
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+    <div id="showModal"></div>
+    <div id="sidebar">
+      <div class="Item">
+        <ul>
+          <h5
+            style="
+              color: white;
+              text-shadow: black 0.1em 0.1em 0.2em;
+              margin-bottom: 5%;
+              text-indent: 10px;
+              padding: 3%;
+              text-align: center;
+              margin-top: 60px;
+              font-family: Jost, sans-serif;
+              font-size: 1.6rem;
+              font-weight: var(--font-weight-bold);
+            "
+          >
+            ★ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab
+            hic sunt, aliquam <br />
+            ✧──────✧
+          </h5>
+          <li>
+            <i class="fa-solid fa-house" style="color: lightcoral"></i>
+            <a
+              href="/src/screens/client/Homepage/homepage.html"
+              style="text-decoration: none"
+              >Home</a
+            >
+          </li>
+
+          <li>
+            <i class="fa-solid fa-shop" style="color: yellow"></i>
+            <a href="../shop/shop.html" style="text-decoration: none">Shop</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-user-group" style="color: lightseagreen"></i>
+            <a href="../aboutUs/about.html" style="text-decoration: none"
+              >About Us</a
+            >
+          </li>
+          <li id="alreadyHere">
+            <i class="fa-solid fa-eye" style="color: indigo"></i>
+            <a href="../watch/watch.html" style="text-decoration: none"
+              >Watch</a
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-phone" style="color: lightblue"></i>
+            <a href="../help/help.html" style="text-decoration: none">Help</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-right-from-bracket" style="color: lightgreen">
+            </i
+            ><a href="../Auth/Login/login.html" style="text-decoration: none"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    > </script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous">
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/navbar.js"></script>
+    <script type="module" src="/navigation.js"></script>
+  </body>
+</html>
