@@ -404,9 +404,11 @@ button:focus {
   color: white;
 }
 #MenuBtn:active,
-#MenuBtn:focus {
+#MenuBtn:focus,
+#MenuBtn:hover {
   border: none;
   outline: none;
+  color: tomato;
 }
 .navbar-hidden {
   top: -100px;
