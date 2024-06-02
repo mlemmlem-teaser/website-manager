@@ -8,27 +8,7 @@ import {
   updateDoc,
 } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.getElementById("MenuBtn");
-  const sidebar = document.getElementById("sidebar");
-  const UserManagerContainer = document.getElementById("UserManagerContainer");
 
-  menuBtn.addEventListener("click", async function () {
-    if (sidebar.style.display === "none") {
-      sidebar.style.display = "flex";
-      // UserManagerContainer.style.padding="100px 0 0 32vw"
-      setTimeout(() => {
-        sidebar.style.transform = "translateX(0)";
-      }, 200);
-    } else {
-      sidebar.style.transform = "translateX(-30vw)";
-      // UserManagerContainer.style.padding="100px 10vw 0 10vw"
-      setTimeout(() => {
-        sidebar.style.display = "none";
-      }, 200);
-    }
-  });
-});
 
 //getall user
 const getAllUsers = async () => {

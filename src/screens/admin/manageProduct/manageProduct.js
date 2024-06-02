@@ -6,25 +6,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
 import { dbRealTime } from "../../../config-firebase.js";
 
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.getElementById("MenuBtn");
-  const sidebar = document.getElementById("sidebar");
-  const UserManagerContainer = document.getElementById("UserManagerContainer");
-
-  menuBtn.addEventListener("click", async function () {
-    if (sidebar.style.display === "none") {
-      sidebar.style.display = "flex";
-      setTimeout(() => {
-        sidebar.style.transform = "translateX(0)";
-      }, 200);
-    } else {
-      sidebar.style.transform = "translateX(-20vw)";
-      setTimeout(() => {
-        sidebar.style.display = "none";
-      }, 200);
-    }
-  });
-});
 //fix
 const productForm2 = document.getElementById("productForm2");
 const cancelBtn2 = document.getElementById("cancelBtn2");
