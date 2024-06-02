@@ -1,5 +1,5 @@
 // Consts
-const apikey = "e950e51d5d49e85f7c2f17f01eb23ba3";
+const apikey = "6bfaa39b0a3a25275c765dcaddc7dae7";
 const apiEndpoint = "https://api.themoviedb.org/3";
 const imgPath = "https://image.tmdb.org/t/p/original";
 
@@ -119,6 +119,24 @@ function buildMoviesSection(list, categoryName) {
   moviesCont.append(div);
 }
 
+function searchMovieTrailer(movieName, iframId) {
+  if (!movieName) return;
+
+  fetch(apiPaths.searchOnYoutube(movieName))
+    .then((res) => res.json())
+    .then((res) => {
+      const bestResult = res.items[0];
+
+      const elements = document.getElementById(iframId);
+      console.log(elements, iframId);
+
+      const div = document.createElement("div");
+      div.innerHTML = `<iframe width="245px" height="150px" src="https://www.youtube.com/embed/${bestResult.id.videoId}?autoplay=1&controls=0"></iframe>`;
+      elements.append(div);
+    })
+    .catch((err) => console.log(err));
+}
+
 window.addEventListener("load", function () {
   init();
   window.addEventListener("scroll", function () {
@@ -128,4 +146,3 @@ window.addEventListener("load", function () {
     else header.classList.remove("black-bg");
   });
 });
-

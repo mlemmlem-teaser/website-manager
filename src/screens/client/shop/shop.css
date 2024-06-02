@@ -315,3 +315,7 @@ a {
 .listProduct .item:hover {
   transform: scale(1.02);
 }
+
+.item {
+  opacity: 1;
+}
