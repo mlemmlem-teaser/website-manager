@@ -28,7 +28,11 @@
     <title>Help</title>
   </head>
   <body>
-    <header id="header" class="fixed-top">
+    <header
+      id="header"
+      class="fixed-top"
+      style="align-items: center;height: 100px;padding-top: 2px;"
+    >
       <div class="container d-flex align-items-center">
         <button id="MenuBtn"><i class="fa-solid fa-bars"></i></button>
         <h1 class="logo">
@@ -36,7 +40,7 @@
             ><b>Net<span style="color: red">flex</span></b></a
           >
         </h1>
-        <nav id="navbar" class="navbar">
+        <nav id="navbar" class="navbar" style="padding-left: 0;">
           <ul>
             <li>
               <a
@@ -79,159 +83,113 @@
         </nav>
       </div>
     </header>
-    <section class="faq-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 offset-md-3">
-            <div class="faq-title text-center pb-3">
-              <h2 style="margin-top: 50px">FAQ</h2>
-            </div>
+
+    <section class="FAQ__list__container" style="margin-top: 50px">
+      <h1 class="FAQ__heading">Frequently Asked Questions</h1>
+      <div class="FAQ__list">
+        <div class="FAQ__accordian">
+          <button class="FAQ__title">
+            What is Netflex?<i class="fal fa-plus"></i>
+          </button>
+          <div class="FAQ__visible">
+            <p>
+              Netflex is a streaming service that offers a wide variety of
+              award-winning TV shows, movies, anime, documentaries and more – on
+              thousands of internet-connected devices.
+            </p>
+            <p>
+              You can watch as much as you want, whenever you want, without a
+              single ad – all for one low monthly price. There's always
+              something new to discover, and new TV shows and movies are added
+              every week!
+            </p>
           </div>
-          <div class="col-md-6 offset-md-3">
-            <div class="faq" id="accordion">
-              <div class="card">
-                <div class="card-header" id="faqHeading-1">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-1"
-                      data-aria-expanded="true"
-                      data-aria-controls="faqCollapse-1"
-                    >
-                      <span class="badge">1</span>What is Lorem Ipsum?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-1"
-                  class="collapse"
-                  aria-labelledby="faqHeading-1"
-                  data-parent="#accordion"
-                ></div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-2">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-2"
-                      data-aria-expanded="false"
-                      data-aria-controls="faqCollapse-2"
-                    >
-                      <span class="badge">2</span> Where does it come from?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-2"
-                  class="collapse"
-                  aria-labelledby="faqHeading-2"
-                  data-parent="#accordion"
-                ></div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-3">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-3"
-                      data-aria-expanded="false"
-                      data-aria-controls="faqCollapse-3"
-                    >
-                      <span class="badge">3</span>Why do we use it?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-3"
-                  class="collapse"
-                  aria-labelledby="faqHeading-3"
-                  data-parent="#accordion"
-                ></div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-4">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-4"
-                      data-aria-expanded="false"
-                      data-aria-controls="faqCollapse-4"
-                    >
-                      <span class="badge">4</span> Where can I get some?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-4"
-                  class="collapse"
-                  aria-labelledby="faqHeading-4"
-                  data-parent="#accordion"
-                ></div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-5">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-5"
-                      data-aria-expanded="false"
-                      data-aria-controls="faqCollapse-5"
-                    >
-                      <span class="badge">5</span> What is Lorem Ipsum?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-5"
-                  class="collapse"
-                  aria-labelledby="faqHeading-5"
-                  data-parent="#accordion"
-                ></div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-6">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-6"
-                      data-aria-expanded="false"
-                      data-aria-controls="faqCollapse-6"
-                    >
-                      <span class="badge">6</span> Where does it come from?
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-7">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-7"
-                      data-aria-expanded="false"
-                      data-aria-controls="faqCollapse-7"
-                    >
-                      <span class="badge">7</span> Why do we use it?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-7"
-                  class="collapse"
-                  aria-labelledby="faqHeading-7"
-                  data-parent="#accordion"
-                ></div>
-              </div>
-            </div>
+        </div>
+        <div class="FAQ__accordian">
+          <button class="FAQ__title">
+            How much does netflex cost?<i class="fal fa-plus"></i>
+          </button>
+          <div class="FAQ__visible">
+            <p>
+              Watch Netflex on your smartphone, tablet, Smart TV, laptop, or
+              streaming device, all for one fixed monthly fee. Plans range from
+              ₹ 199 to ₹ 799 a month. No extra costs, no contracts.
+            </p>
           </div>
+        </div>
+        <div class="FAQ__accordian">
+          <button class="FAQ__title">
+            Where can i watch?<i class="fal fa-plus"></i>
+          </button>
+          <div class="FAQ__visible">
+            <p>
+              Watch anywhere, anytime, on an unlimited number of devices. Sign
+              in with your Netfl3x account to watch instantly on the Internet
+              from your personal computer or on any internet-connected device
+              that offers the Netflix app, including smart TVs, smartphones,
+              tablets, streaming media players and game consoles.
+            </p>
+            <p>
+              You can also download your favourite shows with the iOS, Android,
+              or Windows 10 app. Use downloads to watch while you're on the go
+              and without an internet connection. Take Netflix with you
+              anywhere.
+            </p>
+          </div>
+        </div>
+        <div class="FAQ__accordian">
+          <button class="FAQ__title">
+            How do I cancel?<i class="fal fa-plus"></i>
+          </button>
+          <div class="FAQ__visible">
+            <p>
+              Netflex is flexible. There are no annoying contracts and no
+              commitments. You can easily cancel your account online in two
+              clicks. There are no cancellation fees – start or stop your
+              account anytime.
+            </p>
+          </div>
+        </div>
+        <div class="FAQ__accordian">
+          <button class="FAQ__title">
+            What can I watch from Netflex?<i class="fal fa-plus"></i>
+          </button>
+          <div class="FAQ__visible">
+            <p>
+              Netflex has an extensive library of feature films, documentaries,
+              TV shows, anime, award-winning Netflix originals, and more. Watch
+              as much as you want, anytime you want.
+            </p>
+          </div>
+        </div>
+        <div class="FAQ__accordian">
+          <button class="FAQ__title">
+            Is Netflex good for kids?<i class="fal fa-plus"></i>
+          </button>
+          <div class="FAQ__visible">
+            <p>
+              The Netflex Kids experience is included in your membership to give
+              parents control while kids enjoy family-friendly TV shows and
+              films in their own space.
+            </p>
+            <p>
+              Kids profiles come with PIN-protected parental controls that let
+              you restrict the maturity rating of content kids can watch and
+              block specific titles you don’t want kids to see.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="FAQ__get__started__email">
+        <h3>
+          Ready to watch? Enter your email to create or restart your membership.
+        </h3>
+        <div class="email__form__container">
+          <div class="form__container">
+            <input type="email" class="email__input" placeholder=" " />
+            <label class="email__label">Email Address</label>
+          </div>
+          <button class="primary__button">Get Started →</button>
         </div>
       </div>
     </section>
@@ -247,7 +205,7 @@
               text-indent: 10px;
               padding: 3%;
               text-align: center;
-              margin-top: 50px;
+              margin-top: 64px;
             "
           >
             ★ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab

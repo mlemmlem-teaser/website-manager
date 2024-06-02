@@ -153,19 +153,6 @@ button:active {
   background-color: rgba(109, 109, 110, 0.7);
   color: white;
 }
-.banner_fadeBottom {
-  height: 120px;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    rgba(37, 37, 37, 0.61),
-    #141414
-  );
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 
 /* RESPONSIVE CSS */
 @media (max-width: 767px) {
@@ -177,4 +164,3 @@ button:active {
     max-width: 100%;
   }
 }
-
