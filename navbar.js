@@ -14,7 +14,6 @@ const showMdl = document.querySelector("#showModal");
 const location = window.location.href;
 const logoutbtn = document.querySelector("#logout-btn");
 if (location.includes("admin")) {
-  window.location.href = "/src/screens/admin/Login/login.html";
 
 } else if (!token||token==null) {
   window.location.href = "/src/screens/client/Auth/Login/login.html";
